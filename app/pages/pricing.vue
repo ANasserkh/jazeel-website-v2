@@ -1,18 +1,9 @@
 <script setup>
-
-
-onMounted(() => {
-    document.getElementById('serviceModal').addEventListener('click', function (e) {
-        if (e.target === this) closeServiceModal();
-    });
-    // Close login dropdown on outside click
-    document.addEventListener('click', function (e) {
-        const dd = document.getElementById('loginDropdown');
-        if (dd && !e.target.closest('.login-dropdown-wrap')) {
-            dd.classList.remove('open');
-        }
-    });
+useSeoMeta({
+    title: 'باقات الاشتراك — جزيل | اختر الخطة المناسبة لنمو منظمتك',
+    description: 'باقات جزيل الواضحة والمرنة تساعدك على البدء فورًا وتوسيع عملك التنموي. أسعار شهرية بفوترة سنوية مع خصم 20% على السنة الأولى.',
 })
+
 
 function toggleFaq(e) {
     const el = e.target;
@@ -22,36 +13,18 @@ function toggleFaq(e) {
     if (!wasActive) item.classList.add('active');
 }
 
-
-
-function openServiceModal(serviceName) {
-    document.getElementById('serviceModalName').textContent = serviceName;
-    document.getElementById('serviceForm').classList.remove('hidden');
-    document.getElementById('serviceFormSuccess').classList.add('hidden');
-    document.getElementById('serviceForm').reset();
-    const modal = document.getElementById('serviceModal');
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
+const serviceModal = ref(false);
+const serviceSubtitle = ref("");
+function openServiceDialog(title) {
+    serviceSubtitle.value = title;
+    serviceModal.value = true;
 }
-function closeServiceModal() {
-    const modal = document.getElementById('serviceModal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    document.body.style.overflow = '';
-}
-function submitServiceForm(e) {
-    e.preventDefault();
-    document.getElementById('serviceForm').classList.add('hidden');
-    document.getElementById('serviceFormSuccess').classList.remove('hidden');
-}
-
 
 </script>
 
 
 <template>
-
+    <ServicesRequestDialog :subtitle="serviceSubtitle" v-model="serviceModal" />
 
     <!-- ═══════════════════ HERO ═══════════════════ -->
     <section class="pt-28 pb-14 sm:pt-36 sm:pb-20"
@@ -123,7 +96,8 @@ function submitServiceForm(e) {
                             </p>
                         </div>
 
-                        <a href="#" class="w-full btn-secondary justify-center text-[0.9375rem] mb-5 !py-3">
+                        <a href="https://ngo.jazeel.net.sa/#/register"
+                            class="w-full btn-secondary justify-center text-[0.9375rem] mb-5 !py-3">
                             ابدأ التجربة المجانية
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M13 8H3M6 4l-4 4 4 4" />
@@ -873,7 +847,7 @@ function submitServiceForm(e) {
                         class="inline-block text-[0.8125rem] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg mb-5 w-fit">لرفع
                         معدل القبول</span>
                     <div class="mt-auto">
-                        <button @click="openServiceModal('تدقيق المقترحات بالفريق الاستشاري')"
+                        <button @click="openServiceDialog('تدقيق المقترحات بالفريق الاستشاري')"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>
@@ -894,7 +868,7 @@ function submitServiceForm(e) {
                         class="inline-block text-[0.8125rem] font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-lg mb-5 w-fit">لتأسيس
                         رؤية واضحة</span>
                     <div class="mt-auto">
-                        <button @click="openServiceModal('بناء الاستراتيجية على منصة جزيل')"
+                        <button @click="openServiceDialog('بناء الاستراتيجية على منصة جزيل')"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>
@@ -916,7 +890,7 @@ function submitServiceForm(e) {
                         class="inline-block text-[0.8125rem] font-bold text-jgreen bg-jgreen-50 px-3 py-1 rounded-lg mb-5 w-fit">للمنظمات
                         ذات المشاريع المتعددة</span>
                     <div class="mt-auto">
-                        <button @click="openServiceModal('إدارة المشاريع بفريق محترف')"
+                        <button @click="openServiceDialog('إدارة المشاريع بفريق محترف')"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>
@@ -925,85 +899,6 @@ function submitServiceForm(e) {
             </div>
         </div>
     </section>
-
-    <!-- ═══════════════════ SERVICE REQUEST MODAL ═══════════════════ -->
-    <div id="serviceModal" class="fixed inset-0 z-[100] hidden items-center justify-center"
-        style="background:rgba(7,19,63,0.4);backdrop-filter:blur(4px);">
-        <div class="bg-white rounded-2xl shadow-sys-lg w-full max-w-md mx-4 p-7 sm:p-8 relative"
-            style="animation:fadeUp 0.3s ease;">
-            <button @click="closeServiceModal()"
-                class="absolute top-4 left-4 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-neutral-bg transition-colors">
-                <svg width="18" height="18" fill="none" stroke="#5B6470" stroke-width="2">
-                    <path d="M5 5l8 8M13 5l-8 8" />
-                </svg>
-            </button>
-            <h3 class="tex-xl font-extrabold text-navy mb-1">طلب خدمة</h3>
-            <p id="serviceModalName" class="text-[0.9375rem] text-jgreen font-semibold mb-6"></p>
-
-            <form id="serviceForm" onsubmit="submitServiceForm(event)">
-                <div class="mb-4">
-                    <label class="block text-sm font-bold text-navy mb-1.5">اسم المنظمة</label>
-                    <input type="text" required
-                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                        placeholder="اسم منظمتك" />
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-bold text-navy mb-1.5">الاسم الكامل</label>
-                    <input type="text" required
-                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                        placeholder="اسمك الكامل" />
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-bold text-navy mb-1.5">البريد الإلكتروني</label>
-                    <input type="email" required
-                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                        placeholder="email@example.com" dir="ltr" />
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-bold text-navy mb-1.5">رقم الجوال</label>
-                    <input type="tel" required
-                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                        placeholder="05xxxxxxxx" dir="ltr" />
-                </div>
-                <div class="mb-5">
-                    <label class="block text-sm font-bold text-navy mb-2">هل لديك حساب في جزيل؟</label>
-                    <div class="flex items-center gap-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="hasAccount" value="yes" class="accent-[#19B58B] w-4 h-4" />
-                            <span class="text-[0.9375rem] text-neutral-text">نعم، لدي حساب</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="hasAccount" value="no" checked class="accent-[#19B58B] w-4 h-4" />
-                            <span class="text-[0.9375rem] text-neutral-text">لا، ليس لدي حساب</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="mb-5">
-                    <label class="block text-sm font-bold text-navy mb-1.5">ملاحظات إضافية <span
-                            class="font-normal text-neutral-light">(اختياري)</span></label>
-                    <textarea rows="3"
-                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors resize-none"
-                        placeholder="أي تفاصيل إضافية عن احتياجك..."></textarea>
-                </div>
-                <button type="submit" class="btn-primary w-full justify-center text-[0.9375rem] py-3.5">إرسال
-                    الطلب</button>
-            </form>
-
-            <!-- Success state -->
-            <div id="serviceFormSuccess" class="hidden text-center py-6">
-                <div class="w-14 h-14 rounded-full bg-jgreen-50 flex items-center justify-center mx-auto mb-4">
-                    <svg width="28" height="28" fill="none" stroke="#19B58B" stroke-width="2">
-                        <path d="M7 14.5l5 5 9-9" />
-                    </svg>
-                </div>
-                <h4 class="text-lg font-bold text-navy mb-2">تم إرسال طلبك بنجاح!</h4>
-                <p class="text-[0.9375rem] text-neutral-text mb-5">سيتواصل معك فريقنا خلال 24 ساعة عمل</p>
-                <button @click="closeServiceModal()"
-                    class="btn-secondary justify-center text-[0.9375rem]">إغلاق</button>
-            </div>
-        </div>
-    </div>
-
     <!-- ═══════════════════ FAQ ═══════════════════ -->
     <section id="faq" class="py-16 sm:py-24 bg-neutral-bg/40">
         <div class="max-w-3xl mx-auto px-5 sm:px-8">
@@ -1166,7 +1061,7 @@ function submitServiceForm(e) {
                     ابدأ رحلتك مع جزيل اليوم. أنشئ حسابك وابدأ بإدارة مشاريعك ومقترحاتك وفرص المنح من مكان واحد.
                 </p>
                 <div class="flex items-center justify-center gap-4 flex-wrap">
-                    <a href="#" class="btn-primary text-lg px-10 py-4">
+                    <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary text-lg px-10 py-4">
                         ابدأ تجربتك المجانية
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 9H4M7 5l-4 4 4 4" />
@@ -1177,6 +1072,7 @@ function submitServiceForm(e) {
             </div>
         </div>
     </section>
+
 </template>
 
 <style scoped>

@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+useSeoMeta({
+    title: 'بوابة الجمعيات — جزيل | منظومة متكاملة لإدارة المشاريع والمقترحات وفرص المنح',
+    description: 'جزيل تمكّن الجمعيات غير الربحية من تنظيم عملها التنموي، كتابة مقترحات المشاريع باحتراف، اكتشاف فرص المنح، وإدارة المشاريع ومتابعة التنفيذ من مكان واحد.',
+})
+
+</script>
 
 <template>
 
@@ -41,7 +47,7 @@
 
                     <div class="flex flex-wrap gap-3 mb-10 reveal visible"
                         style="animation: fadeUp 0.6s 0.3s ease both;">
-                        <a href="#" class="btn-primary">
+                        <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary">
                             أنشئ حسابك مجانًا
                             <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round">
@@ -688,7 +694,7 @@
                     style="background:#EAF8F3; border-color:rgba(25,181,139,0.15);">
                     <div class="text-heading-sm text-navy mb-2">جمعيتك لديها سيناريو مختلف؟</div>
                     <p class="text-body-sm text-neutral-text mb-4">جرّب جزيل وشاهد كيف يمكنها مساعدتك.</p>
-                    <a href="#" class="btn-primary" style="padding:0.5rem 1.25rem; font-size:0.8125rem;">ابدأ الآن</a>
+                    <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary" style="padding:0.5rem 1.25rem; font-size:0.8125rem;">ابدأ الآن</a>
                 </div>
             </div>
         </div>
@@ -815,7 +821,7 @@
                 والمتابعة.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#" class="btn-primary" style="padding: 0.875rem 2rem;">
+                <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary" style="padding: 0.875rem 2rem;">
                     أنشئ حسابك مجانًا
                     <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round">

@@ -1,7 +1,7 @@
 <script setup>
 useSeoMeta({
-  title: 'جزيل — المنصة التشغيلية المتكاملة للقطاع غير الربحي',
-  description: 'جزيل منصة تقنية سعودية تمكّن الجمعيات والجهات المانحة من إدارة الاستراتيجية والأفكار وكتابة المقترحات وإدارة المشاريع وفرص المنح بدعم الذكاء الاصطناعي.',
+    title: 'جزيل — المنصة التشغيلية المتكاملة للقطاع غير الربحي',
+    description: 'جزيل منصة تقنية سعودية تمكّن الجمعيات والجهات المانحة من إدارة الاستراتيجية والأفكار وكتابة المقترحات وإدارة المشاريع وفرص المنح بدعم الذكاء الاصطناعي.',
 })
 </script>
 <template>
@@ -38,7 +38,7 @@ useSeoMeta({
 
                     <div class="flex flex-wrap gap-3 mb-10 reveal visible"
                         style="animation: fadeUp 0.6s 0.2s ease both;">
-                        <a href="#" class="btn-primary">
+                        <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary">
                             ابدأ التجربة المجانية
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -716,9 +716,9 @@ useSeoMeta({
                                 لحظياً</span>
                         </div>
                     </div>
-                    <a href="#" class="btn-primary" style="font-size:0.875rem;">دخول بوابة الجمعيات <svg width="14"
-                            height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round">
+                    <a href="/ngo-portal" class="btn-primary" style="font-size:0.875rem;">دخول بوابة الجمعيات <svg
+                            width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round">
                             <path d="m12 19-7-7 7-7" />
                             <path d="M19 12H5" />
                         </svg></a>
@@ -768,7 +768,7 @@ useSeoMeta({
                                 </svg></div><span class="text-body text-navy font-medium">تقارير الأثر والمتابعة</span>
                         </div>
                     </div>
-                    <a href="donor-portal.html" class="btn-violet" style="font-size:0.875rem;">دخول بوابة المانحين <svg
+                    <a href="/donor-portal" class="btn-violet" style="font-size:0.875rem;">دخول بوابة المانحين <svg
                             width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round">
                             <path d="m12 19-7-7 7-7" />

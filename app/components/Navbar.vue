@@ -104,7 +104,7 @@ function toggleNavbarBg() {
                             </svg>
                         </button>
                         <div class="login-dropdown" id="loginDropdown">
-                            <a href="ngo-portal.html">
+                            <a href="https://ngo.jazeel.net.sa/#/login">
                                 <span class="dd-icon" style="background:#EAF8F3;"><svg width="16" height="16"
                                         viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
                                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -118,7 +118,7 @@ function toggleNavbarBg() {
                                         المقترحات والمشاريع</div>
                                 </div>
                             </a>
-                            <a href="donor-portal.html">
+                            <a href="https://donor.jazeel.net.sa/login">
                                 <span class="dd-icon" style="background:rgba(125,83,243,0.08);"><svg width="16"
                                         height="16" viewBox="0 0 24 24" fill="none" stroke="#7D53F3" stroke-width="2">
                                         <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
@@ -127,13 +127,12 @@ function toggleNavbarBg() {
                                     </svg></span>
                                 <div>
                                     <div class="text-navy">دخول الجهات المانحة</div>
-                                    <div style="font-size:11px;font-weight:400;color:#5B6470;margin-top:1px;">نشر الفرص
-                                        وتقييم المقترحات</div>
+                                    <div style="font-size:11px;font-weight:400;color:#5B6470;margin-top:1px;">نشر الفرص وتقييم المقترحات</div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <a href="#" class="btn-primary" style="padding:0.5rem 1.25rem;font-size:0.8125rem;">ابدأ التجربة
+                    <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary" style="padding:0.5rem 1.25rem;font-size:0.8125rem;">ابدأ التجربة
                         المجانية</a>
                 </div>
 
@@ -154,7 +153,7 @@ function toggleNavbarBg() {
             <a href="grants.html">فرص المنح</a>
             <a href="donors-directory.html">دليل المانحين</a>
             <div style="padding:0.75rem 1rem;margin-top:0.5rem;border-top:1px solid #E5E8EB;">
-                <a href="#" class="btn-primary"
+                <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary"
                     style="width:100%;justify-content:center;font-size:0.8125rem;padding:0.75rem;">ابدأ التجربة
                     المجانية</a>
             </div>

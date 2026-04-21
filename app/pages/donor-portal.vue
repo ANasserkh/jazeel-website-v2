@@ -1,3 +1,9 @@
+<script setup>
+useSeoMeta({
+    title: 'بوابة المانحين — جزيل | منظومة متقدمة لإدارة المنح والمبادرات',
+    description: 'جزيل تمكّن الجهات المانحة من إدارة المبادرات وفرص المنح واستقبال الطلبات ومتابعة التنفيذ، سواء عبر حساب داخل المنصة أو نظام خاص ومخصص بالكامل.',
+})
+</script>
 <template>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -41,7 +47,7 @@
 
                     <div class="flex flex-wrap gap-3 mb-10 reveal visible"
                         style="animation: fadeUp 0.6s 0.3s ease both;">
-                        <a href="#" class="btn-violet">
+                        <a href="https://donor.jazeel.net.sa/login" class="btn-violet">
                             تسجيل دخول المانحين
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round">
@@ -245,7 +251,7 @@
                             متابعة أولية مرنة
                         </li>
                     </ul>
-                    <a href="#" class="btn-green-outline justify-center">ابدأ الآن</a>
+                    <a href="https://donor.jazeel.net.sa/login" class="btn-primary justify-center">ابدأ الآن</a>
                 </div>
 
                 <!-- Model 2: Popular -->
@@ -639,7 +645,6 @@
 
                     <div class="flex flex-wrap gap-3">
                         <a href="#" class="btn-primary">تحدث مع فريقنا</a>
-                        <a href="#" class="btn-secondary-dark">اعرف المزيد</a>
                     </div>
                 </div>
 
@@ -963,12 +968,12 @@
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#" class="btn-primary" style="padding: 0.875rem 2rem;">
                     اطلب نسخة تجريبية
-                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round">
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-                <a href="#" class="btn-secondary" style="padding: 0.875rem 2rem;">
+                <a href="#" class="btn-secondary-dark" style="padding: 0.875rem 2rem;">
                     اطلب نظامًا مخصصًا
                 </a>
             </div>
