@@ -1,0 +1,891 @@
+<script setup></script>
+
+<template>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     1. HERO SECTION — White + Green
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero-gradient relative overflow-hidden min-h-[90vh] flex items-center pt-[68px]">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-24 left-16 w-80 h-80 rounded-full blur-[120px]"
+                style="background:rgba(25,181,139,0.1);"></div>
+            <div class="absolute bottom-16 right-20 w-96 h-96 rounded-full blur-[140px]"
+                style="background:rgba(25,181,139,0.06);"></div>
+            <div class="absolute top-1/3 right-1/3 w-[400px] h-[300px] rounded-full blur-[160px]"
+                style="background:rgba(7,19,63,0.03);"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-20 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Text Column -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6 reveal visible"
+                        style="animation: fadeUp 0.6s ease both; background:rgba(25,181,139,0.06); border-color:rgba(25,181,139,0.18);">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        <span class="text-micro font-semibold text-jgreen">منظومة متكاملة للجمعيات غير الربحية</span>
+                    </div>
+
+                    <h1 class="text-display text-navy mb-5 reveal visible"
+                        style="animation: fadeUp 0.6s 0.1s ease both;">
+                        من الفكرة إلى الأثر<br>
+                        <span class="text-jgreen">منظومة واحدة لجمعيتك</span>
+                    </h1>
+
+                    <p class="text-body-lg text-neutral-text mb-8 max-w-lg reveal visible"
+                        style="animation: fadeUp 0.6s 0.2s ease both;">
+                        خطّط، واكتب مقترحاتك، واكتشف فرص المنح، وأدر مشاريعك، وتابع التنفيذ والنتائج — كل ذلك من مكان
+                        واحد بأدوات ذكية ومتكاملة.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mb-10 reveal visible"
+                        style="animation: fadeUp 0.6s 0.3s ease both;">
+                        <a href="#" class="btn-primary">
+                            أنشئ حسابك مجانًا
+                            <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#ecosystem" class="btn-secondary">
+                            تعرّف على المنظومة
+                        </a>
+                    </div>
+
+                    <!-- Hero Stats -->
+                    <div class="flex items-center gap-8 reveal visible" style="animation: fadeUp 0.6s 0.4s ease both;">
+                        <div>
+                            <div class="text-heading text-navy font-bold counter-value" data-target="850">0</div>
+                            <div class="text-caption text-neutral-text">جمعية ومنظمة</div>
+                        </div>
+                        <div class="w-px h-10 bg-neutral-border"></div>
+                        <div>
+                            <div class="text-heading text-navy font-bold counter-value" data-target="2400">0</div>
+                            <div class="text-caption text-neutral-text">مقترح مشروع</div>
+                        </div>
+                        <div class="w-px h-10 bg-neutral-border"></div>
+                        <div>
+                            <div class="text-heading text-jgreen font-bold">+65%</div>
+                            <div class="text-caption text-neutral-text">تحسّن في الجاهزية</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Column: Dashboard Mockup -->
+                <div class="relative reveal visible" style="animation: fadeUp 0.8s 0.3s ease both;">
+                    <div class="rounded-sys-xl p-5 shadow-sys-lg border"
+                        style="background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border-color:rgba(25,181,139,0.12);">
+                        <div class="flex items-center justify-between mb-4 pb-3"
+                            style="border-bottom:1px solid rgba(25,181,139,0.1);">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg flex items-center justify-center"
+                                    style="background:rgba(25,181,139,0.1);">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </div>
+                                <span class="text-caption text-navy font-bold">لوحة تحكم الجمعية</span>
+                            </div>
+                            <div class="flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-jgreen"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-neutral-border"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-neutral-border"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <div class="rounded-sys p-3 text-center" style="background:rgba(25,181,139,0.05);">
+                                <div class="text-heading-sm text-jgreen font-bold">8</div>
+                                <div class="text-micro text-neutral-text">مقترحات جاهزة</div>
+                            </div>
+                            <div class="rounded-sys p-3 text-center bg-neutral-bg">
+                                <div class="text-heading-sm text-navy font-bold">14</div>
+                                <div class="text-micro text-neutral-text">فرصة منح متاحة</div>
+                            </div>
+                            <div class="rounded-sys p-3 text-center bg-neutral-bg">
+                                <div class="text-heading-sm text-navy font-bold">5</div>
+                                <div class="text-micro text-neutral-text">مشاريع نشطة</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="rounded-sys p-3 bg-neutral-bg">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-micro text-navy/70 font-semibold">مقترح: تمكين المرأة
+                                        الريفية</span>
+                                    <span class="text-micro text-jgreen font-bold">92%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-neutral-border/50 rounded-full overflow-hidden">
+                                    <div class="h-full bg-jgreen rounded-full" style="width:92%"></div>
+                                </div>
+                            </div>
+                            <div class="rounded-sys p-3 bg-neutral-bg">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-micro text-navy/70 font-semibold">مشروع: التعليم التقني</span>
+                                    <span class="text-micro text-jgreen font-bold">60%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-neutral-border/50 rounded-full overflow-hidden">
+                                    <div class="h-full bg-jgreen rounded-full" style="width:60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Cards -->
+                    <div class="absolute -right-4 top-8 float-slow">
+                        <div class="rounded-sys-lg p-3 flex items-center gap-3 shadow-sys-md border"
+                            style="min-width:180px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); border-color:rgba(25,181,139,0.12);">
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-jgreen-50">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B"
+                                    stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                    <line x1="16" y1="13" x2="8" y2="13" />
+                                    <line x1="16" y1="17" x2="8" y2="17" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-micro text-neutral-text">مقترح جديد</div>
+                                <div class="text-caption text-navy font-bold">اكتمل 92%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute -left-4 bottom-12 float-slow-d">
+                        <div class="rounded-sys-lg p-3 flex items-center gap-3 shadow-sys-md bg-white border border-neutral-border"
+                            style="min-width:180px;">
+                            <div class="w-9 h-9 rounded-lg bg-jgreen-50 flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="M21 21l-4.35-4.35" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-micro text-neutral-text">فرص متاحة</div>
+                                <div class="text-caption text-jgreen font-bold">14 فرصة جديدة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     2. HOW JAZEEL HELPS — Benefit-first
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="badge-sys mx-auto mb-4">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    كيف تساعد جزيل جمعيتك؟
+                </div>
+                <h2 class="text-display-sm text-navy mb-4">نتائج ملموسة من أول استخدام</h2>
+                <p class="text-body-lg text-neutral-text max-w-2xl mx-auto">جزيل لا تضيف أدوات فحسب — بل تنقل جمعيتك من
+                    العمل المبعثر إلى منظومة واضحة ترفع جاهزيتك وتزيد فرصك.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                <div class="card-sys p-6">
+                    <div class="w-11 h-11 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">مقترحات أقوى</h3>
+                    <p class="text-body-sm text-neutral-text">اكتب مقترحات مشاريع منظمة ومهنية ترفع فرصة القبول لدى
+                        الجهات المانحة.</p>
+                </div>
+
+                <div class="card-sys p-6">
+                    <div class="w-11 h-11 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">فرص منح مناسبة</h3>
+                    <p class="text-body-sm text-neutral-text">اكتشف فرص المنح التي تتوافق مع مجالات عمل جمعيتك بسهولة
+                        ووضوح.</p>
+                </div>
+
+                <div class="card-sys p-6">
+                    <div class="w-11 h-11 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">متابعة أدق</h3>
+                    <p class="text-body-sm text-neutral-text">تابع تقدم المشاريع والتنفيذ بلوحات واضحة تغنيك عن الملفات
+                        المبعثرة.</p>
+                </div>
+
+                <div class="card-sys p-6">
+                    <div class="w-11 h-11 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">تنظيم أعلى</h3>
+                    <p class="text-body-sm text-neutral-text">رتّب استراتيجية جمعيتك وبرامجها وأفكار المشاريع في بنية
+                        واحدة ومترابطة.</p>
+                </div>
+
+                <div class="card-sys p-6">
+                    <div class="w-11 h-11 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M18 20V10" />
+                            <path d="M12 20V4" />
+                            <path d="M6 20v-6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">تقارير أوضح</h3>
+                    <p class="text-body-sm text-neutral-text">احصل على تقارير تقدم ومؤشرات أداء تساعدك في اتخاذ القرار
+                        وعرض الإنجازات.</p>
+                </div>
+
+                <div class="card-sys p-6">
+                    <div class="w-11 h-11 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">جاهزية أعلى</h3>
+                    <p class="text-body-sm text-neutral-text">ارفع جاهزية جمعيتك المؤسسية للتقديم على المنح والمبادرات
+                        بثقة أكبر.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     3. ECOSYSTEM — Connected Modules
+     ═══════════════════════════════════════════════════════════════ -->
+    <section id="ecosystem" class="py-20 lg:py-28 bg-neutral-bg">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="badge-sys mx-auto mb-4">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20" />
+                        <path
+                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                    </svg>
+                    منظومة متكاملة
+                </div>
+                <h2 class="text-display-sm text-navy mb-4">ست وحدات مترابطة لعمل تنموي متكامل</h2>
+                <p class="text-body-lg text-neutral-text max-w-2xl mx-auto">كل وحدة في جزيل تغذّي الأخرى — من التخطيط
+                    الاستراتيجي وحتى قياس الأثر، تعمل المنظومة كوحدة واحدة.</p>
+            </div>
+
+            <!-- Ecosystem Flow -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-sys p-6 reveal reveal-d1 relative">
+                    <div
+                        class="absolute top-4 left-4 text-micro font-bold text-jgreen bg-jgreen-50 w-7 h-7 rounded-full flex items-center justify-center">
+                        1</div>
+                    <div class="w-12 h-12 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">الاستراتيجية والبرامج</h3>
+                    <p class="text-body-sm text-neutral-text">حدّد توجّه جمعيتك الاستراتيجي ونظّم برامجها التنموية في
+                        بنية واضحة قابلة للمتابعة.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d2 relative">
+                    <div
+                        class="absolute top-4 left-4 text-micro font-bold text-jgreen bg-jgreen-50 w-7 h-7 rounded-full flex items-center justify-center">
+                        2</div>
+                    <div class="w-12 h-12 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">بنك أفكار المشاريع</h3>
+                    <p class="text-body-sm text-neutral-text">اجمع أفكار المشاريع في مكان واحد، وقيّمها وطوّرها قبل
+                        تحويلها إلى مقترحات فعلية.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d3 relative">
+                    <div
+                        class="absolute top-4 left-4 text-micro font-bold text-jgreen bg-jgreen-50 w-7 h-7 rounded-full flex items-center justify-center">
+                        3</div>
+                    <div class="w-12 h-12 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">كتابة المقترحات</h3>
+                    <p class="text-body-sm text-neutral-text">اكتب مقترحات مشاريع احترافية بأقسام منظمة، مع دعم الذكاء
+                        الاصطناعي لتسريع الصياغة.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d1 relative">
+                    <div
+                        class="absolute top-4 left-4 text-micro font-bold text-jgreen bg-jgreen-50 w-7 h-7 rounded-full flex items-center justify-center">
+                        4</div>
+                    <div class="w-12 h-12 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">اكتشاف فرص المنح</h3>
+                    <p class="text-body-sm text-neutral-text">تصفّح فرص المنح المتاحة، وقدّم على الفرص المناسبة لمجال
+                        عمل جمعيتك مباشرة.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d2 relative">
+                    <div
+                        class="absolute top-4 left-4 text-micro font-bold text-jgreen bg-jgreen-50 w-7 h-7 rounded-full flex items-center justify-center">
+                        5</div>
+                    <div class="w-12 h-12 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">إدارة المشاريع</h3>
+                    <p class="text-body-sm text-neutral-text">تابع مراحل المشروع، وأدر المهام والفريق والميزانية من لوحة
+                        واحدة واضحة.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d3 relative">
+                    <div
+                        class="absolute top-4 left-4 text-micro font-bold text-jgreen bg-jgreen-50 w-7 h-7 rounded-full flex items-center justify-center">
+                        6</div>
+                    <div class="w-12 h-12 rounded-sys bg-jgreen-50 flex items-center justify-center mb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                            <path d="M18 20V10" />
+                            <path d="M12 20V4" />
+                            <path d="M6 20v-6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-sm text-navy mb-2">التقارير والمتابعة</h3>
+                    <p class="text-body-sm text-neutral-text">احصل على تقارير دورية ومؤشرات أداء تساعدك في قياس التقدم
+                        وعرض النتائج.</p>
+                </div>
+            </div>
+
+            <!-- Flow Indicator -->
+            <div class="flex justify-center mt-10 reveal">
+                <div
+                    class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-neutral-border shadow-sys">
+                    <span class="text-caption text-neutral-text">الاستراتيجية</span>
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-caption text-neutral-text">الأفكار</span>
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-caption text-neutral-text">المقترحات</span>
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-caption text-neutral-text">المنح</span>
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-caption text-neutral-text">التنفيذ</span>
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#19B58B" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-caption text-jgreen font-bold">الأثر</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     4. AI SECTION — Practical Assistant
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="reveal">
+                    <div class="badge-sys mb-4">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2a4 4 0 014 4c0 4-4 6-4 6s-4-2-4-6a4 4 0 014-4z" />
+                            <circle cx="12" cy="18" r="2" />
+                        </svg>
+                        ذكاء اصطناعي مساعد
+                    </div>
+                    <h2 class="text-display-sm text-navy mb-5">كتابة المقترحات أصبحت أسرع وأسهل</h2>
+                    <p class="text-body-lg text-neutral-text mb-8">الذكاء الاصطناعي في جزيل لا يكتب بدلاً عنك — بل
+                        يساعدك في تنظيم أفكارك، بناء المسودة الأولى، وتحسين الصياغة بشكل عملي ومهني.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="check-icon bg-jgreen-50 mt-0.5"><svg width="12" height="12" viewBox="0 0 24 24"
+                                    fill="none" stroke="#19B58B" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5" />
+                                </svg></span>
+                            <div>
+                                <div class="text-body font-bold text-navy">تسريع بناء المسودة الأولى</div>
+                                <div class="text-body-sm text-neutral-text">ابدأ من مخرج أولي بدل الصفحة الفارغة</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="check-icon bg-jgreen-50 mt-0.5"><svg width="12" height="12" viewBox="0 0 24 24"
+                                    fill="none" stroke="#19B58B" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5" />
+                                </svg></span>
+                            <div>
+                                <div class="text-body font-bold text-navy">تحسين تنظيم الأفكار</div>
+                                <div class="text-body-sm text-neutral-text">رتّب أجزاء المقترح بترتيب منطقي ومهني</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="check-icon bg-jgreen-50 mt-0.5"><svg width="12" height="12" viewBox="0 0 24 24"
+                                    fill="none" stroke="#19B58B" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5" />
+                                </svg></span>
+                            <div>
+                                <div class="text-body font-bold text-navy">دعم الصياغة والمراجعة</div>
+                                <div class="text-body-sm text-neutral-text">حسّن جودة النصوص لتكون أكثر وضوحًا وإقناعًا
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="check-icon bg-jgreen-50 mt-0.5"><svg width="12" height="12" viewBox="0 0 24 24"
+                                    fill="none" stroke="#19B58B" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5" />
+                                </svg></span>
+                            <div>
+                                <div class="text-body font-bold text-navy">تقليل الجهد والوقت</div>
+                                <div class="text-body-sm text-neutral-text">وفّر ساعات العمل على كتابة وتنسيق المقترحات
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Visual -->
+                <div class="reveal">
+                    <div class="card-sys p-6 relative">
+                        <div class="flex items-center gap-3 mb-5 pb-4 border-b border-neutral-border">
+                            <div class="w-9 h-9 rounded-lg bg-jgreen-50 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#19B58B"
+                                    stroke-width="2">
+                                    <path d="M12 2a4 4 0 014 4c0 4-4 6-4 6s-4-2-4-6a4 4 0 014-4z" />
+                                    <circle cx="12" cy="18" r="2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-caption text-navy font-bold">مساعد كتابة المقترحات</div>
+                                <div class="text-micro text-neutral-text">يعمل على: مقترح تمكين المرأة الريفية</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-5">
+                            <div class="p-3 rounded-sys bg-jgreen-50 text-body-sm text-navy">
+                                <span class="text-micro text-jgreen font-bold block mb-1">💡 اقتراح الذكاء
+                                    الاصطناعي:</span>
+                                "يهدف المشروع إلى تمكين 200 امرأة في المناطق الريفية من خلال برامج تدريب مهني مكثفة
+                                تشمل..."
+                            </div>
+                            <div class="p-3 rounded-sys bg-neutral-bg text-body-sm text-neutral-text">
+                                <span class="text-micro text-navy font-bold block mb-1">📋 الأقسام المكتملة:</span>
+                                الملخص التنفيذي ✓ | الأهداف ✓ | المخرجات ✓ | الميزانية ⟳
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <div class="text-micro px-3 py-1.5 rounded-full bg-jgreen-50 text-jgreen font-semibold">قبول
+                                الاقتراح</div>
+                            <div
+                                class="text-micro px-3 py-1.5 rounded-full bg-neutral-bg text-neutral-text font-semibold">
+                                تعديل</div>
+                            <div
+                                class="text-micro px-3 py-1.5 rounded-full bg-neutral-bg text-neutral-text font-semibold">
+                                إعادة توليد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     5. JOURNEY — Step by step
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-20 lg:py-28 bg-neutral-bg">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="badge-sys mx-auto mb-4">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg>
+                    رحلة الجمعية
+                </div>
+                <h2 class="text-display-sm text-navy mb-4">من التخطيط إلى قياس الأثر</h2>
+                <p class="text-body-lg text-neutral-text max-w-2xl mx-auto">رحلة واضحة ومنظمة تمر بها جمعيتك داخل جزيل
+                    لتحقيق أقصى استفادة.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="journey-line space-y-8 pr-14">
+                    <div class="relative reveal reveal-d1">
+                        <div
+                            class="absolute right-[-56px] top-0 w-12 h-12 rounded-full bg-jgreen flex items-center justify-center text-white font-bold text-caption z-10">
+                            1</div>
+                        <div class="card-sys p-5">
+                            <h3 class="text-heading-sm text-navy mb-1">حدّد التوجه الاستراتيجي</h3>
+                            <p class="text-body-sm text-neutral-text">ابدأ بتنظيم رؤية جمعيتك وأولوياتها التنموية في
+                                بنية واضحة.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal reveal-d2">
+                        <div
+                            class="absolute right-[-56px] top-0 w-12 h-12 rounded-full bg-jgreen flex items-center justify-center text-white font-bold text-caption z-10">
+                            2</div>
+                        <div class="card-sys p-5">
+                            <h3 class="text-heading-sm text-navy mb-1">طوّر فكرة المشروع</h3>
+                            <p class="text-body-sm text-neutral-text">أضف أفكار مشاريعك إلى بنك الأفكار، ونظّمها وقيّمها
+                                قبل الانتقال للمقترح.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal reveal-d3">
+                        <div
+                            class="absolute right-[-56px] top-0 w-12 h-12 rounded-full bg-jgreen flex items-center justify-center text-white font-bold text-caption z-10">
+                            3</div>
+                        <div class="card-sys p-5">
+                            <h3 class="text-heading-sm text-navy mb-1">اكتب المقترح باحتراف</h3>
+                            <p class="text-body-sm text-neutral-text">استخدم أدوات كتابة المقترحات مع دعم الذكاء
+                                الاصطناعي لإنتاج مقترح مهني ومنظم.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal reveal-d4">
+                        <div
+                            class="absolute right-[-56px] top-0 w-12 h-12 rounded-full bg-jgreen flex items-center justify-center text-white font-bold text-caption z-10">
+                            4</div>
+                        <div class="card-sys p-5">
+                            <h3 class="text-heading-sm text-navy mb-1">اكتشف فرصة المنح المناسبة</h3>
+                            <p class="text-body-sm text-neutral-text">تصفّح فرص المنح المتاحة وقدّم مقترحك على الفرصة
+                                الأنسب لجمعيتك.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal">
+                        <div
+                            class="absolute right-[-56px] top-0 w-12 h-12 rounded-full bg-jgreen flex items-center justify-center text-white font-bold text-caption z-10">
+                            5</div>
+                        <div class="card-sys p-5">
+                            <h3 class="text-heading-sm text-navy mb-1">أدر المشروع بعد الاعتماد</h3>
+                            <p class="text-body-sm text-neutral-text">تابع المراحل والمهام والميزانية من لوحة واحدة
+                                شاملة ومنظمة.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal">
+                        <div
+                            class="absolute right-[-56px] top-0 w-12 h-12 rounded-full bg-navy flex items-center justify-center text-white font-bold text-caption z-10">
+                            6</div>
+                        <div class="card-sys p-5" style="border-color:rgba(25,181,139,0.25);">
+                            <h3 class="text-heading-sm text-navy mb-1">قِس النتائج والأثر</h3>
+                            <p class="text-body-sm text-neutral-text">احصل على تقارير تقدم ومؤشرات أداء واضحة تعكس
+                                إنجازات جمعيتك.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     6. USE CASES — Practical scenarios
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="badge-sys mx-auto mb-4">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                        <path d="M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                    حالات استخدام
+                </div>
+                <h2 class="text-display-sm text-navy mb-4">ماذا يمكن لجمعيتك أن تنجز عبر جزيل؟</h2>
+                <p class="text-body-lg text-neutral-text max-w-2xl mx-auto">سيناريوهات واقعية من عمل الجمعيات غير
+                    الربحية.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-sys p-6 reveal reveal-d1">
+                    <div class="text-micro text-jgreen font-bold mb-3 flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-jgreen"></div>
+                        سيناريو تقديم
+                    </div>
+                    <h3 class="text-body font-bold text-navy mb-2">تجهيز مقترح احترافي لجهة مانحة</h3>
+                    <p class="text-body-sm text-neutral-text">جمعية تريد التقديم على فرصة منح جديدة وتحتاج مقترحًا
+                        مكتملاً ومنظمًا وجاهزًا خلال أيام بدل أسابيع.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d2">
+                    <div class="text-micro text-jgreen font-bold mb-3 flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-jgreen"></div>
+                        سيناريو تنظيم
+                    </div>
+                    <h3 class="text-body font-bold text-navy mb-2">ترتيب أفكار المشاريع بدل ضياعها</h3>
+                    <p class="text-body-sm text-neutral-text">فريق لديه عدة أفكار لمشاريع جديدة ويحتاج مكانًا لتوثيقها
+                        وتقييمها وتحويلها لمقترحات.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d3">
+                    <div class="text-micro text-jgreen font-bold mb-3 flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-jgreen"></div>
+                        سيناريو متابعة
+                    </div>
+                    <h3 class="text-body font-bold text-navy mb-2">متابعة مشاريع تنموية من مكان واحد</h3>
+                    <p class="text-body-sm text-neutral-text">مدير مشاريع يريد رؤية واضحة لكل المشاريع النشطة ومراحلها
+                        وتقدمها من لوحة واحدة.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d1">
+                    <div class="text-micro text-jgreen font-bold mb-3 flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-jgreen"></div>
+                        سيناريو اكتشاف
+                    </div>
+                    <h3 class="text-body font-bold text-navy mb-2">البحث عن فرص منح مناسبة</h3>
+                    <p class="text-body-sm text-neutral-text">جمعية متخصصة تبحث عن فرص تمويل تتوافق مع مجالها دون الحاجة
+                        لمتابعة عشرات المواقع.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d2">
+                    <div class="text-micro text-jgreen font-bold mb-3 flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-jgreen"></div>
+                        سيناريو تقارير
+                    </div>
+                    <h3 class="text-body font-bold text-navy mb-2">إعداد تقارير تقدم واضحة للإدارة</h3>
+                    <p class="text-body-sm text-neutral-text">فريق تنفيذي يحتاج تقارير دورية توضح ما تم إنجازه وما يحتاج
+                        متابعة لعرضها على مجلس الإدارة.</p>
+                </div>
+
+                <div class="card-sys p-6 reveal reveal-d3 flex flex-col justify-center items-center text-center"
+                    style="background:#EAF8F3; border-color:rgba(25,181,139,0.15);">
+                    <div class="text-heading-sm text-navy mb-2">جمعيتك لديها سيناريو مختلف؟</div>
+                    <p class="text-body-sm text-neutral-text mb-4">جرّب جزيل وشاهد كيف يمكنها مساعدتك.</p>
+                    <a href="#" class="btn-primary" style="padding:0.5rem 1.25rem; font-size:0.8125rem;">ابدأ الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     7. COMPARISON — Before vs After
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-20 lg:py-28 bg-neutral-bg">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="badge-sys mx-auto mb-4">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18" />
+                        <path d="M9 21V9" />
+                    </svg>
+                    لماذا جزيل؟
+                </div>
+                <h2 class="text-display-sm text-navy mb-4">الفرق الذي تحدثه جزيل</h2>
+                <p class="text-body-lg text-neutral-text max-w-2xl mx-auto">قارن بين طريقة العمل التقليدية والعمل عبر
+                    منظومة جزيل.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="rounded-sys-xl overflow-hidden border border-neutral-border bg-white shadow-sys reveal">
+                    <!-- Header -->
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="p-5 bg-neutral-bg text-body font-bold text-neutral-text">المقارنة</div>
+                        <div
+                            class="p-5 bg-neutral-bg text-body font-bold text-neutral-text border-r border-neutral-border">
+                            العمل التقليدي</div>
+                        <div class="p-5 text-body font-bold text-jgreen" style="background:#EAF8F3;">عبر جزيل</div>
+                    </div>
+
+                    <!-- Rows -->
+                    <div class="grid grid-cols-3 text-center comparison-row border-t border-neutral-border">
+                        <div class="p-5 text-body-sm text-navy font-semibold text-right pr-6">إدارة الأفكار</div>
+                        <div class="p-5 text-body-sm text-neutral-light border-r border-neutral-border">ملاحظات متفرقة
+                            وملفات ضائعة</div>
+                        <div class="p-5 text-body-sm text-jgreen font-semibold">بنك أفكار منظم وقابل للتطوير</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 text-center comparison-row border-t border-neutral-border">
+                        <div class="p-5 text-body-sm text-navy font-semibold text-right pr-6">كتابة المقترحات</div>
+                        <div class="p-5 text-body-sm text-neutral-light border-r border-neutral-border">ملفات وورد بدون
+                            بنية موحدة</div>
+                        <div class="p-5 text-body-sm text-jgreen font-semibold">قوالب احترافية + دعم ذكاء اصطناعي</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 text-center comparison-row border-t border-neutral-border">
+                        <div class="p-5 text-body-sm text-navy font-semibold text-right pr-6">اكتشاف فرص المنح</div>
+                        <div class="p-5 text-body-sm text-neutral-light border-r border-neutral-border">بحث يدوي بين
+                            عشرات المواقع</div>
+                        <div class="p-5 text-body-sm text-jgreen font-semibold">فرص مجمّعة ومصنّفة حسب المجال</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 text-center comparison-row border-t border-neutral-border">
+                        <div class="p-5 text-body-sm text-navy font-semibold text-right pr-6">متابعة المشاريع</div>
+                        <div class="p-5 text-body-sm text-neutral-light border-r border-neutral-border">جداول إكسل
+                            وتقارير يدوية</div>
+                        <div class="p-5 text-body-sm text-jgreen font-semibold">لوحات تفاعلية بتحديثات حية</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 text-center comparison-row border-t border-neutral-border">
+                        <div class="p-5 text-body-sm text-navy font-semibold text-right pr-6">التقارير</div>
+                        <div class="p-5 text-body-sm text-neutral-light border-r border-neutral-border">إعداد يدوي مرهق
+                            وغير موحد</div>
+                        <div class="p-5 text-body-sm text-jgreen font-semibold">تقارير آلية بمؤشرات واضحة</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 text-center comparison-row border-t border-neutral-border">
+                        <div class="p-5 text-body-sm text-navy font-semibold text-right pr-6">الجاهزية المؤسسية</div>
+                        <div class="p-5 text-body-sm text-neutral-light border-r border-neutral-border">تفاوت في الجودة
+                            والتنظيم</div>
+                        <div class="p-5 text-body-sm text-jgreen font-semibold">نمو مستمر في الكفاءة والنضج</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     8. TRUST & NUMBERS
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <div class="text-center p-6 rounded-sys-lg" style="background:#EAF8F3;">
+                    <div class="text-display-sm text-navy font-bold counter-value" data-target="850">0</div>
+                    <div class="text-body-sm text-neutral-text mt-1">جمعية ومنظمة مسجلة</div>
+                </div>
+                <div class="text-center p-6 rounded-sys-lg" style="background:#EAF8F3;">
+                    <div class="text-display-sm text-jgreen font-bold counter-value" data-target="2400">0</div>
+                    <div class="text-body-sm text-neutral-text mt-1">مقترح مشروع مُعَد</div>
+                </div>
+                <div class="text-center p-6 rounded-sys-lg" style="background:#EAF8F3;">
+                    <div class="text-display-sm text-navy font-bold counter-value" data-target="340">0</div>
+                    <div class="text-body-sm text-neutral-text mt-1">فرصة منح متاحة</div>
+                </div>
+                <div class="text-center p-6 rounded-sys-lg" style="background:#EAF8F3;">
+                    <div class="text-display-sm text-navy font-bold">+65%</div>
+                    <div class="text-body-sm text-neutral-text mt-1">تحسّن في جاهزية التقديم</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     9. FINAL CTA   
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="py-20 lg:py-28 cta-gradient relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px]"
+                style="background:rgba(25,181,139,0.06);"></div>
+        </div>
+
+        <div class="relative max-w-3xl mx-auto px-5 sm:px-8 text-center">
+            <div class="badge-sys mx-auto mb-6" style="background:rgba(25,181,139,0.12); color:#19B58B;">ابدأ رحلتك مع
+                جزيل</div>
+            <h2 class="text-display-sm text-white mb-5">جمعيتك تستحق منظومة عمل أفضل</h2>
+            <p class="text-body-lg text-white/60 mb-10 max-w-xl mx-auto">
+                انتقل من الملفات المبعثرة والعمل اليدوي إلى بيئة رقمية متكاملة تساعدك في التخطيط والكتابة والإدارة
+                والمتابعة.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="btn-primary" style="padding: 0.875rem 2rem;">
+                    أنشئ حسابك مجانًا
+                    <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#" class="btn-secondary"
+                    style="padding: 0.875rem 2rem; color:#fff; border-color:rgba(255,255,255,0.2);">
+                    تواصل مع فريق جزيل
+                </a>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style scoped>
+.header-scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 1px 8px rgba(7, 19, 63, 0.05);
+    backdrop-filter: blur(12px);
+}
+
+.hero-gradient {
+    background: linear-gradient(160deg, #ffffff 0%, #f2fdf9 30%, #e5f8f1 55%, #ddf5ee 75%, #f0faf6 100%);
+}
+
+.cta-gradient {
+    background: linear-gradient(160deg, #07133F 0%, #0e1650 50%, #0d1345 100%);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #07133F;
+    border: 1.5px solid #E5E8EB;
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #EAF8F3;
+    border-color: rgba(25, 181, 139, 0.3);
+    color: #149572;
+}
+
+.btn-outline-dark {
+    background: transparent;
+    color: #07133F;
+    border: 1.5px solid #E5E8EB;
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-outline-dark:hover {
+    border-color: #19B58B;
+    color: #19B58B;
+}
+</style>

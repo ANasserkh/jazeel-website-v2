@@ -1,0 +1,1387 @@
+<script setup>
+
+
+onMounted(() => {
+    document.getElementById('serviceModal').addEventListener('click', function (e) {
+        if (e.target === this) closeServiceModal();
+    });
+    // Close login dropdown on outside click
+    document.addEventListener('click', function (e) {
+        const dd = document.getElementById('loginDropdown');
+        if (dd && !e.target.closest('.login-dropdown-wrap')) {
+            dd.classList.remove('open');
+        }
+    });
+})
+
+function toggleFaq(e) {
+    const el = e.target;
+    const item = el.closest('.faq-item');
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
+}
+
+
+
+function openServiceModal(serviceName) {
+    document.getElementById('serviceModalName').textContent = serviceName;
+    document.getElementById('serviceForm').classList.remove('hidden');
+    document.getElementById('serviceFormSuccess').classList.add('hidden');
+    document.getElementById('serviceForm').reset();
+    const modal = document.getElementById('serviceModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+function closeServiceModal() {
+    const modal = document.getElementById('serviceModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+}
+function submitServiceForm(e) {
+    e.preventDefault();
+    document.getElementById('serviceForm').classList.add('hidden');
+    document.getElementById('serviceFormSuccess').classList.remove('hidden');
+}
+
+
+</script>
+
+
+<template>
+
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section class="pt-28 pb-14 sm:pt-36 sm:pb-20"
+        style="background: linear-gradient(180deg, #ffffff 0%, #f0faf6 50%, #EAF8F3 100%);">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+            <div class="reveal">
+                <span
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold bg-jgreen-50 text-jgreen mb-7">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 1v14M1 8h14" />
+                    </svg>
+                    خصم 20% على السنة الأولى
+                </span>
+            </div>
+            <h1
+                class="reveal reveal-d1 text-[2.5rem] sm:text-[3.25rem] font-extrabold text-navy leading-[1.15] mb-6 tracking-tight">
+                باقات واضحة تساعدك<br class="hidden sm:block" />
+                على البدء والتوسع
+            </h1>
+            <p class="reveal reveal-d2 text-lg sm:text-xl text-neutral-text leading-relaxed max-w-2xl mx-auto mb-8">
+                اختر الخطة المناسبة لحجم منظمتك واحتياجاتها.
+            </p>
+            <div class="reveal reveal-d3 flex items-center justify-center gap-4 flex-wrap">
+                <a href="#plans" class="btn-primary text-base px-8 py-3.5">ابدأ الآن</a>
+                <a href="#faq" class="btn-secondary text-base px-8 py-3.5">الأسئلة الشائعة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PRICING CARDS ═══════════════════ -->
+    <section id="plans" class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+                <!-- PLAN 1: الانطلاقة -->
+                <div class="plan-card reveal p-0">
+                    <div class="p-8 sm:p-9">
+                        <!-- Badge -->
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.8125rem] font-bold bg-amber-50 text-amber-600 mb-5">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 1l1.5 4.5H13l-3.5 2.5 1.3 4.5L7 10l-3.8 2.5 1.3-4.5L1 5.5h4.5z" />
+                            </svg>
+                            14 يوم تجربة مجانية
+                        </span>
+
+                        <h3 class="text-2xl font-extrabold text-navy mb-2">الانطلاقة</h3>
+                        <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7">
+                            مثالية للجمعيات الصغيرة التي تبدأ رحلتها في تنظيم العمل التنموي
+                        </p>
+
+                        <!-- Price -->
+                        <div class="mb-7">
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span class="text-[3rem] font-extrabold text-navy leading-none tracking-tight">59</span>
+                                <div class="flex flex-col">
+                                    <span class="text-base font-bold text-neutral-text">ريال</span>
+                                    <span class="text-sm text-neutral-light">/ شهريًا</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-neutral-text mt-2">
+                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">708</strong> ريال
+                            </p>
+                            <p class="text-sm text-neutral-light mt-1">
+                                بدلاً من <span class="price-strike">900</span> ريال سنويًا
+                            </p>
+                            <p
+                                class="text-xs text-neutral-light mt-2 leading-relaxed bg-neutral-bg/60 rounded-lg px-3 py-2">
+                                يعود السعر بعد السنة الأولى إلى 75 ريال/شهريًا (900 ريال/سنويًا)
+                            </p>
+                        </div>
+
+                        <a href="#" class="w-full btn-secondary justify-center text-[0.9375rem] mb-5 !py-3">
+                            ابدأ التجربة المجانية
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 8H3M6 4l-4 4 4 4" />
+                            </svg>
+                        </a>
+
+                        <!-- Features -->
+                        <div class="space-y-4 pt-5 border-t border-neutral-border/60">
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">حتى 3 مستخدمين</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">حتى 5 مشاريع نشطة</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">كتابة المقترحات الأساسية</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">اكتشاف فرص المنح</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">تقارير أساسية</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">دعم فني عبر البريد</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAN 2: النمو (Featured) -->
+                <div class="plan-card featured reveal reveal-d1 p-0">
+                    <div class="plan-badge">الأكثر اختيارًا</div>
+                    <div class="p-8 sm:p-9 pt-11">
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.8125rem] font-bold bg-jgreen-50 text-jgreen mb-5">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 1v12M3 5l4-4 4 4" />
+                            </svg>
+                            الأنسب للنمو
+                        </span>
+
+                        <h3 class="text-2xl font-extrabold text-navy mb-2">النمو</h3>
+                        <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7">
+                            للجمعيات التي تريد التوسع وإدارة مشاريعها ومقترحاتها باحتراف
+                        </p>
+
+                        <div class="mb-7">
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span
+                                    class="text-[3rem] font-extrabold text-jgreen leading-none tracking-tight">196</span>
+                                <div class="flex flex-col">
+                                    <span class="text-base font-bold text-neutral-text">ريال</span>
+                                    <span class="text-sm text-neutral-light">/ شهريًا</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-neutral-text mt-2">
+                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">2,352</strong> ريال
+                            </p>
+                            <p class="text-sm text-neutral-light mt-1">
+                                بدلاً من <span class="price-strike">2,940</span> ريال سنويًا
+                            </p>
+                            <p
+                                class="text-xs text-neutral-light mt-2 leading-relaxed bg-jgreen-50/60 rounded-lg px-3 py-2">
+                                يعود السعر بعد السنة الأولى إلى 245 ريال/شهريًا (2,940 ريال/سنويًا)
+                            </p>
+                        </div>
+
+                        <a href="#" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3">
+                            اشترك الآن
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 8H3M6 4l-4 4 4 4" />
+                            </svg>
+                        </a>
+
+                        <div class="space-y-4 pt-5 border-t border-jgreen/10">
+                            <p class="text-[0.8125rem] font-bold text-jgreen mb-1">كل مزايا الانطلاقة، بالإضافة إلى:</p>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">حتى 10 مستخدمين</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">مشاريع غير محدودة</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80 font-semibold">كتابة المقترحات بالذكاء
+                                    الاصطناعي</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">إدارة الاستراتيجية والبرامج</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">تقارير متقدمة ومؤشرات أداء</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">دعم فني أولوي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAN 3: الريادة -->
+                <div class="plan-card reveal reveal-d2 p-0">
+                    <div class="p-8 sm:p-9">
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.8125rem] font-bold bg-navy/5 text-navy mb-5">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 1l2 4 4.5.5-3.5 3 1 4.5L7 10.5 3 13l1-4.5L.5 5.5 5 5z" />
+                            </svg>
+                            الحل الشامل
+                        </span>
+
+                        <h3 class="text-2xl font-extrabold text-navy mb-2">الريادة</h3>
+                        <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7">
+                            للمنظمات الكبيرة والفرق التي تحتاج أقصى مستوى من التحكم والإدارة
+                        </p>
+
+                        <div class="mb-7">
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span
+                                    class="text-[3rem] font-extrabold text-navy leading-none tracking-tight">264</span>
+                                <div class="flex flex-col">
+                                    <span class="text-base font-bold text-neutral-text">ريال</span>
+                                    <span class="text-sm text-neutral-light">/ شهريًا</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-neutral-text mt-2">
+                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">3,168</strong> ريال
+                            </p>
+                            <p class="text-sm text-neutral-light mt-1">
+                                بدلاً من <span class="price-strike">3,960</span> ريال سنويًا
+                            </p>
+                            <p
+                                class="text-xs text-neutral-light mt-2 leading-relaxed bg-neutral-bg/60 rounded-lg px-3 py-2">
+                                يعود السعر بعد السنة الأولى إلى 330 ريال/شهريًا (3,960 ريال/سنويًا)
+                            </p>
+                        </div>
+
+                        <a href="#" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3"
+                            style="background:#07133F;">
+                            اشترك الآن
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 8H3M6 4l-4 4 4 4" />
+                            </svg>
+                        </a>
+
+                        <div class="space-y-4 pt-5 border-t border-neutral-border/60">
+                            <p class="text-[0.8125rem] font-bold text-navy mb-1">كل مزايا النمو، بالإضافة إلى:</p>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">مستخدمون غير محدودين</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">إدارة محافظ المشاريع</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">صلاحيات وأدوار متقدمة</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">لوحات تحكم تنفيذية مخصصة</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80 font-semibold">مدير حساب مخصص</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">تكامل API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Logic Note — refined with individual items -->
+            <div class="max-w-5xl mx-auto mt-14 reveal">
+                <div class="bg-jgreen-50/70 border border-jgreen/10 rounded-2xl p-7 sm:p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-jgreen/10 flex items-center justify-center flex-shrink-0">
+                            <svg width="20" height="20" fill="none" stroke="#19B58B" stroke-width="2">
+                                <circle cx="10" cy="10" r="9" />
+                                <path d="M10 6v4M10 13h.01" />
+                            </svg>
+                        </div>
+                        <p class="text-lg font-extrabold text-navy">كيف يعمل التسعير؟</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                        <div class="pricing-note-item">
+                            <div class="pricing-note-icon">
+                                <svg width="14" height="14" fill="none" stroke="#19B58B" stroke-width="2">
+                                    <path d="M7 1v12M3 5l4-4 4 4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[0.9375rem] font-bold text-navy">السعر المعروض شهري</p>
+                                <p class="text-sm text-neutral-text mt-0.5">محسوب على أساس الاشتراك السنوي</p>
+                            </div>
+                        </div>
+                        <div class="pricing-note-item">
+                            <div class="pricing-note-icon">
+                                <svg width="14" height="14" fill="none" stroke="#19B58B" stroke-width="2">
+                                    <rect x="2" y="2" width="10" height="10" rx="2" />
+                                    <path d="M5 7l2 2 3-3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[0.9375rem] font-bold text-navy">الفوترة تتم سنويًا</p>
+                                <p class="text-sm text-neutral-text mt-0.5">تُدفع دفعة واحدة عند الاشتراك</p>
+                            </div>
+                        </div>
+                        <div class="pricing-note-item">
+                            <div class="pricing-note-icon">
+                                <svg width="14" height="14" fill="none" stroke="#19B58B" stroke-width="2">
+                                    <path d="M7 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[0.9375rem] font-bold text-navy">خصم 20% على السنة الأولى</p>
+                                <p class="text-sm text-neutral-text mt-0.5">عرض ترحيبي للسنة الأولى فقط</p>
+                            </div>
+                        </div>
+                        <div class="pricing-note-item">
+                            <div class="pricing-note-icon">
+                                <svg width="14" height="14" fill="none" stroke="#19B58B" stroke-width="2">
+                                    <circle cx="7" cy="7" r="6" />
+                                    <path d="M7 4v3l2 1" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[0.9375rem] font-bold text-navy">14 يوم تجربة مجانية</p>
+                                <p class="text-sm text-neutral-text mt-0.5">في باقة الانطلاقة — بدون بيانات دفع</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ COMPARISON TABLE ═══════════════════ -->
+    <section class="py-16 sm:py-24 bg-neutral-bg/40">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold text-navy mb-4 tracking-tight">
+                    قارن بين الباقات بالتفصيل
+                </h2>
+                <p class="text-base sm:text-lg text-neutral-text">اعرف بدقة ما تحصل عليه في كل باقة</p>
+            </div>
+
+            <div class="reveal bg-white rounded-2xl border border-neutral-border overflow-hidden shadow-sys-md">
+                <div class="overflow-x-auto">
+                    <table class="comparison-table w-full min-w-[680px]">
+                        <thead>
+                            <tr>
+                                <th class="text-right min-w-[240px]">الميزة</th>
+                                <th class="min-w-[150px]">الانطلاقة</th>
+                                <th class="min-w-[150px]" style="background:#eef9f4;">
+                                    <div class="flex flex-col items-center gap-0.5">
+                                        <span
+                                            class="text-[0.6875rem] font-bold text-jgreen bg-jgreen/10 px-2 py-0.5 rounded-full mb-1">الأكثر
+                                            اختيارًا</span>
+                                        النمو
+                                    </div>
+                                </th>
+                                <th class="min-w-[150px]">الريادة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Group: الاستخدام الأساسي -->
+                            <tr class="group-row">
+                                <td colspan="4">الاستخدام الأساسي</td>
+                            </tr>
+                            <tr>
+                                <td>عدد المستخدمين</td>
+                                <td>حتى 3</td>
+                                <td class="featured-col"><strong>حتى 10</strong></td>
+                                <td><strong>غير محدود</strong></td>
+                            </tr>
+                            <tr>
+                                <td>عدد المشاريع النشطة</td>
+                                <td>حتى 5</td>
+                                <td class="featured-col"><strong>غير محدود</strong></td>
+                                <td><strong>غير محدود</strong></td>
+                            </tr>
+                            <tr>
+                                <td>مساحة التخزين</td>
+                                <td>2 جيجا</td>
+                                <td class="featured-col">10 جيجا</td>
+                                <td>50 جيجا</td>
+                            </tr>
+
+                            <!-- Group: المشاريع والمقترحات -->
+                            <tr class="group-row">
+                                <td colspan="4">المشاريع والمقترحات</td>
+                            </tr>
+                            <tr>
+                                <td>كتابة المقترحات</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>مساعد الذكاء الاصطناعي</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>إدارة الاستراتيجية والبرامج</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>بنك أفكار المشاريع</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>إدارة محافظ المشاريع</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+
+                            <!-- Group: فرص المنح -->
+                            <tr class="group-row">
+                                <td colspan="4">فرص المنح</td>
+                            </tr>
+                            <tr>
+                                <td>اكتشاف فرص المنح</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>التقديم على فرص المنح</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>تنبيهات فرص المنح</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+
+                            <!-- Group: التقارير والمتابعة -->
+                            <tr class="group-row">
+                                <td colspan="4">التقارير والمتابعة</td>
+                            </tr>
+                            <tr>
+                                <td>تقارير أساسية</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>تقارير متقدمة ومؤشرات أداء</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>لوحات تحكم تنفيذية مخصصة</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+
+                            <!-- Group: الدعم -->
+                            <tr class="group-row">
+                                <td colspan="4">الدعم والمساعدة</td>
+                            </tr>
+                            <tr>
+                                <td>دعم عبر البريد الإلكتروني</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>دعم أولوي</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>مدير حساب مخصص</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>تكامل API</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                        stroke-width="2">
+                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ ADDITIONAL SERVICES ═══════════════════ -->
+    <section class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <span
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold bg-jgreen-50 text-jgreen mb-5">خدمات
+                    احترافية</span>
+                <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold text-navy mb-4 tracking-tight">
+                    خدمات إضافية تعزز استفادتك من جزيل
+                </h2>
+                <p class="text-base sm:text-lg text-neutral-text max-w-2xl mx-auto leading-relaxed">
+                    بالإضافة إلى الباقات، نقدم خدمات متخصصة تساعد منظمتك على تحقيق أقصى استفادة
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-7 reveal">
+                <!-- Service 1 -->
+                <div class="service-card flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-5">
+                        <svg width="26" height="26" fill="none" stroke="#3b82f6" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-navy mb-2">تدقيق المقترحات</h3>
+                    <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-3">
+                        فريق استشاري متخصص يراجع مقترحاتك ويحسّن جودتها قبل التقديم للجهات المانحة.
+                    </p>
+                    <span
+                        class="inline-block text-[0.8125rem] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg mb-5 w-fit">لرفع
+                        معدل القبول</span>
+                    <div class="mt-auto">
+                        <button @click="openServiceModal('تدقيق المقترحات بالفريق الاستشاري')"
+                            class="btn-secondary justify-center text-[0.9375rem] w-full">
+                            اطلبها الآن
+                        </button>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center mb-5">
+                        <svg width="26" height="26" fill="none" stroke="#8b5cf6" stroke-width="1.5">
+                            <path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-navy mb-2">بناء الاستراتيجية</h3>
+                    <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-3">
+                        نساعدك في بناء وتوثيق استراتيجية منظمتك على المنصة بشكل منهجي ومتكامل.
+                    </p>
+                    <span
+                        class="inline-block text-[0.8125rem] font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-lg mb-5 w-fit">لتأسيس
+                        رؤية واضحة</span>
+                    <div class="mt-auto">
+                        <button @click="openServiceModal('بناء الاستراتيجية على منصة جزيل')"
+                            class="btn-secondary justify-center text-[0.9375rem] w-full">
+                            اطلبها الآن
+                        </button>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl bg-jgreen-50 flex items-center justify-center mb-5">
+                        <svg width="26" height="26" fill="none" stroke="#19B58B" stroke-width="1.5">
+                            <path
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5h6M9 14l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-navy mb-2">إدارة المشاريع بفريق محترف</h3>
+                    <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-3">
+                        فريق إدارة مشاريع متخصص يتولى متابعة تنفيذ مشاريعك عبر المنصة بكفاءة عالية.
+                    </p>
+                    <span
+                        class="inline-block text-[0.8125rem] font-bold text-jgreen bg-jgreen-50 px-3 py-1 rounded-lg mb-5 w-fit">للمنظمات
+                        ذات المشاريع المتعددة</span>
+                    <div class="mt-auto">
+                        <button @click="openServiceModal('إدارة المشاريع بفريق محترف')"
+                            class="btn-secondary justify-center text-[0.9375rem] w-full">
+                            اطلبها الآن
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SERVICE REQUEST MODAL ═══════════════════ -->
+    <div id="serviceModal" class="fixed inset-0 z-[100] hidden items-center justify-center"
+        style="background:rgba(7,19,63,0.4);backdrop-filter:blur(4px);">
+        <div class="bg-white rounded-2xl shadow-sys-lg w-full max-w-md mx-4 p-7 sm:p-8 relative"
+            style="animation:fadeUp 0.3s ease;">
+            <button @click="closeServiceModal()"
+                class="absolute top-4 left-4 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-neutral-bg transition-colors">
+                <svg width="18" height="18" fill="none" stroke="#5B6470" stroke-width="2">
+                    <path d="M5 5l8 8M13 5l-8 8" />
+                </svg>
+            </button>
+            <h3 class="tex-xl font-extrabold text-navy mb-1">طلب خدمة</h3>
+            <p id="serviceModalName" class="text-[0.9375rem] text-jgreen font-semibold mb-6"></p>
+
+            <form id="serviceForm" onsubmit="submitServiceForm(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-navy mb-1.5">اسم المنظمة</label>
+                    <input type="text" required
+                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
+                        placeholder="اسم منظمتك" />
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-navy mb-1.5">الاسم الكامل</label>
+                    <input type="text" required
+                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
+                        placeholder="اسمك الكامل" />
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-navy mb-1.5">البريد الإلكتروني</label>
+                    <input type="email" required
+                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
+                        placeholder="email@example.com" dir="ltr" />
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-navy mb-1.5">رقم الجوال</label>
+                    <input type="tel" required
+                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
+                        placeholder="05xxxxxxxx" dir="ltr" />
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-bold text-navy mb-2">هل لديك حساب في جزيل؟</label>
+                    <div class="flex items-center gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="hasAccount" value="yes" class="accent-[#19B58B] w-4 h-4" />
+                            <span class="text-[0.9375rem] text-neutral-text">نعم، لدي حساب</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="hasAccount" value="no" checked class="accent-[#19B58B] w-4 h-4" />
+                            <span class="text-[0.9375rem] text-neutral-text">لا، ليس لدي حساب</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-bold text-navy mb-1.5">ملاحظات إضافية <span
+                            class="font-normal text-neutral-light">(اختياري)</span></label>
+                    <textarea rows="3"
+                        class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors resize-none"
+                        placeholder="أي تفاصيل إضافية عن احتياجك..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-full justify-center text-[0.9375rem] py-3.5">إرسال
+                    الطلب</button>
+            </form>
+
+            <!-- Success state -->
+            <div id="serviceFormSuccess" class="hidden text-center py-6">
+                <div class="w-14 h-14 rounded-full bg-jgreen-50 flex items-center justify-center mx-auto mb-4">
+                    <svg width="28" height="28" fill="none" stroke="#19B58B" stroke-width="2">
+                        <path d="M7 14.5l5 5 9-9" />
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-navy mb-2">تم إرسال طلبك بنجاح!</h4>
+                <p class="text-[0.9375rem] text-neutral-text mb-5">سيتواصل معك فريقنا خلال 24 ساعة عمل</p>
+                <button @click="closeServiceModal()"
+                    class="btn-secondary justify-center text-[0.9375rem]">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ FAQ ═══════════════════ -->
+    <section id="faq" class="py-16 sm:py-24 bg-neutral-bg/40">
+        <div class="max-w-3xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold text-navy mb-4 tracking-tight">
+                    الأسئلة الشائعة حول التسعير
+                </h2>
+                <p class="text-base sm:text-lg text-neutral-text">إجابات واضحة ومباشرة على أكثر الأسئلة شيوعًا</p>
+            </div>
+
+            <div class="space-y-3.5 reveal">
+                <div class="faq-item active">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">هل السعر الظاهر شهري أم سنوي؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            السعر الظاهر هو السعر الشهري، لكن الفوترة تتم سنويًا. أي أنك تدفع المبلغ السنوي كاملاً عند
+                            الاشتراك،
+                            والسعر الشهري المعروض هو ناتج قسمة المبلغ السنوي على 12 شهرًا.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">هل الخصم 20% على السنة الأولى
+                            فقط؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            نعم، خصم 20% يُطبق على السنة الأولى فقط كعرض ترحيبي. عند التجديد بعد السنة الأولى، تعود
+                            الرسوم إلى السعر
+                            الأصلي السنوي لكل باقة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">ماذا يحدث عند التجديد بعد السنة
+                            الأولى؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            عند التجديد، يعود الاشتراك إلى السعر الأصلي بدون خصم السنة الأولى. مثلاً: باقة الانطلاقة
+                            تعود إلى 900
+                            ريال سنويًا (75 ريال شهريًا)، وباقة النمو إلى 2,940 ريال سنويًا (245 ريال شهريًا).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">هل يمكنني تجربة الباقة قبل
+                            الاشتراك؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            نعم، باقة الانطلاقة تتضمن تجربة مجانية لمدة 14 يوم. يمكنك استكشاف المنصة بالكامل قبل اتخاذ
+                            قرار
+                            الاشتراك. لا يُطلب منك إدخال بيانات الدفع أثناء فترة التجربة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">ما الفرق بين الانطلاقة والنمو
+                            والريادة؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            الانطلاقة مناسبة للجمعيات الصغيرة (حتى 3 مستخدمين و5 مشاريع). النمو تضيف الذكاء الاصطناعي
+                            وإدارة
+                            الاستراتيجية (حتى 10 مستخدمين ومشاريع غير محدودة). الريادة تقدم كل شيء بدون حدود مع صلاحيات
+                            متقدمة ومدير
+                            حساب مخصص.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">هل يمكنني الترقية بين الباقات
+                            لاحقًا؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            نعم، يمكنك الترقية من أي باقة إلى باقة أعلى في أي وقت. يتم احتساب الفرق المتبقي من اشتراكك
+                            الحالي ويُخصم
+                            من تكلفة الباقة الجديدة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">هل يمكن طلب خطة مخصصة؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            نعم، إذا كانت منظمتك تحتاج متطلبات خاصة أو عدد مستخدمين أكبر، تواصل معنا وسنعد خطة مخصصة
+                            تناسب احتياجاتك
+                            بالضبط.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-toggle" @click="toggleFaq">
+                        <span class="text-base font-bold text-navy leading-relaxed">هل توجد خدمات إضافية خارج
+                            الباقة؟</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l5 5 5-5" />
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
+                            نعم، نقدم خدمات احترافية إضافية تشمل: تدقيق المقترحات، بناء الاستراتيجية، وإدارة المشاريع
+                            بفريق متخصص.
+                            يمكنك الاطلاع على التفاصيل في قسم الخدمات الإضافية أعلاه.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FINAL CTA ═══════════════════ -->
+    <section class="py-20 sm:py-28">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8">
+            <div class="reveal cta-gradient rounded-3xl p-12 sm:p-16 text-center">
+                <h2 class="text-[2rem] sm:text-[2.75rem] font-extrabold text-white mb-5 tracking-tight leading-tight">
+                    جاهز لتنظيم عمل<br class="hidden sm:block" />
+                    منظمتك؟
+                </h2>
+                <p class="text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl mx-auto mb-10">
+                    ابدأ رحلتك مع جزيل اليوم. أنشئ حسابك وابدأ بإدارة مشاريعك ومقترحاتك وفرص المنح من مكان واحد.
+                </p>
+                <div class="flex items-center justify-center gap-4 flex-wrap">
+                    <a href="#" class="btn-primary text-lg px-10 py-4">
+                        ابدأ تجربتك المجانية
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 9H4M7 5l-4 4 4 4" />
+                        </svg>
+                    </a>
+                    <a href="#" class="btn-white text-lg px-10 py-4">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style scoped>
+.btn-secondary {
+    background: transparent;
+    color: #07133F;
+    border: 1.5px solid #E5E8EB;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #EAF8F3;
+    border-color: rgba(25, 181, 139, 0.3);
+    color: #149572;
+}
+
+/* Comparison Table — refined */
+.comparison-table th,
+.comparison-table td {
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 0.9375rem;
+    border-bottom: 1px solid #f0f1f3;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+    text-align: right;
+    font-weight: 500;
+    color: #333;
+}
+
+.comparison-table thead th {
+    background: #F8F9FA;
+    font-weight: 800;
+    color: #07133F;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-size: 1rem;
+    padding: 18px 20px;
+}
+
+.comparison-table .group-row td {
+    background: #f6f8fa;
+    font-weight: 800;
+    color: #07133F;
+    font-size: 1rem;
+    border-bottom: 2px solid #E5E8EB;
+    padding: 14px 20px;
+    letter-spacing: -0.01em;
+}
+
+.comparison-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background: #fafcfb;
+}
+
+.comparison-table .featured-col {
+    background: #f7fcfa;
+}
+
+/* FAQ — refined */
+.faq-item {
+    border: 1.5px solid #E5E8EB;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.faq-item.active {
+    border-color: rgba(25, 181, 139, 0.3);
+    box-shadow: 0 2px 12px rgba(25, 181, 139, 0.06);
+}
+
+.faq-toggle {
+    cursor: pointer;
+    padding: 22px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #fff;
+    transition: background 0.15s;
+}
+
+.faq-toggle:hover {
+    background: #fafcfb;
+}
+
+.faq-toggle svg {
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    color: #8B929B;
+}
+
+.faq-item.active .faq-toggle svg {
+    transform: rotate(180deg);
+    color: #19B58B;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    padding: 0 26px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 26px 22px;
+}
+
+.cta-gradient {
+    background: linear-gradient(160deg, #07133F 0%, #0e1650 50%, #0d1345 100%);
+}
+
+.service-card {
+    background: #fff;
+    border: 1.5px solid #E5E8EB;
+    border-radius: 18px;
+    padding: 32px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(7, 19, 63, 0.06);
+    border-color: rgba(25, 181, 139, 0.2);
+}
+
+/* Pricing note items */
+.pricing-note-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.pricing-note-item+.pricing-note-item {
+    border-top: 1px solid rgba(25, 181, 139, 0.08);
+}
+
+.pricing-note-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(25, 181, 139, 0.08);
+}
+
+.plan-card {
+    background: #fff;
+    border: 1.5px solid #E5E8EB;
+    border-radius: 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(7, 19, 63, 0.07);
+}
+
+.plan-card.featured {
+    border-color: #19B58B;
+    border-width: 2.5px;
+    box-shadow: 0 8px 40px rgba(25, 181, 139, 0.12), 0 2px 12px rgba(25, 181, 139, 0.06);
+}
+
+.plan-card.featured:hover {
+    box-shadow: 0 12px 48px rgba(25, 181, 139, 0.16), 0 4px 16px rgba(25, 181, 139, 0.08);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #19B58B;
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 5px 24px;
+    border-radius: 0 0 10px 10px;
+}
+
+.price-strike {
+    text-decoration: line-through;
+    color: #8B929B;
+}
+</style>
