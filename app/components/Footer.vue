@@ -8,7 +8,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
-        <img src="../jazeel-logo.svg" alt="جزيل" class="h-7 mb-4 brightness-0 invert">
+        <img src="~/assets/images/jazeel-logo.svg" alt="جزيل" class="h-7 mb-4 brightness-0 invert">
         <p class="text-body-sm text-white/35 leading-relaxed">منصة تقنية سعودية تمكّن القطاع غير الربحي من إدارة الاستراتيجية والمقترحات والمشاريع وفرص المنح بكفاءة واحترافية.</p>
       </div>
       <div>
