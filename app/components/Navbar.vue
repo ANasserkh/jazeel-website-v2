@@ -83,7 +83,7 @@ function toggleNavbarBg() {
                     <NuxtLink to="pricing"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
                         الأسعار</NuxtLink>
-                    <a href="grants.html"
+                    <a href="/grants"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">فرص
                         المنح</a>
                     <a href="donors-directory.html"
@@ -150,7 +150,7 @@ function toggleNavbarBg() {
             <NuxtLink to="/donor-portal">بوابة الجهات المانحة</NuxtLink>
             <NuxtLink to="/ngo-portal">بوابة الجمعيات</NuxtLink>
             <NuxtLink href="/pricing">الأسعار</NuxtLink>
-            <a href="grants.html">فرص المنح</a>
+            <a href="/grants">فرص المنح</a>
             <a href="donors-directory.html">دليل المانحين</a>
             <div style="padding:0.75rem 1rem;margin-top:0.5rem;border-top:1px solid #E5E8EB;">
                 <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary"
