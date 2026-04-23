@@ -15,10 +15,11 @@
         <h4 class="text-body-sm font-bold text-white mb-4">المنصة</h4>
         <ul class="space-y-2.5">
           <li><NuxtLink to="/" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">الرئيسية</NuxtLink></li>
-          <li><NuxtLink to="/grants" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">فرص المنح</NuxtLink></li>
-          <li><NuxtLink to="/donor-portal" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">بوابة المانحين</NuxtLink></li>
+          <li><NuxtLink to="/donor-portal" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">بوابة الجهات المانحة</NuxtLink></li>
           <li><NuxtLink to="/ngo-portal" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">بوابة الجمعيات</NuxtLink></li>
-          <li><NuxtLink to="/pricing" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">باقات جزيل</NuxtLink></li>
+          <li><NuxtLink to="/pricing" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">الأسعار</NuxtLink></li>
+          <li><NuxtLink to="/grants" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">فرص المنح</NuxtLink></li>
+          <li><NuxtLink to="/donors-directory" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">دليل المانحين</NuxtLink></li>
         </ul>
       </div>
       <div>

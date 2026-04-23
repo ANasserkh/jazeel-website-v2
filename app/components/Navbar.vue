@@ -83,12 +83,12 @@ function toggleNavbarBg() {
                     <NuxtLink to="pricing"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
                         الأسعار</NuxtLink>
-                    <a href="/grants"
+                    <NuxtLink to="/grants"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">فرص
-                        المنح</a>
-                    <a href="donors-directory.html"
+                        المنح</NuxtLink>
+                    <NuxtLink to="/donors-directory"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">دليل
-                        المانحين</a>
+                        المانحين</NuxtLink>
                 </nav>
 
                 <div class="hidden lg:flex items-center gap-3">

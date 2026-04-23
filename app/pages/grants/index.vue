@@ -143,13 +143,13 @@ watchDebounced(search, (val) => {
             <div v-if="status === 'pending'" class="grants-grid mt-10">
                 <grants-card-loader v-for="i in 3" />
             </div>
-            <div v-else class="grants-grid">
+            <div v-else class="grants-grid  ">
 
                 <template v-for="grant in grants?.result">
                     <GrantsCard :grant />
                 </template>
 
-                <div v-if="grants?.total === 0" class="grants-empty-state">
+                <div class="grants-empty-state">
                     <div class="jz-empty">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -157,10 +157,12 @@ watchDebounced(search, (val) => {
                             <path d="m21 21-4.3-4.3" />
                         </svg>
                         <h3>لا توجد فرص منح تطابق بحثك</h3>
-                        <p>جرّب تعديل فلاتر البحث أو الكلمات المفتاحية للحصول على نتائج أفضل، أو اشترك في التنبيهات لتصلك
+                        <p>جرّب تعديل فلاتر البحث أو الكلمات المفتاحية للحصول على نتائج أفضل، أو اشترك في التنبيهات
+                            لتصلك
                             الفرص الجديدة.</p>
                     </div>
                 </div>
+ 
 
             </div>
 
