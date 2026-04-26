@@ -5,90 +5,7 @@ useSeoMeta({
     description: 'دليل شامل للجهات المانحة والداعمة المسجلة في منصة جزيل، يتضمن معلومات الجهة ومجالات دعمها ونطاقها الجغرافي.'
 })
 
-const donors = [
-    {
-        id: 1, name: 'الراجحي الإنسانية', subtitle: 'مؤسسة سليمان بن عبدالعزيز الراجحي الخيرية',
-        type: 'مؤسسة خيرية', logo: '/images/donors/alrajhi.png',
-        desc: 'مؤسسة رائدة في العمل الخيري والإنساني، تركز على دعم المشاريع التنموية والتعليمية والصحية في المملكة العربية السعودية.',
-        fields: ['تعليم', 'صحة', 'تمكين'], region: 'المملكة', grants: 5,
-        founded: '1421هـ', website: 'alrajhi-humanitarian.com',
-        details: 'تأسست مؤسسة الراجحي الإنسانية كأحد أبرز المؤسسات الخيرية في المملكة، وتقدم برامج شاملة تشمل: بناء المساجد، دعم التعليم، الرعاية الصحية، كفالة الأيتام، ومشاريع التمكين الاقتصادي. تمتلك المؤسسة شراكات مع أكثر من 120 جمعية محلية.',
-        achievements: ['دعم أكثر من 200 مشروع تنموي', 'كفالة أكثر من 15,000 يتيم', 'بناء 80+ مسجد في مناطق المملكة']
-    },
-    {
-        id: 2, name: 'مركز الملك سلمان للإغاثة', subtitle: 'مركز إغاثي وإنساني دولي',
-        type: 'جهة حكومية', logo: '/images/donors/king-salman.png',
-        desc: 'مركز إنساني دولي رائد يقدم المساعدات الإغاثية والإنسانية والتنموية للمحتاجين حول العالم بأكثر من 80 دولة.',
-        fields: ['إنسانية', 'إغاثة', 'تنمية'], region: 'دولي', grants: 8,
-        founded: '1436هـ', website: 'ksrelief.org',
-        details: 'مركز الملك سلمان للإغاثة والأعمال الإنسانية هو الذراع الإنساني للمملكة العربية السعودية. يعمل على تقديم المساعدات في مجالات الصحة والتعليم والأمن الغذائي والمأوى والحماية.',
-        achievements: ['مشاريع في أكثر من 80 دولة', 'إنفاق إنساني يتجاوز 6 مليارات ريال', 'أكثر من 2,500 مشروع مُنفَّذ']
-    },
-    {
-        id: 3, name: 'منصة إحسان', subtitle: 'المنصة الوطنية للعمل الخيري',
-        type: 'منصة وطنية', logo: '/images/donors/ehsan.png',
-        desc: 'منصة وطنية تسعى لتسهيل العمل الخيري وتوحيد جهود التبرع والعطاء في المملكة العربية السعودية.',
-        fields: ['خيري', 'تمكين', 'مجتمعي'], region: 'المملكة', grants: 3,
-        founded: '1442هـ', website: 'ehsan.sa',
-        details: 'إحسان هي المنصة الوطنية للعمل الخيري في المملكة، تتيح للأفراد والمؤسسات المساهمة في المشاريع الخيرية بسهولة وشفافية عبر قنوات رقمية موثوقة.',
-        achievements: ['أكثر من 3 ملايين متبرع', 'دعم أكثر من 500 جمعية', 'تجاوز حجم التبرعات 4 مليارات ريال']
-    },
-    {
-        id: 4, name: 'بنك التنمية الاجتماعية', subtitle: 'جهة حكومية تمويلية',
-        type: 'جهة حكومية', logo: '/images/donors/sdb.png',
-        desc: 'يقدم حلولاً تمويلية للأفراد والمنشآت الصغيرة ويساهم في تمكين الأسر المنتجة والمشاريع الاجتماعية.',
-        fields: ['تمويل', 'تمكين', 'ريادة أعمال'], region: 'المملكة', grants: 4,
-        founded: '1391هـ', website: 'sdb.gov.sa',
-        details: 'بنك التنمية الاجتماعية هو مؤسسة حكومية تعنى بتقديم الحلول التمويلية والتأهيلية للأفراد والمنشآت الصغيرة والناشئة لتحقيق الاستقلال المالي.',
-        achievements: ['تمويل أكثر من 100,000 مشروع', 'دعم 50,000+ أسرة منتجة', 'محفظة تمويلية تتجاوز 80 مليار ريال']
-    },
-    {
-        id: 5, name: 'الهيئة العامة للأوقاف', subtitle: 'جهة حكومية تنظيمية',
-        type: 'وقف', logo: '/images/donors/awqaf.png',
-        desc: 'تعمل على تنظيم قطاع الأوقاف وتطويره وتعزيز إسهامه في التنمية الاقتصادية والاجتماعية.',
-        fields: ['أوقاف', 'تنمية', 'مجتمعي'], region: 'المملكة', grants: 6,
-        founded: '1437هـ', website: 'awqaf.gov.sa',
-        details: 'الهيئة العامة للأوقاف هي الجهة المنظمة لقطاع الأوقاف في المملكة، تسعى لتطوير القطاع وتعزيز الحوكمة والشفافية في إدارة الأوقاف.',
-        achievements: ['تسجيل أكثر من 5,000 وقف', 'إطلاق منصة نظارة الرقمية', 'تنظيم أكثر من 30 ورشة تدريبية']
-    },
-    {
-        id: 6, name: 'وقف أبانمي', subtitle: 'وقف خيري أهلي',
-        type: 'وقف', logo: '/images/donors/abanumay.png',
-        desc: 'وقف أهلي يركز على دعم المشاريع التعليمية والصحية والاجتماعية وبناء القدرات المؤسسية.',
-        fields: ['تعليم', 'صحة', 'بناء قدرات'], region: 'المملكة', grants: 2,
-        founded: '1430هـ', website: 'abanumay.org',
-        details: 'وقف أبانمي من الأوقاف الأهلية المتميزة في المملكة، يهتم بدعم المشاريع النوعية في التعليم والصحة وبناء القدرات المؤسسية للمنظمات غير الربحية.',
-        achievements: ['دعم 40+ مشروع تعليمي', 'بناء قدرات 25 جمعية', 'تقديم 15 منحة بحثية']
-    },
-    {
-        id: 7, name: 'مؤسسة الجميح الخيرية', subtitle: 'مؤسسة خيرية أهلية',
-        type: 'مؤسسة خيرية', logo: '/images/donors/aljumaih.png',
-        desc: 'مؤسسة تهتم بدعم المشاريع التنموية والمبادرات المجتمعية والتعليمية في المملكة العربية السعودية.',
-        fields: ['مجتمعي', 'تعليم', 'تنمية'], region: 'المملكة', grants: 3,
-        founded: '1425هـ', website: 'aljumaih.org',
-        details: 'مؤسسة الجميح الخيرية من المؤسسات الأهلية الفاعلة في العمل الخيري بالمملكة، تدعم مجموعة واسعة من المشاريع التنموية والاجتماعية.',
-        achievements: ['دعم 60+ مشروع مجتمعي', 'رعاية 10 مبادرات تعليمية', 'المساهمة في 5 مشاريع إسكان']
-    }
-];
-
 const view = ref('grid');
-const searchQuery = ref('');
-const fieldFilter = ref('all');
-const regionFilter = ref('all');
-const typeFilter = ref('all');
-
-const filteredDonors = computed(() => {
-    return donors.filter(d => {
-        const matchField = fieldFilter.value === 'all' || d.fields.some(f => f === fieldFilter.value);
-        const matchRegion = regionFilter.value === 'all' || d.region === regionFilter.value;
-        const matchType = typeFilter.value === 'all' || d.type.includes(typeFilter.value);
-        const matchSearch = !searchQuery.value ||
-            d.name.includes(searchQuery.value) ||
-            d.desc.includes(searchQuery.value) ||
-            d.fields.some(f => f.includes(searchQuery.value));
-        return matchField && matchRegion && matchType && matchSearch;
-    });
-});
 
 const selectedDonor = ref(null);
 const isModalOpen = ref(false);
@@ -109,6 +26,49 @@ function closeModal() {
 }
 
 
+const config = useRuntimeConfig();
+
+const pagination = ref({
+    search:"",
+    page: 1,
+    rows: 20
+});
+
+const { data: donors, refresh, execute, status } = await useFetch(`${config.public.apiBase}/donors/paginate`, {
+    query: pagination.value,
+    watch: false
+});
+execute();
+
+const stats = ref({
+    donors: 0,
+    grants: 0,
+    programs: 0,
+    locations: 0
+})
+
+await useFetch(`${config.public.apiBase}/donors/stats`, {
+    onResponse: ({ response }) => {
+        stats.value = response._data
+    }
+});
+
+
+function onFilter(params) {
+    pagination.value.type = params.type;
+    pagination.value.program = params.program;
+    pagination.value.location = params.location;
+    pagination.value.page = 1;
+    refresh();
+}
+
+const search = ref();
+watchDebounced(search, (val) => {
+    pagination.value.search = val.trim();
+    refresh();
+}, {
+    debounce: 1000,
+})
 </script>
 
 <template>
@@ -145,22 +105,22 @@ function closeModal() {
                 </p>
                 <div class="flex flex-wrap justify-center gap-8 reveal visible">
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">12</div>
+                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats.donors }}</div>
                         <div class="text-xs text-white/35 font-medium">جهة مانحة</div>
                     </div>
                     <div class="w-px h-12 bg-white/10 self-center"></div>
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold mb-1" style="color:#19B58B;">38</div>
+                        <div class="text-3xl font-extrabold mb-1" style="color:#19B58B;">{{ stats.grants }}</div>
                         <div class="text-xs text-white/35 font-medium">فرصة نشطة</div>
                     </div>
                     <div class="w-px h-12 bg-white/10 self-center"></div>
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">6</div>
+                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats.programs }}</div>
                         <div class="text-xs text-white/35 font-medium">مجالات دعم</div>
                     </div>
                     <div class="w-px h-12 bg-white/10 self-center"></div>
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">4</div>
+                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats.locations }}</div>
                         <div class="text-xs text-white/35 font-medium">مناطق جغرافية</div>
                     </div>
                 </div>
@@ -179,7 +139,7 @@ function closeModal() {
                             <circle cx="11" cy="11" r="8" />
                             <path d="m21 21-4.3-4.3" />
                         </svg>
-                        <input type="text" v-model="searchQuery" class="search-input ps-10"
+                        <input  type="text" v-model="search" class="search-input ps-24"
                             placeholder="ابحث عن جهة مانحة بالاسم أو المجال...">
                     </div>
                     <div class="flex items-center gap-2">
@@ -208,85 +168,18 @@ function closeModal() {
 
                     </div>
                 </div>
-                <!-- Row 2: Filters -->
-                <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-                    <div class="flex flex-wrap gap-2 flex-1">
-                        <span class="text-xs font-bold text-navy/40 self-center ml-2">مجال الدعم:</span>
-                        <button class="filter-pill" :class="{ active: fieldFilter === 'all' }"
-                            @click="fieldFilter = 'all'">الكل</button>
-                        <button v-for="field in ['تعليم', 'صحة', 'تمكين', 'إنسانية', 'تمويل', 'أوقاف']"
-                            class="filter-pill" :class="{ active: fieldFilter === field }" @click="fieldFilter = field">
-                            {{ field }}
-                        </button>
-                    </div>
-                    <div class="flex gap-2 items-center">
-                        <select class="select-filter" v-model="regionFilter">
-                            <option value="all">كل المناطق</option>
-                            <option value="المملكة">المملكة</option>
-                            <option value="دولي">دولي</option>
-                            <option value="الخليج">الخليج</option>
-                        </select>
-                        <select class="select-filter" v-model="typeFilter">
-                            <option value="all">نوع الجهة</option>
-                            <option value="مؤسسة خيرية">مؤسسة خيرية</option>
-                            <option value="جهة حكومية">جهة حكومية</option>
-                            <option value="وقف">وقف</option>
-                            <option value="منصة وطنية">منصة وطنية</option>
-                        </select>
-                    </div>
-                </div>
+                <donors-filter-bar @filter="onFilter" />
             </div>
         </section>
 
         <!-- ═══════════════════ DONORS CONTENT ═══════════════════ -->
         <section class="py-10 sm:py-14 bg-neutral-bg min-h-[400px]">
             <div class="max-w-7xl mx-auto px-5 sm:px-8">
-
                 <!-- Grid View -->
-                <div v-if="view === 'grid'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div v-for="donor in filteredDonors" :key="donor.id" class="donor-card reveal visible"
-                        @click="openModal(donor)">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="donor-logo-wrap">
-                                <img :src="donor.logo" :alt="donor.name" class="w-full h-full object-contain">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-base font-bold text-navy mb-0.5 truncate">{{ donor.name }}</h3>
-                                <p class="text-xs text-neutral-text truncate">{{ donor.subtitle }}</p>
-                                <span class="inline-block mt-1.5 text-[0.68rem] font-bold px-2 py-0.5 rounded-full">{{
-                                    donor.type }}</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-neutral-text leading-relaxed mb-4 line-clamp-2">{{ donor.desc }}</p>
-                        <div class="flex flex-wrap gap-1.5 mb-4">
-                            <span v-for="field in donor.fields" :key="field" class="donor-tag">{{ field }}</span>
-                        </div>
-                        <div class="flex items-center justify-between pt-3 border-t border-neutral-border/40">
-                            <div class="flex gap-3">
-                                <div class="stat-mini">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="m9 12 2 2 4-4" />
-                                    </svg>
-                                    <span><strong class="text-navy">{{ donor.grants }}</strong> فرصة</span>
-                                </div>
-                                <div class="stat-mini">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                                        <circle cx="12" cy="10" r="3" />
-                                    </svg>
-                                    <span>{{ donor.region }}</span>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold text-jgreen flex items-center gap-1">
-                                عرض التفاصيل
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="m12 19-7-7 7-7" />
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
+                <div v-if="view === 'grid' && status !== 'pending'"
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <donors-card v-for="donor in donors.data" :key="donor.id" :donor
+                        @click="openModal(donor)"></donors-card>
                 </div>
 
                 <!-- Table View -->
@@ -299,50 +192,13 @@ function closeModal() {
                                         <th>الجهة المانحة</th>
                                         <th>النوع</th>
                                         <th>مجالات الدعم</th>
-                                        <th>النطاق الجغرافي</th>
                                         <th>الفرص النشطة</th>
                                         <th>الإجراء</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="donor in filteredDonors" :key="donor.id" @click="openModal(donor)">
-                                        <td>
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-10 h-10 rounded-lg bg-neutral-bg border border-neutral-border flex items-center justify-center p-1.5 flex-shrink-0">
-                                                    <img :src="donor.logo" :alt="donor.name"
-                                                        class="w-full h-full object-contain">
-                                                </div>
-                                                <div>
-                                                    <div class="font-bold text-navy text-sm">{{ donor.name }}</div>
-                                                    <div class="text-xs text-neutral-light">{{ donor.subtitle }}</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="text-xs font-bold px-2.5 py-1 rounded-full">{{ donor.type
-                                            }}</span>
-                                        </td>
-                                        <td>
-                                            <div class="flex flex-wrap gap-1">
-                                                <span v-for="field in donor.fields" :key="field" class="donor-tag"
-                                                    style="font-size:0.68rem;padding:2px 8px;">{{ field }}</span>
-                                            </div>
-                                        </td>
-                                        <td class="text-sm">{{ donor.region }}</td>
-                                        <td><span class="font-bold text-navy">{{ donor.grants }}</span> <span
-                                                class="text-neutral-light text-xs">فرصة</span></td>
-                                        <td>
-                                            <button
-                                                class="text-xs font-bold text-jgreen hover:text-jgreen-dark flex items-center gap-1">
-                                                التفاصيل
-                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2.5">
-                                                    <path d="m12 19-7-7 7-7" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    <donors-list-item v-for="donor in donors.data" :key="donor.id" :donor="donor"
+                                        @click="openModal(donor)" />
                                 </tbody>
                             </table>
                         </div>
@@ -350,7 +206,7 @@ function closeModal() {
                 </div>
 
                 <!-- No Results -->
-                <div v-if="filteredDonors.length === 0" class="text-center py-16">
+                <div v-if="donors.data?.length === 0" class="text-center py-16">
                     <svg class="mx-auto mb-4" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8B929B"
                         stroke-width="1.5">
                         <circle cx="11" cy="11" r="8" />
@@ -385,69 +241,69 @@ function closeModal() {
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-white">{{ selectedDonor.name }}</h2>
-                                <p class="text-sm text-white/50">{{ selectedDonor.subtitle }}</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-4 mt-4">
-                            <div class="flex items-center gap-2 text-xs text-white/40">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                {{ selectedDonor.region }}
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-white/40">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                    <line x1="16" y1="2" x2="16" y2="6" />
-                                    <line x1="8" y1="2" x2="8" y2="6" />
-                                </svg>
-                                تأسست: {{ selectedDonor.founded }}
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-white/40">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                                </svg>
-                                {{ selectedDonor.website }}
+                                <div class="flex flex-wrap gap-4 mt-4">
+
+                                    <a target="_blank" v-if="selectedDonor.website" :href="selectedDonor.website">
+
+                                        <div class="flex items-center gap-2 text-xs text-white/40">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                                <path
+                                                    d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                            </svg>
+                                            {{ selectedDonor.website }}
+                                        </div>
+                                    </a>
+                                    <a target="_blank" v-if="selectedDonor.phone" :href="selectedDonor.phone">
+
+                                        <div class="flex items-center gap-2 text-xs text-white/40">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                            </svg>
+                                            {{ selectedDonor.phone }}
+                                        </div>
+                                    </a>
+                                    <a target="_blank" v-if="selectedDonor.email" :href="selectedDonor.email">
+
+                                        <div class="flex items-center gap-2 text-xs text-white/40">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                                <polyline points="22,6 12,13 2,6" />
+                                            </svg>
+                                            {{ selectedDonor.email }}
+                                        </div>
+                                    </a>
+
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full">{{ selectedDonor.type }}</span>
-                            <span v-for="field in selectedDonor.fields" :key="field" class="donor-tag">{{ field
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB]">{{
+                                selectedDonor.type }}</span>
+                            <span v-for="field in selectedDonor.programs" :key="field" class="donor-tag">{{ field
                                 }}</span>
                         </div>
 
                         <h3 class="text-sm font-bold text-navy mb-2">نبذة عن الجهة</h3>
-                        <p class="text-sm text-neutral-text leading-relaxed mb-5">{{ selectedDonor.details }}</p>
+                        <p class="text-sm text-neutral-text leading-relaxed mb-5">{{ selectedDonor.description }}</p>
 
-                        <h3 class="text-sm font-bold text-navy mb-3">أبرز الإنجازات</h3>
-                        <div class="space-y-2 mb-6">
-                            <div v-for="a in selectedDonor.achievements" :key="a" class="flex items-start gap-2.5">
-                                <div
-                                    class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#19B58B"
-                                        stroke-width="3">
-                                        <path d="m5 12 5 5L20 7" />
-                                    </svg>
-                                </div>
-                                <span class="text-sm text-neutral-text">{{ a }}</span>
-                            </div>
-                        </div>
 
                         <div class="grid grid-cols-2 gap-3 mb-5">
                             <div class="bg-neutral-bg rounded-xl p-4 text-center">
-                                <div class="text-2xl font-extrabold text-navy">{{ selectedDonor.grants }}</div>
+                                <div class="text-2xl font-extrabold text-navy">{{ selectedDonor.grants_no }}</div>
                                 <div class="text-xs text-neutral-light mt-1">فرصة منح نشطة</div>
                             </div>
                             <div class="bg-neutral-bg rounded-xl p-4 text-center">
                                 <div class="text-2xl font-extrabold" style="color:#19B58B;">{{
-                                    selectedDonor.fields.length }}
+                                    selectedDonor.programs_no }}
                                 </div>
                                 <div class="text-xs text-neutral-light mt-1">مجالات دعم</div>
                             </div>
@@ -503,7 +359,7 @@ function closeModal() {
 </template>
 
 
-<style scoped>
+<style>
 .donors-directory-page {
     font-family: 'Tajawal', sans-serif;
 }
@@ -607,7 +463,7 @@ function closeModal() {
 
 .search-input {
     width: 100%;
-    padding: 0.75rem 1.25rem 0.75rem 3rem;
+    padding: 0.75rem 2.25rem 0.75rem 3rem;
     border-radius: 12px;
     border: 1.5px solid #E5E8EB;
     font-size: 0.9375rem;

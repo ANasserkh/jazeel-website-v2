@@ -149,7 +149,7 @@ watchDebounced(search, (val) => {
                     <GrantsCard :grant />
                 </template>
 
-                <div class="grants-empty-state">
+                <div v-if="grants?.result.length ===0" class="grants-empty-state">
                     <div class="jz-empty">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
