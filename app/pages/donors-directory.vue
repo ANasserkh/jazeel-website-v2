@@ -5,6 +5,20 @@ useSeoMeta({
     description: 'دليل شامل للجهات المانحة والداعمة المسجلة في منصة جزيل، يتضمن معلومات الجهة ومجالات دعمها ونطاقها الجغرافي.'
 })
 
+const config = useRuntimeConfig();
+const pagination = ref({
+    page: 1,
+    rows: 20
+});
+
+const { data: donors, refresh, status } = await useFetch(`${config.public.apiBase}/donors/paginate`, {
+    query: pagination.value,
+    watch: false
+});
+
+
+
+
 const view = ref('grid');
 
 const selectedDonor = ref(null);
@@ -26,19 +40,6 @@ function closeModal() {
 }
 
 
-const config = useRuntimeConfig();
-
-const pagination = ref({
-    search:"",
-    page: 1,
-    rows: 20
-});
-
-const { data: donors, refresh, execute, status } = await useFetch(`${config.public.apiBase}/donors/paginate`, {
-    query: pagination.value,
-    watch: false
-});
-execute();
 
 const stats = ref({
     donors: 0,
@@ -55,6 +56,7 @@ await useFetch(`${config.public.apiBase}/donors/stats`, {
 
 
 function onFilter(params) {
+    console.log("🚀 ~ onFilter ~ params:", params)
     pagination.value.type = params.type;
     pagination.value.program = params.program;
     pagination.value.location = params.location;
@@ -69,6 +71,31 @@ watchDebounced(search, (val) => {
 }, {
     debounce: 1000,
 })
+
+
+const pages = computed(() => {
+    return Math.ceil(donors.value?.total / pagination.value.rows);
+});
+
+function next() {
+    if (pagination.value.page === pages.value) return
+    pagination.value.page++;
+    refresh();
+
+}
+
+function previous() {
+    if (pagination.value.page === 1) return;
+    pagination.value.page--;
+    refresh();
+
+}
+
+function jump(page) {
+    pagination.value.page = page;
+    refresh();
+}
+
 </script>
 
 <template>
@@ -139,7 +166,7 @@ watchDebounced(search, (val) => {
                             <circle cx="11" cy="11" r="8" />
                             <path d="m21 21-4.3-4.3" />
                         </svg>
-                        <input  type="text" v-model="search" class="search-input ps-24"
+                        <input type="text" v-model="search" class="search-input ps-24"
                             placeholder="ابحث عن جهة مانحة بالاسم أو المجال...">
                     </div>
                     <div class="flex items-center gap-2">
@@ -220,7 +247,25 @@ watchDebounced(search, (val) => {
 
             </div>
         </section>
+        <!-- Pagination -->
+        <div class="grants-pagination">
+            <button @click="previous" class="grants-page-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="m9 18 6-6-6-6" />
+                </svg>
+            </button>
+            <button v-for="i in pages" class="grants-page-btn" @click="jump(i)" :class="{
+                active: i == pagination.page
+            }">{{ i }}</button>
 
+            <button @click="next" class="grants-page-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+            </button>
+        </div>
         <!-- ═══════════════════ MODAL ═══════════════════ -->
         <div v-if="isModalOpen" class="modal-overlay active" @click.self="closeModal">
             <div class="modal-content">
@@ -289,7 +334,7 @@ watchDebounced(search, (val) => {
                             <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB]">{{
                                 selectedDonor.type }}</span>
                             <span v-for="field in selectedDonor.programs" :key="field" class="donor-tag">{{ field
-                                }}</span>
+                            }}</span>
                         </div>
 
                         <h3 class="text-sm font-bold text-navy mb-2">نبذة عن الجهة</h3>
@@ -724,5 +769,48 @@ watchDebounced(search, (val) => {
 .results-count strong {
     color: #07133F;
     font-weight: 700;
+}
+
+.grants-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.grants-page-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: 1px solid var(--jz-border);
+    cursor: pointer;
+    background: #fff;
+    color: var(--jz-text-muted);
+    transition: all 0.2s;
+    font-family: "Tajawal", sans-serif;
+}
+
+.grants-page-btn:hover {
+    border-color: var(--jz-green);
+    color: var(--jz-green);
+    background: var(--jz-mint);
+}
+
+.grants-page-btn.active {
+    background: var(--jz-navy);
+    color: #fff;
+    border-color: var(--jz-navy);
+}
+
+.grants-page-btn svg {
+    width: 1.125rem;
+    height: 1.125rem;
 }
 </style>

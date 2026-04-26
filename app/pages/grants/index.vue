@@ -17,11 +17,13 @@ const pagination = ref({
 });
 
 
-const { data: grants, refresh, execute, status } = await useFetch(`${config.public.apiBase}/grants`, {
+const { data: grants, refresh, status } = await useFetch(`${config.public.apiBase}/grants`, {
     query: pagination.value,
     watch: false
 });
-execute();
+
+
+const { data: stats } = await useFetch(`${config.public.apiBase}/grants/stats`);
 
 const pages = computed(() => {
     return Math.ceil(grants.value?.total / pagination.value.rows);
@@ -70,7 +72,7 @@ watchDebounced(search, (val) => {
     <section class="grants-hero pt-10">
         <div class="jz-container">
             <div class="grants-hero-content">
-                <h1>اكتشف فرص المنح <span>المناسبة لمنظمتك</span></h1>
+                 <h1>اكتشف فرص المنح <span>المناسبة لمنظمتك</span></h1>
                 <p class="grants-hero-desc">منصة مركزية تجمع فرص التمويل والدعم من أبرز الجهات المانحة في المملكة،
                     وتساعدك على التقديم بكفاءة وثقة.</p>
                 <div class="grants-stats">
@@ -83,7 +85,7 @@ watchDebounced(search, (val) => {
                             </svg>
                         </div>
                         <div>
-                            <div class="grants-stat-num">7</div>
+                            <div class="grants-stat-num">{{ stats?.grants ?? 0 }}</div>
                             <div class="grants-stat-label">فرصة نشطة</div>
                         </div>
                     </div>
@@ -97,7 +99,7 @@ watchDebounced(search, (val) => {
                             </svg>
                         </div>
                         <div>
-                            <div class="grants-stat-num">6</div>
+                            <div class="grants-stat-num">{{ stats?.donors ?? 0 }}</div>
                             <div class="grants-stat-label">جهة مانحة</div>
                         </div>
                     </div>
@@ -112,7 +114,7 @@ watchDebounced(search, (val) => {
                             </svg>
                         </div>
                         <div>
-                            <div class="grants-stat-num">12</div>
+                            <div class="grants-stat-num">{{ stats?.programs ?? 0 }}</div>
                             <div class="grants-stat-label">مجال متاح</div>
                         </div>
                     </div>
@@ -139,17 +141,14 @@ watchDebounced(search, (val) => {
                     <strong>{{ grants?.total }}</strong> فرصة
                 </p>
             </div>
-
             <div v-if="status === 'pending'" class="grants-grid mt-10">
                 <grants-card-loader v-for="i in 3" />
             </div>
             <div v-else class="grants-grid  ">
-
                 <template v-for="grant in grants?.result">
                     <GrantsCard :grant />
                 </template>
-
-                <div v-if="grants?.result.length ===0" class="grants-empty-state">
+                <div v-if="grants?.result.length === 0" class="grants-empty-state">
                     <div class="jz-empty">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -162,8 +161,6 @@ watchDebounced(search, (val) => {
                             الفرص الجديدة.</p>
                     </div>
                 </div>
- 
-
             </div>
 
             <!-- Pagination -->

@@ -11,13 +11,13 @@ await useFetch(`${useRuntimeConfig().public.apiBase}/donors/filters`, {
     }
 });
 
-
+ 
 const selectedProgram = ref(-1);
 const selectedLocation = ref(-1);
 const selectedType = ref(-1);
 
 const emit = defineEmits(["filter"]);
-watchEffect(() => {
+watch([selectedLocation, selectedProgram, selectedType], () => {
     emit("filter", {
         location: selectedLocation.value == -1 ? null : selectedLocation.value,
         program: selectedProgram.value == -1 ? null : selectedProgram.value,
