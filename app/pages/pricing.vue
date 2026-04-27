@@ -196,7 +196,7 @@ function openServiceDialog(title) {
                             </p>
                         </div>
 
-                        <a href="#" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3">
+                        <a  href="https://ngo.jazeel.net.sa/#/register" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3">
                             اشترك الآن
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M13 8H3M6 4l-4 4 4 4" />
@@ -295,7 +295,7 @@ function openServiceDialog(title) {
                             </p>
                         </div>
 
-                        <a href="#" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3"
+                        <a href="https://ngo.jazeel.net.sa/#/register" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3"
                             style="background:#07133F;">
                             اشترك الآن
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -1067,7 +1067,7 @@ function openServiceDialog(title) {
                             <path d="M14 9H4M7 5l-4 4 4 4" />
                         </svg>
                     </a>
-                    <a href="#" class="btn-white text-lg px-10 py-4">تواصل معنا</a>
+                    <a href="/contact" class="btn-white text-lg px-10 py-4">تواصل معنا</a>
                 </div>
             </div>
         </div>

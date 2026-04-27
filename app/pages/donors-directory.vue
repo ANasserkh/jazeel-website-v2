@@ -200,7 +200,7 @@ function jump(page) {
         </section>
 
         <!-- ═══════════════════ DONORS CONTENT ═══════════════════ -->
-        <section class="py-10 sm:py-14 bg-neutral-bg min-h-[400px]">
+        <section class="py-10 sm:py-14 bg-neutral-bg min-h-[400px]" v-if="status === 'success'">
             <div class="max-w-7xl mx-auto px-5 sm:px-8">
                 <!-- Grid View -->
                 <div v-if="view === 'grid' && status !== 'pending'"
@@ -244,7 +244,6 @@ function jump(page) {
                     <h3 class="text-lg font-bold text-navy mb-2">لا توجد نتائج</h3>
                     <p class="text-sm text-neutral-text">جرّب تعديل كلمات البحث أو تغيير الفلاتر</p>
                 </div>
-
             </div>
         </section>
         <!-- Pagination -->

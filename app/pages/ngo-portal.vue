@@ -828,7 +828,7 @@ useSeoMeta({
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-                <a href="#" class="btn-secondary"
+                <a href="/contact" class="btn-secondary"
                     style="padding: 0.875rem 2rem; color:#fff; border-color:rgba(255,255,255,0.2);">
                     تواصل مع فريق جزيل
                 </a>

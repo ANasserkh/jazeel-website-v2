@@ -56,7 +56,7 @@ useSeoMeta({
                                 <path d="M15 12H3" />
                             </svg>
                         </a>
-                        <a href="#custom-system" class="btn-secondary">
+                        <a href="/contact" class="btn-secondary">
                             اطلب منصة مخصصة
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round">
@@ -300,7 +300,7 @@ useSeoMeta({
                             إدارة الجهات المستفيدة
                         </li>
                     </ul>
-                    <a href="#" class="btn-primary justify-center" style="background:#7D53F3;">اطلب نسخة تجريبية</a>
+                    <a href="/contact" class="btn-primary justify-center" style="background:#7D53F3;">اطلب نسخة تجريبية</a>
                 </div>
 
                 <!-- Model 3 -->
@@ -343,7 +343,7 @@ useSeoMeta({
                             مناسب للمجالس والمؤسسات الكبرى
                         </li>
                     </ul>
-                    <a href="#custom" class="btn-outline-dark justify-center">تحدث معنا</a>
+                    <a href="/contact" class="btn-outline-dark justify-center">تحدث معنا</a>
                 </div>
             </div>
         </div>
@@ -644,7 +644,7 @@ useSeoMeta({
                     </div>
 
                     <div class="flex flex-wrap gap-3">
-                        <a href="#" class="btn-primary">تحدث مع فريقنا</a>
+                        <a href="/contact" class="btn-primary">تحدث مع فريقنا</a>
                     </div>
                 </div>
 
@@ -966,14 +966,14 @@ useSeoMeta({
                 سواء أردت حسابًا سريعًا داخل جزيل أو نظامًا مخصصًا بالكامل لجهتك، فريقنا جاهز لمساعدتك.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#" class="btn-primary" style="padding: 0.875rem 2rem;">
+                <a href="/contact" class="btn-primary" style="padding: 0.875rem 2rem;">
                     اطلب نسخة تجريبية
                     <svg class="rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" stroke-linecap="round">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-                <a href="#" class="btn-secondary-dark" style="padding: 0.875rem 2rem;">
+                <a href="/contact" class="btn-secondary-dark" style="padding: 0.875rem 2rem;">
                     اطلب نظامًا مخصصًا
                 </a>
             </div>
