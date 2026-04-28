@@ -20,6 +20,8 @@ watch(dialog, (val) => {
 })
 const modal = ref(null)
 function closeModal(e) {
+    console.log("🚀 ~ closeModal ~ getData(e.target):", getData(e.target))
+    console.log("🚀 ~ closeModal ~ getData(modal.value):", getData(modal.value))
 
     if (getData(e.target) === getData(modal.value))
         dialog.value = false;
@@ -28,14 +30,11 @@ function closeModal(e) {
 function getData(el) {
     const attrNames = el.getAttributeNames();
     const dataVAttr = attrNames.find(name => name.startsWith('data-v-'));
-    if (dataVAttr) {
-        return el.getAttribute(dataVAttr);
-    }
-    return null;
+    return dataVAttr;
 }
 </script>
 <template>
-    <div ref="modal" @click="closeModal" class="fixed inset-0 z-[100] items-center justify-center" :class="{
+    <div ref="modal" class="fixed inset-0 z-[100] items-center justify-center" :class="{
         hidden: !dialog,
         flex: dialog
     }" style="background:rgba(7,19,63,0.4);backdrop-filter:blur(4px);">
@@ -50,7 +49,7 @@ function getData(el) {
             <h3 class="tex-xl font-extrabold text-navy mb-1">{{ title }}</h3>
             <p class="text-[0.9375rem] text-jgreen font-semibold mb-6">{{ subtitle }}</p>
 
-            <slot></slot>
+            <slot ></slot>
         </div>
     </div>
 </template>

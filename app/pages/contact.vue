@@ -15,7 +15,7 @@ const isSubmitting = ref(false);
 const submitted = ref(false);
 
 const config = useRuntimeConfig();
-const url = `${config.public.apiBase}/contact-us`;
+const url = `${config.public.apiMaster}/contact-messages`;
 
 async function handleSubmit() {
     isSubmitting.value = true

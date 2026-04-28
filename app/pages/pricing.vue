@@ -14,9 +14,16 @@ function toggleFaq(e) {
 }
 
 const serviceModal = ref(false);
-const serviceSubtitle = ref("");
-function openServiceDialog(title) {
-    serviceSubtitle.value = title;
+const serviceType = ref("");
+
+const services = {
+    ProposalReview: 1,
+    StrategyBuilding: 2,
+    ProjectManagement: 3
+}
+
+function openServiceDialog(type) {
+    serviceType.value = type;
     serviceModal.value = true;
 }
 
@@ -24,7 +31,7 @@ function openServiceDialog(title) {
 
 
 <template>
-    <ServicesRequestDialog :subtitle="serviceSubtitle" v-model="serviceModal" />
+    <ServicesRequestDialog :service-type="serviceType" v-model="serviceModal" />
 
     <!-- ═══════════════════ HERO ═══════════════════ -->
     <section class="pt-28 pb-14 sm:pt-36 sm:pb-20"
@@ -196,7 +203,8 @@ function openServiceDialog(title) {
                             </p>
                         </div>
 
-                        <a  href="https://ngo.jazeel.net.sa/#/register" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3">
+                        <a href="https://ngo.jazeel.net.sa/#/register"
+                            class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3">
                             اشترك الآن
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M13 8H3M6 4l-4 4 4 4" />
@@ -295,7 +303,8 @@ function openServiceDialog(title) {
                             </p>
                         </div>
 
-                        <a href="https://ngo.jazeel.net.sa/#/register" class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3"
+                        <a href="https://ngo.jazeel.net.sa/#/register"
+                            class="w-full btn-primary justify-center text-[0.9375rem] mb-5 !py-3"
                             style="background:#07133F;">
                             اشترك الآن
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -847,7 +856,7 @@ function openServiceDialog(title) {
                         class="inline-block text-[0.8125rem] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg mb-5 w-fit">لرفع
                         معدل القبول</span>
                     <div class="mt-auto">
-                        <button @click="openServiceDialog('تدقيق المقترحات بالفريق الاستشاري')"
+                        <button @click="openServiceDialog(services.ProposalReview)"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>
@@ -868,7 +877,7 @@ function openServiceDialog(title) {
                         class="inline-block text-[0.8125rem] font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-lg mb-5 w-fit">لتأسيس
                         رؤية واضحة</span>
                     <div class="mt-auto">
-                        <button @click="openServiceDialog('بناء الاستراتيجية على منصة جزيل')"
+                        <button @click="openServiceDialog(services.StrategyBuilding)"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>
@@ -890,7 +899,7 @@ function openServiceDialog(title) {
                         class="inline-block text-[0.8125rem] font-bold text-jgreen bg-jgreen-50 px-3 py-1 rounded-lg mb-5 w-fit">للمنظمات
                         ذات المشاريع المتعددة</span>
                     <div class="mt-auto">
-                        <button @click="openServiceDialog('إدارة المشاريع بفريق محترف')"
+                        <button @click="openServiceDialog(services.ProjectManagement)"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>
