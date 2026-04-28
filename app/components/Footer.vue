@@ -27,8 +27,8 @@
         <ul class="space-y-2.5">
           <li><a href="#" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">عن جزيل</a></li>
           <li><a href="#" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">مركز المعرفة</a></li>
-          <li><a href="#" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">سياسة الخصوصية</a></li>
-          <li><a href="#" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">شروط الاستخدام</a></li>
+          <li><NuxtLink to="/terms#privacy" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">سياسة الخصوصية</NuxtLink></li>
+          <li><NuxtLink to="/terms#tos" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">شروط الاستخدام</NuxtLink></li>
           <li><NuxtLink to="/contact" class="text-body-sm text-white/35 hover:text-jgreen transition-colors">تواصل معنا</NuxtLink></li>
         </ul>
       </div>
@@ -55,8 +55,8 @@
     <div class="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-micro text-white/25">© 2026 جزيل. جميع الحقوق محفوظة.</p>
       <div class="flex gap-6">
-        <a href="#" class="text-micro text-white/25 hover:text-white/50 transition-colors">سياسة الخصوصية</a>
-        <a href="#" class="text-micro text-white/25 hover:text-white/50 transition-colors">شروط الاستخدام</a>
+        <NuxtLink to="/terms#privacy" class="text-micro text-white/25 hover:text-white/50 transition-colors">سياسة الخصوصية</NuxtLink>
+        <NuxtLink to="/terms#tos" class="text-micro text-white/25 hover:text-white/50 transition-colors">شروط الاستخدام</NuxtLink>
       </div>
     </div>
   </div>
