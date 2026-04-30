@@ -76,11 +76,11 @@ function toggleNavbarBg() {
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
                         بوابة
                         الجهات المانحة</NuxtLink>
-                    <NuxtLink to="ngo-portal"
+                    <NuxtLink to="/ngo-portal"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
                         بوابة
                         الجمعيات</NuxtLink>
-                    <NuxtLink to="pricing"
+                    <NuxtLink to="/pricing"
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
                         الأسعار</NuxtLink>
                     <NuxtLink to="/grants"
