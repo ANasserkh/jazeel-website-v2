@@ -361,85 +361,7 @@ execute();
             </div>
         </div>
 
-        <!-- ============================================
-       Related Grants
-       ============================================ -->
-        <!-- <section class="gd-related">
-        <div class="jz-container">
-            <div class="gd-related-header">
-                <h2>فرص مشابهة قد تهمك</h2>
-                <a href="grants.html">
-                    عرض جميع الفرص
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="m15 18-6-6 6-6" />
-                    </svg>
-                </a>
-            </div>
-            <div class="gd-related-grid">
-                <a href="grant-details.html" class="gd-rcard">
-                    <div class="gd-rcard-head">
-                        <div class="gd-rcard-logo"><img src="../donors/ehsan.png" alt="إحسان"></div>
-                        <div>
-                            <div class="gd-rcard-donor">منصة إحسان</div>
-                            <span class="gd-badge gd-sidebar-badge-open"
-                                style="font-size:0.6875rem;padding:0.2rem 0.5rem;margin-top:0.25rem;">مفتوحة</span>
-                        </div>
-                    </div>
-                    <div class="gd-rcard-body">
-                        <h3>منحة التحول الرقمي للمنظمات غير الربحية</h3>
-                        <div class="gd-rcard-meta">
-                            <span>متبقي 49 يوم</span>
-                            <span>جميع المناطق</span>
-                        </div>
-                    </div>
-                    <div class="gd-rcard-footer">
-                        <div class="gd-rcard-cta">عرض التفاصيل ←</div>
-                    </div>
-                </a>
-                <a href="grant-details.html" class="gd-rcard">
-                    <div class="gd-rcard-head">
-                        <div class="gd-rcard-logo"><img src="../donors/sdb.png" alt="بنك التنمية"></div>
-                        <div>
-                            <div class="gd-rcard-donor">بنك التنمية الاجتماعية</div>
-                            <span class="gd-badge gd-sidebar-badge-open"
-                                style="font-size:0.6875rem;padding:0.2rem 0.5rem;margin-top:0.25rem;">مفتوحة</span>
-                        </div>
-                    </div>
-                    <div class="gd-rcard-body">
-                        <h3>برنامج تعزيز صحة المجتمع</h3>
-                        <div class="gd-rcard-meta">
-                            <span>متبقي 37 يوم</span>
-                            <span>المنطقة الغربية</span>
-                        </div>
-                    </div>
-                    <div class="gd-rcard-footer">
-                        <div class="gd-rcard-cta">عرض التفاhref="https://ngo.jazeel.net.sa/#/proposals" صيل ←</div>
-                    </div>
-                </a>
-                <a href="grant-details.html" class="gd-rcard">
-                    <div class="gd-rcard-head">
-                        <div class="gd-rcard-logo"><img src="../donors/alrajhi.png" alt="الراجحي"></div>
-                        <div>
-                            <div class="gd-rcard-donor">الراجحي الإنسانية</div>
-                            <span class="gd-badge gd-sidebar-badge-open"
-                                style="font-size:0.6875rem;padding:0.2rem 0.5rem;margin-top:0.25rem;">مفتوحة</span>
-                        </div>
-                    </div>
-                    <div class="gd-rcard-body">
-                        <h3>برنامج الابتكار الاجتماعي</h3>
-                        <div class="gd-rcard-meta">
-                            <span>متبقي 79 يوم</span>
-                            <span>جميع المناطق</span>
-                        </div>
-                    </div>
-                    <div class="gd-rcard-footer">
-                        <div class="gd-rcard-cta">عرض التفاصيل ←</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section> -->
+    
 
         <!-- ============================================
        Bottom CTA
@@ -460,14 +382,14 @@ execute();
                         </svg>
                         ابدأ إعداد مقترح مشروعك
                     </a>
-                    <button class="gd-btn-secondary">
+                    <NuxtLink href="/contact" class="gd-btn-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path
                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
                         تواصل معنا
-                    </button>
+                    </NuxtLink>
                 </div>
             </div>
         </section>
