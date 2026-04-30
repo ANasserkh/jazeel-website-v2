@@ -6,6 +6,13 @@ useSeoMeta({
     description: 'استكشف فرص المنح المتاحة للجمعيات والمنظمات غير الربحية عبر منصة جزيل',
 })
 
+const {
+    email,
+    subscribe,
+    loading,
+    isValid
+} = useNewsletterSubscribe();
+
 
 const config = useRuntimeConfig();
 
@@ -72,7 +79,7 @@ watchDebounced(search, (val) => {
     <section class="grants-hero pt-10">
         <div class="jz-container">
             <div class="grants-hero-content">
-                 <h1>اكتشف فرص المنح <span>المناسبة لمنظمتك</span></h1>
+                <h1>اكتشف فرص المنح <span>المناسبة لمنظمتك</span></h1>
                 <p class="grants-hero-desc">منصة مركزية تجمع فرص التمويل والدعم من أبرز الجهات المانحة في المملكة،
                     وتساعدك على التقديم بكفاءة وثقة.</p>
                 <div class="grants-stats">
@@ -199,8 +206,24 @@ watchDebounced(search, (val) => {
                 <h2>لا تفوّت أي فرصة منح جديدة</h2>
                 <p>اشترك في التنبيهات وسنرسل لك إشعاراً فورياً بكل فرصة منح جديدة تناسب اهتماماتك</p>
                 <div class="grants-newsletter-form">
-                    <input type="email" placeholder="بريدك الإلكتروني">
-                    <button>اشترك الآن</button>
+                    <input v-model="email" type="email" placeholder="بريدك الإلكتروني"
+                        :class="{ '!border-red-500': !isValid }">
+                    <button @click="subscribe">
+                        <span v-if="!loading">
+                            اشترك الآن
+                        </span>
+                        <span v-else class="flex items-center gap-2">
+                            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4">
+                                </circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
