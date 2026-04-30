@@ -9,7 +9,7 @@ const route = useRoute();
 
 const fromJazeel = route.query.internal;
 const config = useRuntimeConfig();
-const { data, execute, status } = await useFetch(`${config.public.apiBase}/grants/${route.params.id}?is_from_portal=${fromJazeel}`);
+const { data, execute, status } = await useFetch(`${config.public.apiBase}/grants/v2/${route.params.id}?is_from_portal=${fromJazeel}`);
 execute();
 </script>
 <template>
@@ -21,6 +21,7 @@ execute();
             <div class="text-center mt-4"></div>
         </div>
     </div>
+    
     <div v-else>
         <section class="gd-hero pt-32">
             <div class="jz-container pt-32">

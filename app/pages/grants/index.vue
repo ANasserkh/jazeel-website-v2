@@ -24,7 +24,7 @@ const pagination = ref({
 });
 
 
-const { data: grants, refresh, status } = await useFetch(`${config.public.apiBase}/grants`, {
+const { data: grants, refresh, status } = await useFetch(`${config.public.apiBase}/grants/v2`, {
     query: pagination.value,
     watch: false
 });
