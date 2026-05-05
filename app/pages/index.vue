@@ -963,7 +963,7 @@ useSeoMeta({
     <!-- ═══════════════════════════════════════════════════════════════
      BLOG / KNOWLEDGE
      ═══════════════════════════════════════════════════════════════ -->
-    <section class="py-20 sm:py-24 bg-neutral-bg">
+    <!-- <section class="py-20 sm:py-24 bg-neutral-bg">
         <div class="max-w-7xl mx-auto px-5 sm:px-8">
             <div class="flex items-end justify-between mb-12 reveal">
                 <div>
@@ -1049,7 +1049,7 @@ useSeoMeta({
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ═══════════════════════════════════════════════════════════════
      CTA FINAL
