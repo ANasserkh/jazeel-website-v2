@@ -26,8 +26,8 @@ useSeoMeta({
 
                     <h1 class="text-display-sm sm:text-display text-white mb-5 reveal visible"
                         style="animation: fadeUp 0.6s 0.1s ease both;">
-                        منصة موحدة لتنمية الموارد المالية<br>
-                        وإدارة فرص <span class="text-jgreen">المنح</span>
+                        منصة تنمية الموارد المالية وادارة
+                        <span class="text-jgreen"> المشاريع التنموية</span>
                     </h1>
 
                     <p class="text-body-lg text-white/50 max-w-lg mb-8 reveal visible"
