@@ -25,6 +25,6 @@ const statusClass = computed(() => {
 </script>
 <template>
     <span :class="`${status ? 'grant-status' : 'gd-badge'} ${statusClass}`">
-        {{ deadline == null || deadline > 0 ? 'مفتوحة' : 'مغلقة' }}
+        {{ isOpen ? 'مفتوحة' : 'مغلقة' }}
     </span>
 </template>
