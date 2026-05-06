@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@emran-alhaddad/saudi-riyal-font": "^1.1.0",
     "@vueuse/nuxt": "^14.2.1",
     "date-fns": "^4.1.0",
     "nuxt": "^4.4.2",

@@ -86,20 +86,23 @@ function openServiceDialog(type) {
                         <div class="mb-7">
                             <div class="flex items-baseline gap-2 mb-2">
                                 <span class="text-[3rem] font-extrabold text-navy leading-none tracking-tight">59</span>
-                                <div class="flex flex-col">
-                                    <span class="text-base font-bold text-neutral-text">ريال</span>
+                                <div class="flex items-center">
+                                    <span class="icon-saudi_riyal_new text-3xl font-bold text-neutral-text"></span>
                                     <span class="text-sm text-neutral-light">/ شهريًا</span>
                                 </div>
                             </div>
                             <p class="text-sm text-neutral-text mt-2">
-                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">708</strong> ريال
+                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">708</strong> <span
+                                    class="icon-saudi_riyal_new"></span>
                             </p>
                             <p class="text-sm text-neutral-light mt-1">
-                                بدلاً من <span class="price-strike">900</span> ريال سنويًا
+                                بدلاً من <span class="price-strike">900</span> <span
+                                    class="icon-saudi_riyal_new"></span> سنويًا
                             </p>
                             <p
                                 class="text-xs text-neutral-light mt-2 leading-relaxed bg-neutral-bg/60 rounded-lg px-3 py-2">
-                                يعود السعر بعد السنة الأولى إلى 75 ريال/شهريًا (900 ريال/سنويًا)
+                                يعود السعر بعد السنة الأولى إلى 75 <span class="icon-saudi_riyal_new"></span>/شهريًا
+                                (900 <span class="icon-saudi_riyal_new"></span>/سنويًا)
                             </p>
                         </div>
 
@@ -186,20 +189,23 @@ function openServiceDialog(type) {
                             <div class="flex items-baseline gap-2 mb-2">
                                 <span
                                     class="text-[3rem] font-extrabold text-jgreen leading-none tracking-tight">196</span>
-                                <div class="flex flex-col">
-                                    <span class="text-base font-bold text-neutral-text">ريال</span>
+                                <div class="flex items-center">
+                                    <span class="icon-saudi_riyal_new text-3xl font-bold text-neutral-text"></span>
                                     <span class="text-sm text-neutral-light">/ شهريًا</span>
                                 </div>
                             </div>
                             <p class="text-sm text-neutral-text mt-2">
-                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">2,352</strong> ريال
+                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">2,352</strong> <span
+                                    class="icon-saudi_riyal_new"></span>
                             </p>
                             <p class="text-sm text-neutral-light mt-1">
-                                بدلاً من <span class="price-strike">2,940</span> ريال سنويًا
+                                بدلاً من <span class="price-strike">2,940</span> <span
+                                    class="icon-saudi_riyal_new"></span> سنويًا
                             </p>
                             <p
                                 class="text-xs text-neutral-light mt-2 leading-relaxed bg-jgreen-50/60 rounded-lg px-3 py-2">
-                                يعود السعر بعد السنة الأولى إلى 245 ريال/شهريًا (2,940 ريال/سنويًا)
+                                يعود السعر بعد السنة الأولى إلى 245 <span class="icon-saudi_riyal_new"></span>/شهريًا
+                                (2,940 <span class="icon-saudi_riyal_new text-base"></span>/سنويًا)
                             </p>
                         </div>
 
@@ -286,20 +292,23 @@ function openServiceDialog(type) {
                             <div class="flex items-baseline gap-2 mb-2">
                                 <span
                                     class="text-[3rem] font-extrabold text-navy leading-none tracking-tight">264</span>
-                                <div class="flex flex-col">
-                                    <span class="text-base font-bold text-neutral-text">ريال</span>
+                                <div class="flex items-center">
+                                    <span class="icon-saudi_riyal_new text-3xl font-bold text-neutral-text"></span>
                                     <span class="text-sm text-neutral-light">/ شهريًا</span>
                                 </div>
                             </div>
                             <p class="text-sm text-neutral-text mt-2">
-                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">3,168</strong> ريال
+                                تُدفع سنويًا بمبلغ <strong class="text-navy font-extrabold">3,168</strong> <span
+                                    class="icon-saudi_riyal_new"></span>
                             </p>
                             <p class="text-sm text-neutral-light mt-1">
-                                بدلاً من <span class="price-strike">3,960</span> ريال سنويًا
+                                بدلاً من <span class="price-strike">3,960</span> <span
+                                    class="icon-saudi_riyal_new"></span> سنويًا
                             </p>
                             <p
                                 class="text-xs text-neutral-light mt-2 leading-relaxed bg-neutral-bg/60 rounded-lg px-3 py-2">
-                                يعود السعر بعد السنة الأولى إلى 330 ريال/شهريًا (3,960 ريال/سنويًا)
+                                يعود السعر بعد السنة الأولى إلى 330 <span class="icon-saudi_riyal_new"></span>/شهريًا
+                                (3,960 <span class="icon-saudi_riyal_new"></span>/سنويًا)
                             </p>
                         </div>
 
@@ -964,7 +973,10 @@ function openServiceDialog(type) {
                         <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
                             عند التجديد، يعود الاشتراك إلى السعر الأصلي بدون خصم السنة الأولى. مثلاً: باقة الانطلاقة
                             تعود إلى 900
-                            ريال سنويًا (75 ريال شهريًا)، وباقة النمو إلى 2,940 ريال سنويًا (245 ريال شهريًا).
+                            <span class="icon-saudi_riyal_new"></span> سنويًا (75 <span
+                                class="icon-saudi_riyal_new"></span> شهريًا)، وباقة النمو إلى 2,940 <span
+                                class="icon-saudi_riyal_new"></span> سنويًا (245 <span
+                                class="icon-saudi_riyal_new"></span> شهريًا).
                         </p>
                     </div>
                 </div>

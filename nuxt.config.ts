@@ -24,7 +24,10 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: true },
-  css: ["./app/assets/css/main.css"],
+  css: [
+    "./app/assets/css/main.css",
+    "@emran-alhaddad/saudi-riyal-font/index.css",
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
