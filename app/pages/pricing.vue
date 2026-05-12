@@ -122,7 +122,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">حتى 3 مستخدمين</span>
+                                <span class="text-[0.9375rem] text-navy/80">حتى 5 مستخدمين</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -130,7 +130,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">حتى 5 مشاريع نشطة</span>
+                                <span class="text-[0.9375rem] text-navy/80">حتى 4 مشاريع تنموية</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -138,7 +138,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">كتابة المقترحات الأساسية</span>
+                                <span class="text-[0.9375rem] text-navy/80">كتابة 5 مقترحات مشاريع</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -146,7 +146,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">اكتشاف فرص المنح</span>
+                                <span class="text-[0.9375rem] text-navy/80">استعراض فرص المنح غير محدود</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -154,7 +154,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">تقارير أساسية</span>
+                                <span class="text-[0.9375rem] text-navy/80">إصدار التقارير الدورية</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -162,7 +162,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">دعم فني عبر البريد</span>
+                                <span class="text-[0.9375rem] text-navy/80">دعم فني عبر قنوات التواصل</span>
                             </div>
                         </div>
                     </div>
@@ -233,7 +233,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">مشاريع غير محدودة</span>
+                                <span class="text-[0.9375rem] text-navy/80">حتى 10 مشاريع تنموية</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -241,8 +241,15 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80 font-semibold">كتابة المقترحات بالذكاء
-                                    الاصطناعي</span>
+                                <span class="text-[0.9375rem] text-navy/80 font-semibold">كتابة مقترحات غير محدود</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="check-icon bg-jgreen-50 mt-0.5">
+                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
+                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
+                                    </svg>
+                                </div>
+                                <span class="text-[0.9375rem] text-navy/80">مساعد الذكاء الاصطناعي</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -258,15 +265,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">تقارير متقدمة ومؤشرات أداء</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">دعم فني أولوي</span>
+                                <span class="text-[0.9375rem] text-navy/80">أولوية الدعم الفني</span>
                             </div>
                         </div>
                     </div>
@@ -337,7 +336,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">إدارة محافظ المشاريع</span>
+                                <span class="text-[0.9375rem] text-navy/80">مشاريع تنموية غير محدودة</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -361,7 +360,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80 font-semibold">مدير حساب مخصص</span>
+                                <span class="text-[0.9375rem] text-navy/80 font-semibold">مشرف حساب متخصص</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -369,7 +368,7 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">تكامل API</span>
+                                <span class="text-[0.9375rem] text-navy/80">دعم فني مباشر</span>
                             </div>
                         </div>
                     </div>
@@ -476,21 +475,21 @@ function openServiceDialog(type) {
                             </tr>
                             <tr>
                                 <td>عدد المستخدمين</td>
-                                <td>حتى 3</td>
+                                <td>حتى 5</td>
+                                <td class="featured-col"><strong>حتى 10</strong></td>
+                                <td><strong>غير محدود*</strong></td>
+                            </tr>
+                            <tr>
+                                <td>عدد المشاريع التنموية النشطة</td>
+                                <td>حتى 4</td>
                                 <td class="featured-col"><strong>حتى 10</strong></td>
                                 <td><strong>غير محدود</strong></td>
                             </tr>
                             <tr>
-                                <td>عدد المشاريع النشطة</td>
+                                <td>كتابة مقترحات المشاريع</td>
                                 <td>حتى 5</td>
                                 <td class="featured-col"><strong>غير محدود</strong></td>
                                 <td><strong>غير محدود</strong></td>
-                            </tr>
-                            <tr>
-                                <td>مساحة التخزين</td>
-                                <td>2 جيجا</td>
-                                <td class="featured-col">10 جيجا</td>
-                                <td>50 جيجا</td>
                             </tr>
 
                             <!-- Group: المشاريع والمقترحات -->
@@ -498,7 +497,76 @@ function openServiceDialog(type) {
                                 <td colspan="4">المشاريع والمقترحات</td>
                             </tr>
                             <tr>
-                                <td>كتابة المقترحات</td>
+                                <td>إصدار التقارير الدورية</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>لوحة تحكم بوصول شامل</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>إصدار المقترحات بقوالب متعددة</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>استعراض بنك الأفكار</td>
+                                <td>جزئي</td>
+                                <td class="featured-col">كامل</td>
+                                <td>كامل مع تحديثات مخصصة</td>
+                            </tr>
+                            <tr>
+                                <td>تقارير متقدمة ومؤشرات أداء</td>
                                 <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
                                         stroke-width="2">
@@ -521,9 +589,9 @@ function openServiceDialog(type) {
                             <tr>
                                 <td>مساعد الذكاء الاصطناعي</td>
                                 <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
                                         stroke-width="2">
-                                        <path d="M6 6l8 8M14 6l-8 8" />
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
                                     </svg>
                                 </td>
                                 <td class="featured-col">
@@ -542,27 +610,6 @@ function openServiceDialog(type) {
                             <tr>
                                 <td>إدارة الاستراتيجية والبرامج</td>
                                 <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
-                                        stroke-width="2">
-                                        <path d="M6 6l8 8M14 6l-8 8" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>بنك أفكار المشاريع</td>
-                                <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
                                         stroke-width="2">
                                         <path d="M5 10.5l3.5 3.5 7-7" />
@@ -582,7 +629,7 @@ function openServiceDialog(type) {
                                 </td>
                             </tr>
                             <tr>
-                                <td>إدارة محافظ المشاريع</td>
+                                <td>صلاحيات وأدوار متقدمة</td>
                                 <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
                                         stroke-width="2">
@@ -593,121 +640,6 @@ function openServiceDialog(type) {
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
                                         stroke-width="2">
                                         <path d="M6 6l8 8M14 6l-8 8" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                            </tr>
-
-                            <!-- Group: فرص المنح -->
-                            <tr class="group-row">
-                                <td colspan="4">فرص المنح</td>
-                            </tr>
-                            <tr>
-                                <td>اكتشاف فرص المنح</td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>التقديم على فرص المنح</td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>تنبيهات فرص المنح</td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
-                                        stroke-width="2">
-                                        <path d="M6 6l8 8M14 6l-8 8" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                            </tr>
-
-                            <!-- Group: التقارير والمتابعة -->
-                            <tr class="group-row">
-                                <td colspan="4">التقارير والمتابعة</td>
-                            </tr>
-                            <tr>
-                                <td>تقارير أساسية</td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>تقارير متقدمة ومؤشرات أداء</td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
-                                        stroke-width="2">
-                                        <path d="M6 6l8 8M14 6l-8 8" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
                                     </svg>
                                 </td>
                                 <td>
@@ -739,12 +671,56 @@ function openServiceDialog(type) {
                                 </td>
                             </tr>
 
-                            <!-- Group: الدعم -->
+                            <!-- Group: فرص المنح -->
+                            <tr class="group-row">
+                                <td colspan="4">فرص المنح</td>
+                            </tr>
+                            <tr>
+                                <td>استعراض فرص المنح</td>
+                                <td>غير محدود</td>
+                                <td class="featured-col">غير محدود</td>
+                                <td>غير محدود</td>
+                            </tr>
+                            <tr>
+                                <td>التقديم على فرص المنح</td>
+                                <td>حتى 6</td>
+                                <td class="featured-col">حتى 6</td>
+                                <td><strong>غير محدود</strong></td>
+                            </tr>
+                            <tr>
+                                <td>تنبيهات فرص المنح</td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td class="featured-col">
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
+                                        stroke-width="2">
+                                        <path d="M5 10.5l3.5 3.5 7-7" />
+                                    </svg>
+                                </td>
+                            </tr>
+
+                            <!-- Group: الدعم والمساعدة -->
                             <tr class="group-row">
                                 <td colspan="4">الدعم والمساعدة</td>
                             </tr>
                             <tr>
-                                <td>دعم عبر البريد الإلكتروني</td>
+                                <td>الدعم الفني</td>
+                                <td>قنوات التواصل</td>
+                                <td class="featured-col">دعم أولوي</td>
+                                <td>مباشر عبر مشرف الحساب</td>
+                            </tr>
+                            <tr>
+                                <td>حضور اللقاءات التعريفية</td>
                                 <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
                                         stroke-width="2">
@@ -765,7 +741,7 @@ function openServiceDialog(type) {
                                 </td>
                             </tr>
                             <tr>
-                                <td>دعم أولوي</td>
+                                <td>الاستفادة من بنك المقترحات</td>
                                 <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
                                         stroke-width="2">
@@ -786,7 +762,7 @@ function openServiceDialog(type) {
                                 </td>
                             </tr>
                             <tr>
-                                <td>مدير حساب مخصص</td>
+                                <td>أولوية الإطلاع على الإصدارات</td>
                                 <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
                                         stroke-width="2">
@@ -806,26 +782,22 @@ function openServiceDialog(type) {
                                     </svg>
                                 </td>
                             </tr>
+
+                            <!-- Group: الخدمات الإضافية -->
+                            <tr class="group-row">
+                                <td colspan="4">الخدمات الإضافية</td>
+                            </tr>
                             <tr>
-                                <td>تكامل API</td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
-                                        stroke-width="2">
-                                        <path d="M6 6l8 8M14 6l-8 8" />
-                                    </svg>
-                                </td>
-                                <td class="featured-col">
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#d4d8dd"
-                                        stroke-width="2">
-                                        <path d="M6 6l8 8M14 6l-8 8" />
-                                    </svg>
-                                </td>
-                                <td>
-                                    <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
-                                        stroke-width="2">
-                                        <path d="M5 10.5l3.5 3.5 7-7" />
-                                    </svg>
-                                </td>
+                                <td>خصم البرامج التدريبية</td>
+                                <td>-</td>
+                                <td class="featured-col">خصم 50%</td>
+                                <td>خصم 50%</td>
+                            </tr>
+                            <tr>
+                                <td>خصم الخدمات الاستشارية</td>
+                                <td>-</td>
+                                <td class="featured-col">خصم 15%</td>
+                                <td>خصم 25%</td>
                             </tr>
                         </tbody>
                     </table>
