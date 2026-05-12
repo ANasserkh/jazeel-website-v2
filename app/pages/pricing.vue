@@ -17,10 +17,74 @@ const serviceModal = ref(false);
 const serviceType = ref("");
 
 const services = {
-    ProposalReview: 1,
-    StrategyBuilding: 2,
-    ProjectManagement: 3
+    ProposalBuilding: 1,
+    TechnicalDesign: 2,
+    SpecialistQualification: 3,
+    UnitEstablishment: 4,
+    ProjectManagement: 5,
+    ProcessModeling: 6,
+    FundraisingQualification: 7,
+    FundraisingUnit: 8
 }
+
+const servicesList = [
+    {
+        id: services.ProposalBuilding,
+        title: 'بناء مقترحات المشاريع التنموية',
+        description: 'نساعدك في صياغة مقترحات مشاريع احترافية ترفع من فرص قبولك لدى المانحين.',
+        tag: 'لرفع معدل القبول',
+        color: 'blue'
+    },
+    {
+        id: services.TechnicalDesign,
+        title: 'التصميم الفني للمشاريع التنموية',
+        description: 'تصميم هيكلي وفني دقيق للمشاريع يضمن كفاءة التنفيذ وتحقيق الأثر المنشود.',
+        tag: 'تصميم احترافي',
+        color: 'purple'
+    },
+    {
+        id: services.SpecialistQualification,
+        title: 'تأهيل أخصائي المشاريع التنموية',
+        description: 'برنامج تدريبي مكثف لتأهيل الكوادر البشرية على أفضل ممارسات إدارة المشاريع.',
+        tag: 'تطوير الكوادر',
+        color: 'jgreen'
+    },
+    {
+        id: services.UnitEstablishment,
+        title: 'تأسيس وحدة البرامج والمشاريع',
+        description: 'بناء الهياكل الإدارية والعمليات اللازمة لتأسيس وحدة برامج ومشاريع قوية.',
+        tag: 'تأسيس مؤسسي',
+        color: 'navy'
+    },
+    {
+        id: services.ProjectManagement,
+        title: 'إدارة المشاريع التنموية',
+        description: 'إشراف مباشر ومتابعة حثيثة لتنفيذ المشاريع لضمان الجودة والالتزام بالجداول الزمنية.',
+        tag: 'إدارة متكاملة',
+        color: 'blue'
+    },
+    {
+        id: services.ProcessModeling,
+        title: 'نمذجة الإجراءات والعمليات في إدارة المشاريع التنموية',
+        description: 'تحويل العمليات المعقدة إلى نماذج واضحة وسهلة التنفيذ تضمن استدامة العمل.',
+        tag: 'كفاءة تشغيلية',
+        color: 'purple'
+    },
+    {
+        id: services.FundraisingQualification,
+        title: 'تأهيل وتمكين أخصائي ادارة تنمية الموارد المالية',
+        description: 'تمكين المسؤولين عن تنمية الموارد بأدوات ومهارات الاستدامة المالية الحديثة.',
+        tag: 'استدامة مالية',
+        color: 'jgreen'
+    },
+    {
+        id: services.FundraisingUnit,
+        title: 'تأسيس وحدة تنمية الموارد المالية',
+        description: 'تطوير استراتيجيات وأنظمة متكاملة لجذب الموارد المالية وضمان نمو المنظمة.',
+        tag: 'نمو مستدام',
+        color: 'navy'
+    }
+];
 
 function openServiceDialog(type) {
     serviceType.value = type;
@@ -821,66 +885,45 @@ function openServiceDialog(type) {
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-7 reveal">
-                <!-- Service 1 -->
-                <div class="service-card flex flex-col">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-5">
-                        <svg width="26" height="26" fill="none" stroke="#3b82f6" stroke-width="1.5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 reveal justify-center">
+                <div v-for="service in servicesList" :key="service.id" class="service-card flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" :class="{
+                        'bg-blue-50': service.color === 'blue',
+                        'bg-purple-50': service.color === 'purple',
+                        'bg-jgreen-50': service.color === 'jgreen',
+                        'bg-navy/5': service.color === 'navy',
+                    }">
+                        <!-- Dynamic Icon Selection -->
+                        <svg v-if="service.color === 'blue'" width="26" height="26" fill="none" stroke="#3b82f6"
+                            stroke-width="1.5">
                             <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                    </div>
-                    <h3 class="text-xl font-extrabold text-navy mb-2">تدقيق المقترحات</h3>
-                    <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-3">
-                        فريق استشاري متخصص يراجع مقترحاتك ويحسّن جودتها قبل التقديم للجهات المانحة.
-                    </p>
-                    <span
-                        class="inline-block text-[0.8125rem] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg mb-5 w-fit">لرفع
-                        معدل القبول</span>
-                    <div class="mt-auto">
-                        <button @click="openServiceDialog(services.ProposalReview)"
-                            class="btn-secondary justify-center text-[0.9375rem] w-full">
-                            اطلبها الآن
-                        </button>
-                    </div>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card flex flex-col">
-                    <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center mb-5">
-                        <svg width="26" height="26" fill="none" stroke="#8b5cf6" stroke-width="1.5">
+                        <svg v-else-if="service.color === 'purple'" width="26" height="26" fill="none" stroke="#8b5cf6"
+                            stroke-width="1.5">
                             <path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6" />
                         </svg>
-                    </div>
-                    <h3 class="text-xl font-extrabold text-navy mb-2">بناء الاستراتيجية</h3>
-                    <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-3">
-                        نساعدك في بناء وتوثيق استراتيجية منظمتك على المنصة بشكل منهجي ومتكامل.
-                    </p>
-                    <span
-                        class="inline-block text-[0.8125rem] font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-lg mb-5 w-fit">لتأسيس
-                        رؤية واضحة</span>
-                    <div class="mt-auto">
-                        <button @click="openServiceDialog(services.StrategyBuilding)"
-                            class="btn-secondary justify-center text-[0.9375rem] w-full">
-                            اطلبها الآن
-                        </button>
-                    </div>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card flex flex-col">
-                    <div class="w-14 h-14 rounded-2xl bg-jgreen-50 flex items-center justify-center mb-5">
-                        <svg width="26" height="26" fill="none" stroke="#19B58B" stroke-width="1.5">
+                        <svg v-else-if="service.color === 'jgreen'" width="26" height="26" fill="none" stroke="#19B58B"
+                            stroke-width="1.5">
                             <path
                                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5h6M9 14l2 2 4-4" />
                         </svg>
+                        <svg v-else width="26" height="26" fill="none" stroke="#07133F" stroke-width="1.5">
+                            <path
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-extrabold text-navy mb-2">إدارة المشاريع بفريق محترف</h3>
+                    <h3 class="text-xl font-extrabold text-navy mb-2">{{ service.title }}</h3>
                     <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-3">
-                        فريق إدارة مشاريع متخصص يتولى متابعة تنفيذ مشاريعك عبر المنصة بكفاءة عالية.
+                        {{ service.description }}
                     </p>
-                    <span
-                        class="inline-block text-[0.8125rem] font-bold text-jgreen bg-jgreen-50 px-3 py-1 rounded-lg mb-5 w-fit">للمنظمات
-                        ذات المشاريع المتعددة</span>
+                    <span class="inline-block text-[0.8125rem] font-bold px-3 py-1 rounded-lg mb-5 w-fit" :class="{
+                        'text-blue-600 bg-blue-50': service.color === 'blue',
+                        'text-purple-600 bg-purple-50': service.color === 'purple',
+                        'text-jgreen bg-jgreen-50': service.color === 'jgreen',
+                        'text-navy bg-navy/5': service.color === 'navy',
+                    }">{{ service.tag }}</span>
                     <div class="mt-auto">
-                        <button @click="openServiceDialog(services.ProjectManagement)"
+                        <button @click="openServiceDialog(service.id)"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>

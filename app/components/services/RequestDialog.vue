@@ -8,16 +8,26 @@ const { serviceType } = defineProps({
 });
 
 const services = {
-    ProposalReview: 1,
-    StrategyBuilding: 2,
-    ProjectManagement: 3
+    ProposalBuilding: 1,
+    TechnicalDesign: 2,
+    SpecialistQualification: 3,
+    UnitEstablishment: 4,
+    ProjectManagement: 5,
+    ProcessModeling: 6,
+    FundraisingQualification: 7,
+    FundraisingUnit: 8
 }
 
 const subtitle = computed(() => {
     switch (serviceType) {
-        case services.ProposalReview: return "تدقيق المقترحات"
-        case services.StrategyBuilding: return "بناء الاستراتيجية"
-        case services.ProjectManagement: return "إدارة المشاريع"
+        case services.ProposalBuilding: return "بناء مقترحات المشاريع التنموية"
+        case services.TechnicalDesign: return "التصميم الفني للمشاريع التنموية"
+        case services.SpecialistQualification: return "تأهيل أخصائي المشاريع التنموية"
+        case services.UnitEstablishment: return "تأسيس وحدة البرامج والمشاريع"
+        case services.ProjectManagement: return "إدارة المشاريع التنموية"
+        case services.ProcessModeling: return "نمذجة الإجراءات والعمليات في إدارة المشاريع التنموية"
+        case services.FundraisingQualification: return "تأهيل وتمكين أخصائي ادارة تنمية الموارد المالية"
+        case services.FundraisingUnit: return "تأسيس وحدة تنمية الموارد المالية"
     }
 })
 
