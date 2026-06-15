@@ -19,7 +19,7 @@ function toggleDeadline(status) {
 
 function toggleSource(type) {
     filters.value.source_type = type;
-    filters.value.deadline_status = null;
+    filters.value.deadline_status = 1;
     emit("filter", filters.value);
 
 }
