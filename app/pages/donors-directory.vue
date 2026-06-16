@@ -8,7 +8,7 @@ useSeoMeta({
 const config = useRuntimeConfig();
 const pagination = ref({
     page: 1,
-    rows: 20
+    rows: 18
 });
 
 const { data: stats, status: statsStatus } = await useFetch(`${config.public.apiBase}/donors/stats`);
@@ -264,9 +264,9 @@ function jump(page) {
                         style="background:linear-gradient(135deg,#07133F,#0d1f5c);padding:2rem 2rem 1.5rem;border-radius:20px 20px 0 0;">
                         <div class="flex items-center gap-4">
                             <div
-                                class="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center p-2.5 flex-shrink-0">
+                                class="w-16 h-16 rounded-2xl bg-white/90 border border-white/10 flex items-center justify-center p-2.5 flex-shrink-0">
                                 <img :src="selectedDonor.logo" :alt="selectedDonor.name"
-                                    class="w-full h-full object-contain brightness-0 invert">
+                                    class="w-full h-full object-contain">
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-white">{{ selectedDonor.name }}</h2>
