@@ -14,7 +14,7 @@ function toggleFaq(e) {
 }
 
 const serviceModal = ref(false);
-const serviceType = ref("");
+const serviceType = ref(1);
 
 const services = {
     ProposalBuilding: 1,
@@ -282,7 +282,8 @@ function openServiceDialog(type) {
                         </a>
 
                         <div class="space-y-4 pt-5 border-t border-jgreen/10">
-                            <p class="text-[0.8125rem] font-bold text-jgreen mb-1">كل مزايا الانطلاقة، بالإضافة إلى:</p>
+                            <p class="text-[0.8125rem] font-bold text-jgreen mb-1">كل مزايا الانطلاقة، بالإضافة إلى:
+                            </p>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
                                     <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
@@ -305,7 +306,8 @@ function openServiceDialog(type) {
                                         <path d="M2.5 6.5l2.5 2.5 5-5" />
                                     </svg>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80 font-semibold">كتابة مقترحات غير محدود</span>
+                                <span class="text-[0.9375rem] text-navy/80 font-semibold">كتابة مقترحات غير
+                                    محدود</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <div class="check-icon bg-jgreen-50 mt-0.5">
@@ -945,14 +947,16 @@ function openServiceDialog(type) {
             <div class="space-y-3.5 reveal">
                 <div class="faq-item active">
                     <div class="faq-toggle" @click="toggleFaq">
-                        <span class="text-base font-bold text-navy leading-relaxed">هل السعر الظاهر شهري أم سنوي؟</span>
+                        <span class="text-base font-bold text-navy leading-relaxed">هل السعر الظاهر شهري أم
+                            سنوي؟</span>
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 8l5 5 5-5" />
                         </svg>
                     </div>
                     <div class="faq-answer">
                         <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            السعر الظاهر هو السعر الشهري، لكن الفوترة تتم سنويًا. أي أنك تدفع المبلغ السنوي كاملاً عند
+                            السعر الظاهر هو السعر الشهري، لكن الفوترة تتم سنويًا. أي أنك تدفع المبلغ السنوي كاملاً
+                            عند
                             الاشتراك،
                             والسعر الشهري المعروض هو ناتج قسمة المبلغ السنوي على 12 شهرًا.
                         </p>
@@ -1006,7 +1010,8 @@ function openServiceDialog(type) {
                     </div>
                     <div class="faq-answer">
                         <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            نعم، باقة الانطلاقة تتضمن تجربة مجانية لمدة 14 يوم. يمكنك استكشاف المنصة بالكامل قبل اتخاذ
+                            نعم، باقة الانطلاقة تتضمن تجربة مجانية لمدة 14 يوم. يمكنك استكشاف المنصة بالكامل قبل
+                            اتخاذ
                             قرار
                             الاشتراك. لا يُطلب منك إدخال بيانات الدفع أثناء فترة التجربة.
                         </p>
@@ -1023,9 +1028,11 @@ function openServiceDialog(type) {
                     </div>
                     <div class="faq-answer">
                         <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            الانطلاقة مناسبة للجمعيات الصغيرة (حتى 3 مستخدمين و5 مشاريع). النمو تضيف الذكاء الاصطناعي
+                            الانطلاقة مناسبة للجمعيات الصغيرة (حتى 3 مستخدمين و5 مشاريع). النمو تضيف الذكاء
+                            الاصطناعي
                             وإدارة
-                            الاستراتيجية (حتى 10 مستخدمين ومشاريع غير محدودة). الريادة تقدم كل شيء بدون حدود مع صلاحيات
+                            الاستراتيجية (حتى 10 مستخدمين ومشاريع غير محدودة). الريادة تقدم كل شيء بدون حدود مع
+                            صلاحيات
                             متقدمة ومدير
                             حساب مخصص.
                         </p>
@@ -1042,7 +1049,8 @@ function openServiceDialog(type) {
                     </div>
                     <div class="faq-answer">
                         <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            نعم، يمكنك الترقية من أي باقة إلى باقة أعلى في أي وقت. يتم احتساب الفرق المتبقي من اشتراكك
+                            نعم، يمكنك الترقية من أي باقة إلى باقة أعلى في أي وقت. يتم احتساب الفرق المتبقي من
+                            اشتراكك
                             الحالي ويُخصم
                             من تكلفة الباقة الجديدة.
                         </p>
@@ -1075,7 +1083,8 @@ function openServiceDialog(type) {
                     </div>
                     <div class="faq-answer">
                         <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            نعم، نقدم خدمات احترافية إضافية تشمل: تدقيق المقترحات، بناء الاستراتيجية، وإدارة المشاريع
+                            نعم، نقدم خدمات احترافية إضافية تشمل: تدقيق المقترحات، بناء الاستراتيجية، وإدارة
+                            المشاريع
                             بفريق متخصص.
                             يمكنك الاطلاع على التفاصيل في قسم الخدمات الإضافية أعلاه.
                         </p>
