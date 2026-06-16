@@ -24,7 +24,7 @@ import { format } from 'date-fns';
         </div>
         <div class="grant-card-body">
             <h3 class="grant-card-title">{{ grant.title }}</h3>
-            <p class="grant-card-desc" v-html="grant.description"></p>
+            <div class="grant-card-desc" v-html="grant.description"></div>
             <div class="grant-card-tags">
                 <span class="grant-tag" v-for="program in grant.programs"> {{ program.name }} </span>
             </div>

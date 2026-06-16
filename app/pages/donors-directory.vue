@@ -11,16 +11,14 @@ const pagination = ref({
     rows: 20
 });
 
+const { data: stats, status: statsStatus } = await useFetch(`${config.public.apiBase}/donors/stats`);
+
 const { data: donors, refresh, status } = await useFetch(`${config.public.apiBase}/donors/paginate`, {
     query: pagination.value,
     watch: false
 });
 
-
-
-
 const view = ref('grid');
-
 const selectedDonor = ref(null);
 const isModalOpen = ref(false);
 
@@ -41,22 +39,9 @@ function closeModal() {
 
 
 
-const stats = ref({
-    donors: 0,
-    grants: 0,
-    programs: 0,
-    locations: 0
-})
-
-await useFetch(`${config.public.apiBase}/donors/stats`, {
-    onResponse: ({ response }) => {
-        stats.value = response._data
-    }
-});
 
 
 function onFilter(params) {
-    console.log("🚀 ~ onFilter ~ params:", params)
     pagination.value.type = params.type;
     pagination.value.program = params.program;
     pagination.value.location = params.location;
@@ -72,8 +57,8 @@ watchDebounced(search, (val) => {
     debounce: 1000,
 })
 
-
 const pages = computed(() => {
+    if (donors.value?.total == null) return 0;
     return Math.ceil(donors.value?.total / pagination.value.rows);
 });
 
@@ -130,24 +115,24 @@ function jump(page) {
                     دليل شامل للجهات المانحة والمؤسسات الداعمة المسجلة في المنصة، مع تفاصيل مجالات الدعم والنطاق
                     الجغرافي.
                 </p>
-                <div class="flex flex-wrap justify-center gap-8 reveal visible">
+                <div class="flex flex-wrap justify-center gap-8 reveal visible" v-if="statsStatus === 'success'">
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats.donors }}</div>
+                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats?.donors }}</div>
                         <div class="text-xs text-white/35 font-medium">جهة مانحة</div>
                     </div>
                     <div class="w-px h-12 bg-white/10 self-center"></div>
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold mb-1" style="color:#19B58B;">{{ stats.grants }}</div>
+                        <div class="text-3xl font-extrabold mb-1" style="color:#19B58B;">{{ stats?.grants }}</div>
                         <div class="text-xs text-white/35 font-medium">فرصة نشطة</div>
                     </div>
                     <div class="w-px h-12 bg-white/10 self-center"></div>
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats.programs }}</div>
+                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats?.programs }}</div>
                         <div class="text-xs text-white/35 font-medium">مجالات دعم</div>
                     </div>
                     <div class="w-px h-12 bg-white/10 self-center"></div>
                     <div class="text-center">
-                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats.locations }}</div>
+                        <div class="text-3xl font-extrabold text-white mb-1">{{ stats?.locations }}</div>
                         <div class="text-xs text-white/35 font-medium">مناطق جغرافية</div>
                     </div>
                 </div>
@@ -333,7 +318,7 @@ function jump(page) {
                             <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB]">{{
                                 selectedDonor.type }}</span>
                             <span v-for="field in selectedDonor.programs" :key="field" class="donor-tag">{{ field
-                            }}</span>
+                                }}</span>
                         </div>
 
                         <h3 class="text-sm font-bold text-navy mb-2">نبذة عن الجهة</h3>

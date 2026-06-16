@@ -9,8 +9,7 @@ const route = useRoute();
 
 const fromJazeel = route.query.internal;
 const config = useRuntimeConfig();
-const { data, execute, status } = await useFetch(`${config.public.apiBase}/grants/v2/${route.params.id}?is_from_portal=${fromJazeel}`);
-execute();
+const { data, status } = await useFetch(`${config.public.apiBase}/grants/v2/${route.params.id}?is_from_portal=${fromJazeel}`);
 </script>
 <template>
 
