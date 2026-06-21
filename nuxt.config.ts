@@ -12,15 +12,15 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    // public: {
-    //   apiBase: "https://localhost:7012/website/api",
-    //   apiMaster: "https://localhost:7049/api/website",
-    // },
-
     public: {
-      apiBase: "https://ngo.jazeel.net.sa/website/api",
-      apiMaster: "https://master.jazeel.net.sa/api/website",
+      apiBase: "https://localhost:7012/website/api",
+      apiMaster: "https://localhost:7049/api/website",
     },
+
+    // public: {
+    //   apiBase: "https://ngo.jazeel.net.sa/website/api",
+    //   apiMaster: "https://master.jazeel.net.sa/api/website",
+    // },
   },
 
   devtools: { enabled: true },

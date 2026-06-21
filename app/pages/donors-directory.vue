@@ -25,16 +25,11 @@ const isModalOpen = ref(false);
 function openModal(donor) {
     selectedDonor.value = donor;
     isModalOpen.value = true;
-    if (process.client) {
-        document.body.style.overflow = 'hidden';
-    }
+
 }
 
 function closeModal() {
     isModalOpen.value = false;
-    if (process.client) {
-        document.body.style.overflow = '';
-    }
 }
 
 
