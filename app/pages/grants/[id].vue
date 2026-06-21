@@ -7,9 +7,11 @@ useSeoMeta({
 
 const route = useRoute();
 
-const fromJazeel = route.query.internal;
+const fromJazeel = computed(() => {
+    return route.query.internal === 'true';
+});
 const config = useRuntimeConfig();
-const { data, status } = await useFetch(`${config.public.apiBase}/grants/v2/${route.params.id}?is_from_portal=${fromJazeel}`);
+const { data, status } = await useFetch(`${config.public.apiBase}/grants/v2/${route.params.id}?is_from_portal=${fromJazeel.value}`);
 </script>
 <template>
 
@@ -20,7 +22,7 @@ const { data, status } = await useFetch(`${config.public.apiBase}/grants/v2/${ro
             <div class="text-center mt-4"></div>
         </div>
     </div>
-    
+
     <div v-else>
         <section class="gd-hero pt-32">
             <div class="jz-container pt-32">
@@ -196,7 +198,7 @@ const { data, status } = await useFetch(`${config.public.apiBase}/grants/v2/${ro
                                     <path d="M19 12H5" />
                                 </svg>
                             </div>
-                            <h2>آلية التقديم</h2>
+                            <h2>آلية التقديم عبر جزيل</h2>
                         </div>
                         <div class="gd-timeline">
                             <div class="gd-timeline-step">
@@ -360,7 +362,7 @@ const { data, status } = await useFetch(`${config.public.apiBase}/grants/v2/${ro
             </div>
         </div>
 
-    
+
 
         <!-- ============================================
        Bottom CTA

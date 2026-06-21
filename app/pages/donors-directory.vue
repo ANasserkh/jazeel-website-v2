@@ -341,10 +341,10 @@ function jump(page) {
                                     <path d="m12 19-7-7 7-7" />
                                 </svg>
                             </NuxtLink>
-                            <NuxtLink to="/donor-portal"
+                            <a  target="_blank" :href="selectedDonor.website"
                                 class="flex-1 text-center py-3 px-4 rounded-xl border border-neutral-border text-sm font-bold text-navy hover:bg-neutral-bg transition-all">
                                 زيارة البوابة
-                            </NuxtLink>
+                            </a>
                         </div>
 
                         <div class="mt-5 pt-4 border-t border-neutral-border/40 text-center">
