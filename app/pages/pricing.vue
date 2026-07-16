@@ -91,6 +91,14 @@ function openServiceDialog(type) {
     serviceModal.value = true;
 }
 
+const route = useRoute();
+if (route.query.service != null) {
+    if (servicesList.find(s => s.id == route.query.service)) {
+        openServiceDialog(Number(route.query.service))
+
+    }
+}
+
 </script>
 
 
