@@ -34,11 +34,11 @@ function getData(el) {
 }
 </script>
 <template>
-    <div ref="modal" class="fixed inset-0 z-[100] items-center justify-center" :class="{
+    <div ref="modal" class="fixed inset-0 z-[100] items-center justify-center " :class="{
         hidden: !dialog,
         flex: dialog
     }" style="background:rgba(7,19,63,0.4);backdrop-filter:blur(4px);">
-        <div class="bg-white rounded-2xl shadow-sys-lg w-full max-w-md mx-4 p-7 sm:p-8 relative"
+        <div class="bg-white rounded-2xl shadow-sys-lg w-full max-w-md mx-4 p-7 sm:p-8 relative overflow-y-auto max-h-[90%]"
             style="animation:fadeUp 0.3s ease;">
             <button @click="dialog = !dialog"
                 class="absolute top-4 left-4 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-neutral-bg transition-colors">
@@ -49,7 +49,7 @@ function getData(el) {
             <h3 class="tex-xl font-extrabold text-navy mb-1">{{ title }}</h3>
             <p class="text-[0.9375rem] text-jgreen font-semibold mb-6">{{ subtitle }}</p>
 
-            <slot ></slot>
+            <slot></slot>
         </div>
     </div>
 </template>

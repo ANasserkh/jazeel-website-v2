@@ -110,10 +110,10 @@ watch(dialog, (val) => {
                     class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
                     placeholder="email@example.com" dir="ltr" v-model="formData.email" />
             </div>
-
+            
             <div class="mb-4">
                 <label class="block text-sm font-bold text-navy mb-1.5">رقم الجوال</label>
-                <input type="tel" required
+                <input type="tel" required oninput="this.value = this.value.replace(/\D+/g, '')"
                     class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
                     placeholder="05xxxxxxxx" dir="ltr" v-model="formData.phoneNumber" />
             </div>
