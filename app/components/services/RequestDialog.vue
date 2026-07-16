@@ -91,17 +91,17 @@ watch(dialog, (val) => {
     <dialog-form title="طلب خدمة" :subtitle v-model="dialog">
         <form v-if="!done" @submit.prevent="save">
             <div class="mb-4">
-                <label class="block text-sm font-bold text-navy mb-1.5">اسم المنظمة</label>
+                <label class="block text-sm font-bold text-navy mb-1.5">مسمى الجمعية</label>
                 <input type="text" required
                     class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                    placeholder="اسم منظمتك" v-model="formData.organizationName" />
+                    placeholder="اسم الجمعية" v-model="formData.organizationName" />
             </div>
 
             <div class="mb-4">
-                <label class="block text-sm font-bold text-navy mb-1.5">الاسم الكامل</label>
+                <label class="block text-sm font-bold text-navy mb-1.5">اسم المسؤول</label>
                 <input type="text" required
                     class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                    placeholder="اسمك الكامل" v-model="formData.fullName" />
+                    placeholder="اسم المسؤول" v-model="formData.fullName" />
             </div>
 
             <div class="mb-4">
@@ -165,7 +165,7 @@ watch(dialog, (val) => {
                 </svg>
             </div>
             <h4 class="text-lg font-bold text-navy mb-2">تم إرسال طلبك بنجاح!</h4>
-            <p class="text-[0.9375rem] text-neutral-text mb-5">سيتواصل معك فريقنا خلال 24 ساعة عمل</p>
+            <p class="text-[0.9375rem] text-neutral-text mb-5">سيتواصل معك فريقنا خلال يومين عمل</p>
             <button @click="dialog = false" class="btn-secondary justify-center text-[0.9375rem]">إغلاق</button>
         </div>
 
