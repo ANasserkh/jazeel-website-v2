@@ -91,7 +91,7 @@ watch(dialog, (val) => {
     <dialog-form title="طلب خدمة" :subtitle v-model="dialog">
         <form v-if="!done" @submit.prevent="save">
             <div class="mb-4">
-                <label class="block text-sm font-bold text-navy mb-1.5">مسمى الجمعية</label>
+                <label class="block text-sm font-bold text-navy mb-1.5">اسم الجمعية</label>
                 <input type="text" required
                     class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
                     placeholder="اسم الجمعية" v-model="formData.organizationName" />
