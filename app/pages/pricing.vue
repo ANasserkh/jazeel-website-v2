@@ -115,15 +115,15 @@ if (route.query.service != null) {
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M8 1v14M1 8h14" />
                     </svg>
-                    خصم 20% على السنة الأولى
-                </span>
+                    خصم 20% على أول اشتراك </span>
             </div>
             <h1
-                class="reveal reveal-d1 text-[2.5rem] sm:text-[3.25rem] font-extrabold text-navy leading-[1.15] mb-6 tracking-tight">
-                باقات واضحة تساعدك<br class="hidden sm:block" />
-                على البدء والتوسع
-            </h1>
-            <p class="reveal reveal-d2 text-lg sm:text-xl text-neutral-text leading-relaxed max-w-2xl mx-auto mb-8">
+                class="reveal reveal-d1 text-[2.5rem] sm:text-[3.5rem] font-extrabold text-navy leading-[1.15] mb-6 tracking-tight">
+                مع جزيل</h1>
+            <h3
+                class="reveal reveal-d1 text-[1.5rem] sm:text-[2.5rem]  text-navy leading-[1.15] mb-6 tracking-tight font-semibold">
+                اكتشف فرص المنح، اكتب مقترحات احترافية وأدر مشاريعك بكفاءة أعلى</h3>
+            <p class="reveal reveal-d2 text-lg sm:text-xl text-neutral-text leading-relaxed max-w-2xl mx-auto mb-8 ">
                 اختر الخطة المناسبة لحجم منظمتك واحتياجاتها.
             </p>
             <div class="reveal reveal-d3 flex items-center justify-center gap-4 flex-wrap">
@@ -149,10 +149,12 @@ if (route.query.service != null) {
                             14 يوم تجربة مجانية
                         </span>
 
-                        <h3 class="text-2xl font-extrabold text-navy mb-2">الانطلاقة</h3>
-                        <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7">
-                            مثالية للجمعيات الصغيرة التي تبدأ رحلتها في تنظيم العمل التنموي
-                        </p>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-extrabold text-navy">الانطلاقة</h3>
+                        </div>
+                        <h4 class="text-[1.1rem] font-extrabold text-navy mb-3 leading-snug">ابدأ رحلتك نحو التمويل
+                            والاستدامة</h4>
+
 
                         <!-- Price -->
                         <div class="mb-7">
@@ -173,8 +175,7 @@ if (route.query.service != null) {
                             </p>
                             <p
                                 class="text-xs text-neutral-light mt-2 leading-relaxed bg-neutral-bg/60 rounded-lg px-3 py-2">
-                                يعود السعر بعد السنة الأولى إلى 75 <span class="icon-saudi_riyal_new"></span>/شهريًا
-                                (900 <span class="icon-saudi_riyal_new"></span>/سنويًا)
+                                وفر 192 <span class="icon-saudi_riyal_new"></span> مع الاشتراك السنوي
                             </p>
                         </div>
 
@@ -187,55 +188,31 @@ if (route.query.service != null) {
                         </a>
 
                         <!-- Features -->
-                        <div class="space-y-4 pt-5 border-t border-neutral-border/60">
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                        <div class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7 space-y-2.5">
+                            <p class="font-medium text-navy/95">مثالية للجمعيات الناشئة التي ترغب في:</p>
+                            <div class="space-y-1.5 pr-1">
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>اكتشاف فرص المنح والتمويل.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">حتى 5 مستخدمين</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>تنظيم مشاريعها ومبادراتها.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">حتى 4 مشاريع تنموية</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>إعداد مقترحات احترافية بسهولة.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">كتابة 5 مقترحات مشاريع</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>بناء قاعدة بيانات مؤسسية.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">استعراض فرص المنح غير محدود</span>
                             </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">إصدار التقارير الدورية</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">دعم فني عبر قنوات التواصل</span>
-                            </div>
+                            <p
+                                class="text-[0.875rem] bg-neutral-bg/60 border border-neutral-border/40 p-2.5 rounded-xl text-navy mt-4 leading-normal">
+                                <strong class="text-jgreen font-extrabold">النتيجة:</strong> وفر عشرات الساعات شهريًا
+                                وابدأ العمل بطريقة احترافية.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -252,10 +229,12 @@ if (route.query.service != null) {
                             الأنسب للنمو
                         </span>
 
-                        <h3 class="text-2xl font-extrabold text-navy mb-2">النمو</h3>
-                        <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7">
-                            للجمعيات التي تريد التوسع وإدارة مشاريعها ومقترحاتها باحتراف
-                        </p>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-extrabold text-navy">النمو</h3>
+                        </div>
+                        <h4 class="text-[1.1rem] font-extrabold text-navy mb-3 leading-snug">ضاعف فرص منظمتك في الحصول
+                            على التمويل</h4>
+
 
                         <div class="mb-7">
                             <div class="flex items-baseline gap-2 mb-2">
@@ -276,8 +255,7 @@ if (route.query.service != null) {
                             </p>
                             <p
                                 class="text-xs text-neutral-light mt-2 leading-relaxed bg-jgreen-50/60 rounded-lg px-3 py-2">
-                                يعود السعر بعد السنة الأولى إلى 245 <span class="icon-saudi_riyal_new"></span>/شهريًا
-                                (2,940 <span class="icon-saudi_riyal_new text-base"></span>/سنويًا)
+                                وفر 588 <span class="icon-saudi_riyal_new"></span> مع الاشتراك السنوي
                             </p>
                         </div>
 
@@ -289,58 +267,31 @@ if (route.query.service != null) {
                             </svg>
                         </a>
 
-                        <div class="space-y-4 pt-5 border-t border-jgreen/10">
-                            <p class="text-[0.8125rem] font-bold text-jgreen mb-1">كل مزايا الانطلاقة، بالإضافة إلى:
+                        <div class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7 space-y-2.5">
+                            <p class="font-medium text-navy/95">مناسبة للجهات التي تدير عدة مشاريع وتسعى إلى:</p>
+                            <div class="space-y-1.5 pr-1">
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>إدارة المشاريع والفرق بكفاءة.</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>رفع جودة المقترحات.</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>متابعة مؤشرات الأداء.</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>توحيد العمل في منصة واحدة.</span>
+                                </div>
+                            </div>
+                            <p
+                                class="text-[0.875rem] bg-jgreen-50/50 border border-jgreen/10 p-2.5 rounded-xl text-navy mt-4 leading-normal">
+                                <strong class="text-jgreen font-extrabold">النتيجة:</strong> إدارة أكثر احترافية وفرص
+                                أكبر للنمو والاستدامة.
                             </p>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">حتى 10 مستخدمين</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">حتى 10 مشاريع تنموية</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80 font-semibold">كتابة مقترحات غير
-                                    محدود</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">مساعد الذكاء الاصطناعي</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">إدارة الاستراتيجية والبرامج</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">أولوية الدعم الفني</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -356,10 +307,12 @@ if (route.query.service != null) {
                             الحل الشامل
                         </span>
 
-                        <h3 class="text-2xl font-extrabold text-navy mb-2">الريادة</h3>
-                        <p class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7">
-                            للمنظمات الكبيرة والفرق التي تحتاج أقصى مستوى من التحكم والإدارة
-                        </p>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-extrabold text-navy">الريادة</h3>
+                        </div>
+                        <h4 class="text-[1.1rem] font-extrabold text-navy mb-3 leading-snug">منظومة متكاملة للمنظمات
+                            الطموحة</h4>
+
 
                         <div class="mb-7">
                             <div class="flex items-baseline gap-2 mb-2">
@@ -380,8 +333,7 @@ if (route.query.service != null) {
                             </p>
                             <p
                                 class="text-xs text-neutral-light mt-2 leading-relaxed bg-neutral-bg/60 rounded-lg px-3 py-2">
-                                يعود السعر بعد السنة الأولى إلى 330 <span class="icon-saudi_riyal_new"></span>/شهريًا
-                                (3,960 <span class="icon-saudi_riyal_new"></span>/سنويًا)
+                                وفر 792 <span class="icon-saudi_riyal_new"></span> مع الاشتراك السنوي
                             </p>
                         </div>
 
@@ -394,56 +346,31 @@ if (route.query.service != null) {
                             </svg>
                         </a>
 
-                        <div class="space-y-4 pt-5 border-t border-neutral-border/60">
-                            <p class="text-[0.8125rem] font-bold text-navy mb-1">كل مزايا النمو، بالإضافة إلى:</p>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                        <div class="text-[0.9375rem] text-neutral-text leading-relaxed mb-7 space-y-2.5">
+                            <p class="font-medium text-navy/95">للمنظمات الكبيرة والجهات المانحة التي تحتاج إلى:</p>
+                            <div class="space-y-1.5 pr-1">
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>إدارة متقدمة للمشاريع.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">مستخدمون غير محدودين</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>صلاحيات متعددة للفرق.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">مشاريع تنموية غير محدودة</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>تقارير ولوحات معلومات احترافية.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">صلاحيات وأدوار متقدمة</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-jgreen font-bold">•</span>
+                                    <span>أعلى مستوى من التحكم والإدارة.</span>
                                 </div>
-                                <span class="text-[0.9375rem] text-navy/80">لوحات تحكم تنفيذية مخصصة</span>
                             </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80 font-semibold">مشرف حساب متخصص</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="check-icon bg-jgreen-50 mt-0.5">
-                                    <svg width="12" height="12" fill="none" stroke="#19B58B" stroke-width="2.5">
-                                        <path d="M2.5 6.5l2.5 2.5 5-5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[0.9375rem] text-navy/80">دعم فني مباشر</span>
-                            </div>
+                            <p
+                                class="text-[0.875rem] bg-neutral-bg/60 border border-neutral-border/40 p-2.5 rounded-xl text-navy mt-4 leading-normal">
+                                <strong class="text-navy font-extrabold">النتيجة:</strong> قيادة مؤسسية قائمة على
+                                البيانات واتخاذ القرار.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -459,7 +386,9 @@ if (route.query.service != null) {
                                 <path d="M10 6v4M10 13h.01" />
                             </svg>
                         </div>
-                        <p class="text-lg font-extrabold text-navy">كيف يعمل التسعير؟</p>
+                        <p class="text font-extrabold text-navy text-center">المنظمات التي تعمل بدون منظومة تشغيلية
+                            متكاملة تواجه
+                            غالبًا: </p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                         <div class="pricing-note-item">
@@ -469,8 +398,7 @@ if (route.query.service != null) {
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-[0.9375rem] font-bold text-navy">السعر المعروض شهري</p>
-                                <p class="text-sm text-neutral-text mt-0.5">محسوب على أساس الاشتراك السنوي</p>
+                                <p class="text-[0.9375rem] font-bold text-navy">فقدان فرص التمويل</p>
                             </div>
                         </div>
                         <div class="pricing-note-item">
@@ -481,8 +409,7 @@ if (route.query.service != null) {
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-[0.9375rem] font-bold text-navy">الفوترة تتم سنويًا</p>
-                                <p class="text-sm text-neutral-text mt-0.5">تُدفع دفعة واحدة عند الاشتراك</p>
+                                <p class="text-[0.9375rem] font-bold text-navy">تأخر إنجاز المقترحات.</p>
                             </div>
                         </div>
                         <div class="pricing-note-item">
@@ -492,8 +419,7 @@ if (route.query.service != null) {
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-[0.9375rem] font-bold text-navy">خصم 20% على السنة الأولى</p>
-                                <p class="text-sm text-neutral-text mt-0.5">عرض ترحيبي للسنة الأولى فقط</p>
+                                <p class="text-[0.9375rem] font-bold text-navy">صعوبة متابعة المشاريع.</p>
                             </div>
                         </div>
                         <div class="pricing-note-item">
@@ -504,12 +430,18 @@ if (route.query.service != null) {
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-[0.9375rem] font-bold text-navy">14 يوم تجربة مجانية</p>
-                                <p class="text-sm text-neutral-text mt-0.5">في باقة الانطلاقة — بدون بيانات دفع</p>
+                                <p class="text-[0.9375rem] font-bold text-navy">ضعف قياس الأثر.</p>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
+            </div>
+            <div class="mt-6 pt-6 border-jgreen/15">
+                <p class="text-base sm:text-3xl font-extrabold text-jgreen text-center">
+                    جزيل تجمع كل ذلك في منصة واحدة.
+                </p>
             </div>
         </div>
     </section>
@@ -756,12 +688,6 @@ if (route.query.service != null) {
                                 <td>غير محدود</td>
                             </tr>
                             <tr>
-                                <td>التقديم على فرص المنح</td>
-                                <td>حتى 6</td>
-                                <td class="featured-col">حتى 6</td>
-                                <td><strong>غير محدود</strong></td>
-                            </tr>
-                            <tr>
                                 <td>تنبيهات فرص المنح</td>
                                 <td>
                                     <svg class="inline" width="20" height="20" fill="none" stroke="#19B58B"
@@ -864,14 +790,14 @@ if (route.query.service != null) {
                             <tr>
                                 <td>خصم البرامج التدريبية</td>
                                 <td>-</td>
-                                <td class="featured-col">خصم 50%</td>
-                                <td>خصم 50%</td>
+                                <td class="featured-col">خصم 15%</td>
+                                <td>خصم 25%</td>
                             </tr>
                             <tr>
                                 <td>خصم الخدمات الاستشارية</td>
                                 <td>-</td>
-                                <td class="featured-col">خصم 15%</td>
-                                <td>خصم 25%</td>
+                                <td class="featured-col">خصم 10%</td>
+                                <td>خصم 20%</td>
                             </tr>
                         </tbody>
                     </table>
@@ -970,44 +896,6 @@ if (route.query.service != null) {
                         </p>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-toggle" @click="toggleFaq">
-                        <span class="text-base font-bold text-navy leading-relaxed">هل الخصم 20% على السنة الأولى
-                            فقط؟</span>
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 8l5 5 5-5" />
-                        </svg>
-                    </div>
-                    <div class="faq-answer">
-                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            نعم، خصم 20% يُطبق على السنة الأولى فقط كعرض ترحيبي. عند التجديد بعد السنة الأولى، تعود
-                            الرسوم إلى السعر
-                            الأصلي السنوي لكل باقة.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-toggle" @click="toggleFaq">
-                        <span class="text-base font-bold text-navy leading-relaxed">ماذا يحدث عند التجديد بعد السنة
-                            الأولى؟</span>
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 8l5 5 5-5" />
-                        </svg>
-                    </div>
-                    <div class="faq-answer">
-                        <p class="text-[0.9375rem] text-neutral-text leading-[1.8]">
-                            عند التجديد، يعود الاشتراك إلى السعر الأصلي بدون خصم السنة الأولى. مثلاً: باقة الانطلاقة
-                            تعود إلى 900
-                            <span class="icon-saudi_riyal_new"></span> سنويًا (75 <span
-                                class="icon-saudi_riyal_new"></span> شهريًا)، وباقة النمو إلى 2,940 <span
-                                class="icon-saudi_riyal_new"></span> سنويًا (245 <span
-                                class="icon-saudi_riyal_new"></span> شهريًا).
-                        </p>
-                    </div>
-                </div>
-
                 <div class="faq-item">
                     <div class="faq-toggle" @click="toggleFaq">
                         <span class="text-base font-bold text-navy leading-relaxed">هل يمكنني تجربة الباقة قبل
