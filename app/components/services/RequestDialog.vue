@@ -166,7 +166,7 @@ watch(dialog, (val) => {
             </div>
             <h4 class="text-lg font-bold text-navy mb-2">تم إرسال طلبك بنجاح!</h4>
             <p class="text-[0.9375rem] text-neutral-text mb-5">سيتواصل معك فريقنا خلال يومين عمل</p>
-            <button @click="dialog = false" class="btn-secondary justify-center text-[0.9375rem]">إغلاق</button>
+            <button @click="dialog = false" class="btn btn-navy justify-center text-[0.9375rem]">إغلاق</button>
         </div>
 
     </dialog-form>
