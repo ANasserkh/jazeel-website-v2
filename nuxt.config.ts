@@ -4,6 +4,19 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
+          hid: "zoho-salesiq",
+          innerHTML: `
+          			window.$zoho = window.$zoho || {};
+	          		$zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+        `,
+          type: "text/javascript",
+        },
+        {
+          src: "https://salesiq.zohopublic.com/widget?wc=siqff50887ec5f028d14b4dd7b74ac32e65",
+          defer: true,
+          id: "zsiqscript",
+        },
+        {
           src: "https://platform-api.sharethis.com/js/sharethis.js",
           async: true,
           defer: true,
