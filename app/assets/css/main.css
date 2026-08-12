@@ -1207,10 +1207,10 @@ body {
 }
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(50%);
   }
 }
 .reveal {
@@ -1466,7 +1466,7 @@ body {
 .logo-track {
   display: flex;
   gap: 2.5rem;
-  animation: marquee 30s linear infinite;
+  animation: marquee 60s linear infinite;
   width: max-content;
 }
 .logo-track:hover {
