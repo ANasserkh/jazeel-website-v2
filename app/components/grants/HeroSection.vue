@@ -41,9 +41,10 @@ const currentMonth = computed(() => {
         <div class="jz-container">
             <div class="grants-hero-content">
                 <template v-if="calender">
-                    <h1>رزنامة جزيل <span class="block">لشهر {{ currentMonth }}</span></h1>
-                    <p class="grants-hero-desc">استكشف فرص التمويل والدعم المتاحة في المملكة، وابدأ رحلة التقديم بخطوات
-                        واثقة وكفاءة عالية.</p>
+                    <h1>روزنامة جزيل <span class="block">لشهر {{ currentMonth }}</span></h1>
+                    <p class="grants-hero-desc">
+                        استكشف أحدث فرص التمويل والدعم في المملكة، مع تحديث مستمر وتلقائي يضمن لك الاطلاع على المنح المتاحة أولًا بأول
+                    </p>
 
                     <div class="grants-stats">
                         <div class="grants-stat">
