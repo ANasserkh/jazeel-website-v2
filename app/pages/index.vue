@@ -296,7 +296,7 @@ useSeoMeta({
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
-                        <img src="@/assets/images/ngos/146.png" alt="شعار جهة غير ربحية"
+                        <img src="@/assets/images/ngos/14.png" alt="شعار جهة غير ربحية"
                             class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
                     </div>
                     <div
