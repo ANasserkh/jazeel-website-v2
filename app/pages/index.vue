@@ -222,87 +222,87 @@ useSeoMeta({
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/1.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/2.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/3.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/4.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/5.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/6.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/7.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/8.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/9.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/10.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/11.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/12.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/13.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/14.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/15.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/14.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
                     <div
                         class="w-24 h-24 rounded-sys-lg border border-neutral-border/40 flex items-center justify-center p-2 shrink-0 hover:shadow-sys-md hover:border-jgreen/20 transition-all duration-300">
                         <img src="@/assets/images/ngos/17.png" alt="شعار جهة غير ربحية"
-                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-contain transition-all duration-500">
                     </div>
 
                     <!-- duplicate for seamless loop -->
