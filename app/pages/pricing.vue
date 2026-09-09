@@ -24,7 +24,8 @@ const services = {
     ProjectManagement: 5,
     ProcessModeling: 6,
     FundraisingQualification: 7,
-    FundraisingUnit: 8
+    FundraisingUnit: 8,
+    JazeelHour: 9,
 }
 
 const servicesList = [
@@ -34,6 +35,20 @@ const servicesList = [
         description: 'نساعدك في صياغة مقترحات مشاريع احترافية ترفع من فرص قبولك لدى المانحين.',
         tag: 'لرفع معدل القبول',
         color: 'blue'
+    },
+    {
+        id: services.JazeelHour,
+        title: 'ساعة جزيل',
+        description: 'خدمة الساعات الاستشارية للجمعيات الأهلية للاجارة عن الاستفسارات المرتبطة بمقترحات المشاريع والمنح.',
+        tag: 'كفاءة تشغيلية',
+        color: 'jgreen'
+    },
+    {
+        id: services.TechnicalDesign,
+        title: 'التصميم الفني للمشاريع التنموية',
+        description: 'تصميم هيكلي وفني دقيق للمشاريع يضمن كفاءة التنفيذ وتحقيق الأثر المنشود.',
+        tag: 'تصميم احترافي',
+        color: 'purple'
     },
     {
         id: services.TechnicalDesign,

@@ -15,7 +15,8 @@ const services = {
     ProjectManagement: 5,
     ProcessModeling: 6,
     FundraisingQualification: 7,
-    FundraisingUnit: 8
+    FundraisingUnit: 8,
+    JazeelHour: 9,
 }
 
 const subtitle = computed(() => {
@@ -27,7 +28,7 @@ const subtitle = computed(() => {
         case services.ProjectManagement: return "إدارة المشاريع التنموية"
         case services.ProcessModeling: return "نمذجة الإجراءات والعمليات في إدارة المشاريع التنموية"
         case services.FundraisingQualification: return "تأهيل وتمكين أخصائي ادارة تنمية الموارد المالية"
-        case services.FundraisingUnit: return "تأسيس وحدة تنمية الموارد المالية"
+        case services.JazeelHour: return "ساعة جزيل الاستشارية"
     }
 })
 
@@ -110,7 +111,7 @@ watch(dialog, (val) => {
                     class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
                     placeholder="email@example.com" dir="ltr" v-model="formData.email" />
             </div>
-            
+
             <div class="mb-4">
                 <label class="block text-sm font-bold text-navy mb-1.5">رقم الجوال</label>
                 <input type="tel" required oninput="this.value = this.value.replace(/\D+/g, '')"
