@@ -1,183 +1,151 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 
-
-
-const { serviceType } = defineProps({
-    serviceType: Number
-});
-
-const services = {
-    ProposalBuilding: 1,
-    TechnicalDesign: 2,
-    SpecialistQualification: 3,
-    UnitEstablishment: 4,
-    ProjectManagement: 5,
-    ProcessModeling: 6,
-    FundraisingQualification: 7,
-    FundraisingUnit: 8,
-    JazeelHour: 9,
-}
-
-const subtitle = computed(() => {
-    switch (serviceType) {
-        case services.ProposalBuilding: return "بناء مقترحات المشاريع التنموية"
-        case services.TechnicalDesign: return "التصميم الفني للمشاريع التنموية"
-        case services.SpecialistQualification: return "تأهيل أخصائي المشاريع التنموية"
-        case services.UnitEstablishment: return "تأسيس وحدة البرامج والمشاريع"
-        case services.ProjectManagement: return "إدارة المشاريع التنموية"
-        case services.ProcessModeling: return "نمذجة الإجراءات والعمليات في إدارة المشاريع التنموية"
-        case services.FundraisingQualification: return "تأهيل وتمكين أخصائي ادارة تنمية الموارد المالية"
-        case services.JazeelHour: return "ساعة جزيل الاستشارية"
-    }
-})
-
+const { service } = defineProps({ service: { type: Object, required: true } });
 const dialog = defineModel({ default: false });
+const hasPayment = computed(() => Boolean(service?.payment));
+const step = ref('request');
+const loading = ref(false);
+const done = ref(false);
+const error = ref('');
+const requestSubmitted = ref(false);
+const serviceRequest = ref(null);
 
-const formData = ref({
-    organizationName: '',
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    hasAccount: false,
-    notes: '',
-    serviceType: ''
-});
-
+const emptyForm = () => ({ organizationName: '', fullName: '', email: '', phoneNumber: '', hasAccount: false, notes: '', serviceType: '' });
+const formData = ref(emptyForm());
 const config = useRuntimeConfig();
 const url = `${config.public.apiMaster}/service-requests`;
-const loading = ref(false);
-const done = ref(false)
+
 async function save() {
     if (loading.value) return;
+    if (requestSubmitted.value) {
+        step.value = 'payment';
+        return;
+    }
 
     loading.value = true;
+    error.value = '';
     try {
-
-        formData.value.serviceType = serviceType;
-        await fetch(url, {
+        formData.value.serviceType = service.id;
+        const response = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData.value),
         });
+        if (!response.ok) throw new Error('Could not save service request');
 
-        done.value = true;
+        const responseBody = await response.json().catch(() => ({}));
+        const savedRequest = responseBody?.data ?? responseBody;
+        requestSubmitted.value = true;
+        serviceRequest.value = { ...formData.value, ...savedRequest };
+        if (hasPayment.value) step.value = 'payment';
+        else done.value = true;
+    } catch(err) {
+        error.value = 'تعذر إرسال الطلب حالياً. يرجى المحاولة مرة أخرى.';
     } finally {
         loading.value = false;
     }
 }
 
 function reset() {
-    formData.value = {
-        organizationName: '',
-        fullName: '',
-        email: '',
-        phoneNumber: '',
-        hasAccount: false,
-        notes: '',
-        serviceType: 1
-    }
-
+    formData.value = emptyForm();
+    step.value = 'request';
+    loading.value = false;
     done.value = false;
+    error.value = '';
+    requestSubmitted.value = false;
+    serviceRequest.value = null;
 }
 
-watch(dialog, (val) => {
-    if (val) return;
-    reset();
-})
+watch(dialog, (isOpen) => {
+    if (!isOpen) reset();
+});
 </script>
+
 <template>
-    <dialog-form title="طلب خدمة" :subtitle v-model="dialog">
-        <form v-if="!done" @submit.prevent="save">
+    <dialog-form :title="step === 'payment' ? 'إتمام الدفع' : 'طلب خدمة'" :subtitle="service.title" v-model="dialog">
+        <div v-if="hasPayment && !done" class="mb-7" dir="rtl">
+            <div class="flex items-center" aria-label="خطوات الطلب">
+                <div class="flex shrink-0 items-center gap-2"
+                    :class="step === 'request' ? 'text-jgreen' : 'text-neutral-light'">
+                    <span class="flex h-7 w-7 items-center justify-center rounded-full text-xs font-extrabold"
+                        :class="step === 'request' ? 'bg-jgreen text-white' : 'bg-neutral-bg text-neutral-light'">1</span>
+                    <span class="text-sm font-bold">بيانات الطلب</span>
+                </div>
+                <span class="mx-3 h-0.5 flex-1 rounded-full"
+                    :class="step === 'payment' ? 'bg-jgreen' : 'bg-neutral-border'"></span>
+                <div class="flex shrink-0 items-center gap-2 text-neutral-light"
+                    :class="{ 'text-jgreen': step === 'payment' }">
+                    <span
+                        class="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-bg text-xs font-extrabold"
+                        :class="step === 'payment' ? 'bg-jgreen text-white' : 'text-neutral-light'">2</span>
+                    <span class="text-sm font-bold">الدفع</span>
+                </div>
+            </div>
+        </div>
+
+        <form v-if="!done && step === 'request'" @submit.prevent="save">
             <div class="mb-4">
                 <label class="block text-sm font-bold text-navy mb-1.5">اسم الجمعية</label>
-                <input type="text" required
-                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                    placeholder="اسم الجمعية" v-model="formData.organizationName" />
+                <input v-model="formData.organizationName" type="text" required placeholder="اسم الجمعية"
+                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors" />
             </div>
-
             <div class="mb-4">
                 <label class="block text-sm font-bold text-navy mb-1.5">اسم المسؤول</label>
-                <input type="text" required
-                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                    placeholder="اسم المسؤول" v-model="formData.fullName" />
+                <input v-model="formData.fullName" type="text" required placeholder="اسم المسؤول"
+                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors" />
             </div>
-
             <div class="mb-4">
                 <label class="block text-sm font-bold text-navy mb-1.5">البريد الإلكتروني</label>
-                <input type="email" required
-                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                    placeholder="email@example.com" dir="ltr" v-model="formData.email" />
+                <input v-model="formData.email" type="email" required placeholder="email@example.com" dir="ltr"
+                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors" />
             </div>
-
             <div class="mb-4">
                 <label class="block text-sm font-bold text-navy mb-1.5">رقم الجوال</label>
-                <input type="tel" required oninput="this.value = this.value.replace(/\D+/g, '')"
-                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors"
-                    placeholder="05xxxxxxxx" dir="ltr" v-model="formData.phoneNumber" />
+                <input v-model="formData.phoneNumber" type="tel" required inputmode="numeric" pattern="[0-9]*"
+                    placeholder="05xxxxxxxx" dir="ltr"
+                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors" />
             </div>
-
             <div class="mb-5">
                 <label class="block text-sm font-bold text-navy mb-2">هل لديك حساب في جزيل؟</label>
                 <div class="flex items-center gap-4">
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="hasAccount" :value="true" class="accent-[#19B58B] w-4 h-4"
-                            v-model="formData.hasAccount" />
-                        <span class="text-[0.9375rem] text-neutral-text">نعم، لدي حساب</span>
-                    </label>
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="hasAccount" :value="false" class="accent-[#19B58B] w-4 h-4"
-                            v-model="formData.hasAccount" />
-                        <span class="text-[0.9375rem] text-neutral-text">لا، ليس لدي حساب</span>
-                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer"><input v-model="formData.hasAccount"
+                            type="radio" :value="true" class="accent-[#19B58B] w-4 h-4" /><span
+                            class="text-[0.9375rem] text-neutral-text">نعم، لدي حساب</span></label>
+                    <label class="flex items-center gap-2 cursor-pointer"><input v-model="formData.hasAccount"
+                            type="radio" :value="false" class="accent-[#19B58B] w-4 h-4" /><span
+                            class="text-[0.9375rem] text-neutral-text">لا، ليس لدي حساب</span></label>
                 </div>
             </div>
-
             <div class="mb-5">
                 <label class="block text-sm font-bold text-navy mb-1.5">ملاحظات إضافية <span
                         class="font-normal text-neutral-light">(اختياري)</span></label>
-                <textarea rows="3"
-                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors resize-none"
-                    placeholder="أي تفاصيل إضافية عن احتياجك..." v-model="formData.notes"></textarea>
+                <textarea v-model="formData.notes" rows="3" placeholder="أي تفاصيل إضافية عن احتياجك..."
+                    class="w-full border border-neutral-border rounded-xl px-4 py-3 text-[0.9375rem] focus:outline-none focus:border-jgreen transition-colors resize-none"></textarea>
             </div>
-            <button type="submit" :disabled="loading" class="btn-primary w-full justify-center text-[0.9375rem] py-3.5">
-                <span v-if="!loading">إرسال الطلب</span>
-                <span v-else class="flex items-center gap-2">
-                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
-                        </circle>
-                        <path class="opacity-75" fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                        </path>
-                    </svg>
-                    جاري الإرسال...
-                </span>
-            </button>
+            <p v-if="error" role="alert" class="mb-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{{ error }}
+            </p>
+            <button type="submit" :disabled="loading"
+                class="btn-primary w-full justify-center text-[0.9375rem] py-3.5">{{ loading ? 'جاري الإرسال...' :
+                    hasPayment ? 'المتابعة إلى الدفع' : 'إرسال الطلب' }}</button>
         </form>
 
-        <!-- Success state -->
-        <div v-if="done" class=" text-center py-6">
-            <div class="w-14 h-14 rounded-full bg-jgreen-50 flex items-center justify-center mx-auto mb-4">
-                <svg width="28" height="28" fill="none" stroke="#19B58B" stroke-width="2">
+        <section v-else-if="!done && step === 'payment'" class="py-1">
+            <div class="mb-5 rounded-xl bg-jgreen-50 px-4 py-3 text-sm text-navy"><span class="font-bold">تم تسجيل
+                    طلبك.</span> أكمل الدفع لتأكيد الخدمة.</div>
+            <ServicesPaymentForm :service :service-request="serviceRequest" />
+            <button type="button" class="mt-5 w-full text-sm font-bold text-neutral-text hover:text-navy"
+                @click="step = 'request'">العودة إلى بيانات الطلب</button>
+        </section>
+
+        <div v-else class="text-center py-6">
+            <div class="w-14 h-14 rounded-full bg-jgreen-50 flex items-center justify-center mx-auto mb-4"><svg
+                    width="28" height="28" fill="none" stroke="#19B58B" stroke-width="2">
                     <path d="M7 14.5l5 5 9-9" />
-                </svg>
-            </div>
+                </svg></div>
             <h4 class="text-lg font-bold text-navy mb-2">تم إرسال طلبك بنجاح!</h4>
             <p class="text-[0.9375rem] text-neutral-text mb-5">سيتواصل معك فريقنا خلال يومين عمل</p>
             <button @click="dialog = false" class="btn btn-navy justify-center text-[0.9375rem]">إغلاق</button>
         </div>
-
     </dialog-form>
 </template>
-<style scoped>
-select {
-    /* Example: custom arrow styling if the default one is not desired */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M10 13l-4-4m0 0 4-4m-4 4h9'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.75rem center;
-    background-size: 1em;
-}
-</style>

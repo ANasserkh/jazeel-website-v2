@@ -13,8 +13,7 @@ function toggleFaq(e) {
     if (!wasActive) item.classList.add('active');
 }
 
-const serviceModal = ref(false);
-const serviceType = ref(1);
+
 
 const services = {
     ProposalBuilding: 1,
@@ -41,7 +40,9 @@ const servicesList = [
         title: 'ساعة جزيل',
         description: 'خدمة الساعات الاستشارية للجمعيات الأهلية للاجابة عن استفسارات المنح واليات الاجابة عليها.',
         tag: 'كفاءة تشغيلية',
-        color: 'jgreen'
+        color: 'jgreen',
+        price: 500,
+        payment:true
     },
     {
         id: services.TechnicalDesign,
@@ -101,16 +102,21 @@ const servicesList = [
     }
 ];
 
-function openServiceDialog(type) {
-    serviceType.value = type;
+const serviceModal = ref(false);
+const service = ref(servicesList[0]);
+
+
+function openServiceDialog(item) {
+    service.value = item;
     serviceModal.value = true;
 }
 
 const route = useRoute();
 if (route.query.service != null) {
-    if (servicesList.find(s => s.id == route.query.service)) {
-        openServiceDialog(Number(route.query.service))
 
+    const request = servicesList.find(s => s.id == route.query.service);
+    if (request) {
+        openServiceDialog(request);
     }
 }
 
@@ -118,7 +124,7 @@ if (route.query.service != null) {
 
 
 <template>
-    <ServicesRequestDialog :service-type="serviceType" v-model="serviceModal" />
+    <ServicesRequestDialog :service="service" v-model="serviceModal" />
 
     <!-- ═══════════════════ HERO ═══════════════════ -->
     <section class="pt-28 pb-14 sm:pt-36 sm:pb-20"
@@ -874,7 +880,7 @@ if (route.query.service != null) {
                         'text-navy bg-navy/5': service.color === 'navy',
                     }">{{ service.tag }}</span>
                     <div class="mt-auto">
-                        <button @click="openServiceDialog(service.id)"
+                        <button @click="openServiceDialog(service)"
                             class="btn-secondary justify-center text-[0.9375rem] w-full">
                             اطلبها الآن
                         </button>

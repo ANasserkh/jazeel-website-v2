@@ -2,6 +2,13 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   app: {
     head: {
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/moyasar-payment-form@2.2.13/dist/moyasar.css",
+          crossorigin: "anonymous",
+        },
+      ],
       script: [
         {
           hid: "zoho-salesiq",
@@ -21,18 +28,26 @@ export default defineNuxtConfig({
           async: true,
           defer: true,
         },
+
+        {
+          src: "https://platform-api.sharethis.com/js/sharethis.js",
+          async: true,
+          defer: true,
+        },
+
+        {
+          src: "https://cdn.jsdelivr.net/npm/moyasar-payment-form@2.2.13/dist/moyasar.umd.min.js",
+          async: true,
+          defer: true,
+        },
       ],
     },
   },
   runtimeConfig: {
-    // public: {
-    //   apiBase: "https://localhost:7012/website/api",
-    //   apiMaster: "https://localhost:7049/api/website",
-    // },
-
     public: {
-      apiBase: "https://ngo.jazeel.net.sa/website/api",
-      apiMaster: "https://master.jazeel.net.sa/api/website",
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
+      apiMaster: process.env.NUXT_PUBLIC_API_MASTER,
+      moyasarPublishableKey: process.env.NUXT_PUBLIC_MOYASAR_PUBLISHABLE_KEY,
     },
   },
 

@@ -16,12 +16,23 @@ onMounted(() => {
     updateHeader();
     toggleNavbarBg()
 });
+
+
+
+const isLight = computed(() => {
+    const pages = ["donor-portal", "ngo-portal", "pricing", 'payment-result']
+    return pages.includes(route.name)
+});
+
+
 function updateHeader() {
     const header = document.getElementById('mainHeader');
     const navLinks = document.querySelectorAll('.nav-link');
     const loginLink = document.getElementById('loginLink');
     const langBtn = document.getElementById('langBtn');
     const mobileToggle = document.getElementById('mobileToggle');
+    const logo = document.getElementById('headerLogo');
+    const logoV2 = document.getElementById('headerLogoV2');
 
     const scrolled = window.scrollY > 40;
     if (scrolled) {
@@ -30,12 +41,24 @@ function updateHeader() {
         if (loginLink) loginLink.style.color = '#07133F';
         if (langBtn) langBtn.style.color = '#5B6470';
         if (mobileToggle) mobileToggle.style.color = '#07133F';
+
+        if (!isLight) {
+            logo.classList.remove('hidden');
+            logoV2.classList.add('hidden');
+        }
+
     } else {
         header.classList.remove('header-scrolled');
         navLinks.forEach((l, i) => { l.style.color = i === 0 ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.6)'; });
         if (loginLink) loginLink.style.color = 'rgba(255,255,255,0.7)';
         if (langBtn) langBtn.style.color = 'rgba(255,255,255,0.5)';
         if (mobileToggle) mobileToggle.style.color = '#fff';
+        if (!isLight) {
+
+            logoV2.classList.remove('hidden');
+            logo.classList.add('hidden');
+        }
+
     }
 }
 
@@ -44,13 +67,12 @@ watch(() => route.path, () => {
     toggleNavbarBg();
 });
 
-function toggleNavbarBg() {
-    const pages = ["donor-portal", "ngo-portal", "pricing"]
 
-    if (pages.includes(route.name)) {
+function toggleNavbarBg() {
+
+    if (isLight.value) {
         document.getElementById('mainHeader').classList.add('light-nav');
     } else {
-
         document.getElementById('mainHeader').classList.remove('light-nav');
     }
 }
@@ -65,7 +87,14 @@ function toggleNavbarBg() {
         <div class="max-w-7xl mx-auto px-5 sm:px-8">
             <div class="flex items-center justify-between h-[68px]">
                 <NuxtLink to="/" class="flex items-center gap-2">
-                    <img src="~/assets/images/jazeel-logo.svg" alt="جزيل" class="h-8" id="headerLogo">
+                    <img src="~/assets/images/jazeel-logo-v2.svg" alt="جزيل" :class="{
+                        'h-8': true,
+                        'hidden': isLight
+                    }" id="headerLogoV2">
+                    <img src="~/assets/images/jazeel-logo.svg" alt="جزيل" :class="{
+                        'h-8': true,
+                        'hidden': !isLight
+                    }" id="headerLogo">
                 </NuxtLink>
 
                 <nav class="hidden lg:flex items-center gap-0.5" id="desktopNav">
@@ -84,10 +113,12 @@ function toggleNavbarBg() {
                         class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
                         الأسعار</NuxtLink>
                     <NuxtLink to="/grants"
-                        class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">فرص
+                        class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
+                        فرص
                         المنح</NuxtLink>
                     <NuxtLink to="/donors-directory"
-                        class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">دليل
+                        class="nav-link px-4 py-2 rounded-lg text-[0.9375rem] font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all">
+                        دليل
                         المانحين</NuxtLink>
                 </nav>
 
@@ -127,12 +158,14 @@ function toggleNavbarBg() {
                                     </svg></span>
                                 <div>
                                     <div class="text-navy">دخول الجهات المانحة</div>
-                                    <div style="font-size:11px;font-weight:400;color:#5B6470;margin-top:1px;">نشر الفرص وتقييم المقترحات</div>
+                                    <div style="font-size:11px;font-weight:400;color:#5B6470;margin-top:1px;">نشر الفرص
+                                        وتقييم المقترحات</div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary" style="padding:0.5rem 1.25rem;font-size:0.8125rem;">ابدأ التجربة
+                    <a href="https://ngo.jazeel.net.sa/#/register" class="btn-primary"
+                        style="padding:0.5rem 1.25rem;font-size:0.8125rem;">ابدأ التجربة
                         المجانية</a>
                 </div>
 
