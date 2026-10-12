@@ -37,7 +37,6 @@ function closeModal() {
 
 
 function onFilter(params) {
-    pagination.value.type = params.type;
     pagination.value.program = params.program;
     pagination.value.location = params.location;
     pagination.value.page = 1;
@@ -309,13 +308,6 @@ function jump(page) {
                     </div>
 
                     <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB]">{{
-                                selectedDonor.type }}</span>
-                            <span v-for="field in selectedDonor.programs" :key="field" class="donor-tag">{{ field
-                                }}</span>
-                        </div>
-
                         <h3 class="text-sm font-bold text-navy mb-2">نبذة عن الجهة</h3>
                         <p class="text-sm text-neutral-text leading-relaxed mb-5">{{ selectedDonor.description }}</p>
 

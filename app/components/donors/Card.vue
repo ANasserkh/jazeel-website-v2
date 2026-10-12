@@ -13,15 +13,9 @@ defineProps({
             <div class="flex-1 min-w-0">
                 <h3 class="text-base font-bold text-navy mb-0.5 truncate">{{ donor.name }}</h3>
                 <p class="text-xs text-neutral-text truncate">{{ donor.subtitle }}</p>
-                <span
-                    class="inline-block mt-1.5 text-[0.68rem] font-bold px-2 py-0.5 rounded-full bg-[#EFF6FF] text-[#2563EB]">{{
-                        donor.type }}</span>
             </div>
         </div>
         <p class="text-sm text-neutral-text leading-relaxed mb-4 line-clamp-2">{{ donor.description }}</p>
-        <div class="flex flex-wrap gap-1.5 mb-4">
-            <span v-for="field in donor.programs" :key="field" class="donor-tag">{{ field }}</span>
-        </div>
         <div class="flex items-center justify-between pt-3 border-t border-neutral-border/40">
             <div class="flex gap-3">
                 <div class="stat-mini">
